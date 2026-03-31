@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary — English Language Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--deep:#2d1b5e;--mid:#7b2d8b;--green:#b44fcb;--light:#ce93d8;--pale:#f3e5f5;--mist:#faf0fb;--cream:#fdf8ff;--ink:#2a1a35;--soft:#5a3a6a;--accent:#f4a261;--accent-pale:#fde8d0;--gold:#f9a825;--gold-pale:#fff8e1}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(253,248,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--pale)}
+    .logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--mid);text-decoration:none}.logo span{font-style:italic}
+    .nav-badge{background:var(--pale);color:var(--mid);font-size:0.78rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:50px}
+    .prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--mid),var(--gold));z-index:200;width:0;transition:width 0.1s}
+    .hero{padding:7rem 3rem 3rem;max-width:860px;margin:0 auto;text-align:center}
+    .hero-tags{display:flex;justify-content:center;gap:0.7rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .tag{font-size:0.75rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:50px}
+    .t-cat{background:var(--pale);color:var(--mid)}.t-lvl{background:#e8f5e9;color:#2e7d32}.t-time{background:var(--gold-pale);color:#f57f17}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+    .hero h1 em{font-style:italic;color:var(--mid)}
+    .hero-sub{font-size:1.05rem;color:var(--soft);line-height:1.7;max-width:580px;margin:0 auto 2rem}
+    .hero-meta{display:flex;justify-content:center;gap:1.5rem;font-size:0.82rem;color:var(--soft);padding-top:1.2rem;border-top:1px solid var(--pale);flex-wrap:wrap}
+    .body{max-width:720px;margin:0 auto;padding:0 3rem 6rem}
+    .prose{margin:2rem 0}
+    .prose h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;margin-bottom:0.8rem;color:var(--ink)}
+    .prose p{font-size:0.96rem;color:var(--soft);line-height:1.8;margin-bottom:0.9rem}
+    .prose p strong{color:var(--ink)}
+    .callout{background:var(--pale);border-left:4px solid var(--mid);border-radius:14px;padding:1.3rem 1.5rem;margin:1.8rem 0;display:flex;gap:0.9rem;align-items:flex-start}
+    .callout-icon{font-size:1.4rem;flex-shrink:0}
+    .callout p{font-size:0.91rem;color:var(--ink);line-height:1.7;margin:0}
+    /* WORD CARDS */
+    .words-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin:2rem 0}
+    .word-card{background:#fff;border-radius:16px;padding:1.5rem;border:1.5px solid var(--pale);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+    .word-card:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(123,45,139,.1)}
+    .word-card::after{content:'';position:absolute;top:0;right:0;width:60px;height:60px;background:linear-gradient(135deg,var(--pale),transparent);border-radius:0 0 0 60px}
+    .word-num{font-family:'Caveat',cursive;font-size:0.9rem;color:var(--light);margin-bottom:0.3rem}
+    .word-en{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--mid);margin-bottom:0.2rem}
+    .word-type{font-size:0.72rem;font-weight:700;background:var(--pale);color:var(--mid);padding:0.15rem 0.5rem;border-radius:50px;display:inline-block;margin-bottom:0.5rem}
+    .word-def{font-size:0.88rem;color:var(--soft);line-height:1.6;margin-bottom:0.7rem}
+    .word-ex{font-size:0.85rem;color:var(--ink);font-style:italic;background:var(--mist);padding:0.5rem 0.8rem;border-radius:8px;line-height:1.5}
+    .word-ex em{font-style:normal;font-weight:700;color:var(--mid)}
+    /* CATEGORY SECTION */
+    .cat-section{margin:2.5rem 0}
+    .cat-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--ink);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
+    .cat-title::after{content:'';flex:1;height:1px;background:var(--pale)}
+    /* TIPS */
+    .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+    .tip-card{background:#fff;border-radius:14px;padding:1.2rem;border:1.5px solid var(--pale)}
+    .tip-icon{font-size:1.5rem;margin-bottom:0.5rem}
+    .tip-title{font-weight:700;font-size:0.9rem;color:var(--ink);margin-bottom:0.3rem}
+    .tip-body{font-size:0.82rem;color:var(--soft);line-height:1.6}
+    /* PRACTICE */
+    .practice{background:var(--deep);border-radius:20px;padding:2rem;margin:2.5rem 0;color:#fff}
+    .practice h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;margin-bottom:0.5rem}
+    .practice p{font-size:0.87rem;color:rgba(255,255,255,.7);margin-bottom:1.1rem;line-height:1.6}
+    .pi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:0.8rem 1rem;font-size:0.87rem;color:#fff;line-height:1.5;margin-bottom:0.6rem}
+    .pi span{font-family:'Caveat',cursive;color:var(--light);display:block;margin-top:0.3rem;font-size:1rem}
+    .next{background:#fff;border-radius:18px;padding:1.8rem;border:1.5px solid var(--pale);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2.5rem 0;transition:all .2s;cursor:pointer}
+    .next:hover{border-color:var(--mid);box-shadow:0 8px 25px rgba(123,45,139,.1);transform:translateY(-2px)}
+    .next-lbl{font-family:'Caveat',cursive;color:var(--mid);font-size:1rem;display:block;margin-bottom:0.3rem}
+    .next-ttl{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink)}
+    .arrow{font-size:1.5rem;color:var(--mid)}
+    .r{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.r.v{opacity:1;transform:translateY(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .a1{animation:fadeUp .5s ease both}.a2{animation:fadeUp .5s .1s ease both}.a3{animation:fadeUp .5s .2s ease both}.a4{animation:fadeUp .5s .3s ease both}
+    @media(max-width:700px){nav{padding:1rem 1.5rem}.hero,.body{padding-left:1.5rem;padding-right:1.5rem}.words-grid{grid-template-columns:1fr}.tips-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<nav><a href="english-language-blog.html" class="logo">English <span>Language</span></a><span class="nav-badge">🎯 Vocabulary</span></nav>
+<div class="hero">
+  <div class="hero-tags a1"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag t-lvl">🌱 Beginner</span><span class="tag t-time">⏱ 5 min read</span></div>
+  <h1 class="a2">100 Essential English Words<br/>Every Beginner Should Learn <em>First</em></h1>
+  <p class="hero-sub a3">The core vocabulary that unlocks everyday communication from day one — organised by category so you can learn them naturally and remember them effortlessly.</p>
+  <div class="hero-meta a4"><span>📅 March 24, 2026</span><span>✍️ English Language Blog</span><span>📖 Vocabulary · Article #01</span></div>
+</div>
+<div class="body">
+  <div class="prose r">
+    <p>When you start learning English, it is tempting to try to learn hundreds of words at once. But research shows that <strong>knowing the right 100 words can unlock up to 50% of everyday English conversation.</strong> These are not random words — they are the ones that appear in almost every situation you will ever face.</p>
+    <p>We have organised them into six essential categories. Learn one category at a time, use the example sentences to see each word in context, and you will be surprised how quickly your confidence grows.</p>
+  </div>
+  <div class="callout r"><div class="callout-icon">💡</div><p><strong>How to use this list:</strong> Don't try to memorise all 100 in one day. Pick one category, read it slowly, say each word out loud, and use it in a sentence of your own. Come back the next day for the next category.</p></div>
+
+  <!-- PEOPLE & GREETINGS -->
+  <div class="cat-section r">
+    <div class="cat-title">👋 People & Greetings</div>
+    <div class="words-grid">
+      <div class="word-card"><div class="word-num">#01–05</div><div class="word-en">Hello / Hi</div><span class="word-type">exclamation</span><div class="word-def">A word used to greet someone. "Hello" is more formal; "Hi" is casual.</div><div class="word-ex"><em>Hello</em>, my name is Sara. / <em>Hi</em>, how are you?</div></div>
+      <div class="word-card"><div class="word-num">#06</div><div class="word-en">Please</div><span class="word-type">adverb</span><div class="word-def">Used to make a request polite. One of the most important words in English.</div><div class="word-ex">Could you <em>please</em> help me?</div></div>
+      <div class="word-card"><div class="word-num">#07</div><div class="word-en">Thank you</div><span class="word-type">phrase</span><div class="word-def">Used to show gratitude. "Thanks" is the informal version.</div><div class="word-ex"><em>Thank you</em> for your help.</div></div>
+      <div class="word-card"><div class="word-num">#08</div><div class="word-en">Sorry</div><span class="word-type">adjective</span><div class="word-def">Used to apologise or express regret.</div><div class="word-ex">I am <em>sorry</em> I am late.</div></div>
+      <div class="word-card"><div class="word-num">#09</div><div class="word-en">Excuse me</div><span class="word-type">phrase</span><div class="word-def">Used to politely get attention or pass by someone.</div><div class="word-ex"><em>Excuse me</em>, where is the office?</div></div>
+      <div class="word-card"><div class="word-num">#10</div><div class="word-en">Nice to meet you</div><span class="word-type">phrase</span><div class="word-def">Said when you meet someone for the first time.</div><div class="word-ex"><em>Nice to meet you</em>, I am Ahmed.</div></div>
+    </div>
+  </div>
+
+  <!-- EVERYDAY VERBS -->
+  <div class="cat-section r">
+    <div class="cat-title">⚡ Essential Everyday Verbs</div>
+    <div class="words-grid">
+      <div class="word-card"><div class="word-num">#11</div><div class="word-en">Be</div><span class="word-type">verb</span><div class="word-def">The most important verb in English. Used to describe states, identities, and feelings.</div><div class="word-ex">I <em>am</em> happy. She <em>is</em> a teacher.</div></div>
+      <div class="word-card"><div class="word-num">#12</div><div class="word-en">Have</div><span class="word-type">verb</span><div class="word-def">Used to show possession or experience.</div><div class="word-ex">I <em>have</em> a question. She <em>has</em> a meeting.</div></div>
+      <div class="word-card"><div class="word-num">#13</div><div class="word-en">Go</div><span class="word-type">verb</span><div class="word-def">To move or travel from one place to another.</div><div class="word-ex">I <em>go</em> to work every morning.</div></div>
+      <div class="word-card"><div class="word-num">#14</div><div class="word-en">Want</div><span class="word-type">verb</span><div class="word-def">To desire or wish for something.</div><div class="word-ex">I <em>want</em> to learn English.</div></div>
+      <div class="word-card"><div class="word-num">#15</div><div class="word-en">Know</div><span class="word-type">verb</span><div class="word-def">To have knowledge or information about something.</div><div class="word-ex">I <em>know</em> the answer.</div></div>
+      <div class="word-card"><div class="word-num">#16</div><div class="word-en">Think</div><span class="word-type">verb</span><div class="word-def">To use your mind to consider or believe something.</div><div class="word-ex">I <em>think</em> this is correct.</div></div>
+    </div>
+  </div>
+
+  <!-- TIME WORDS -->
+  <div class="cat-section r">
+    <div class="cat-title">🕐 Time Words</div>
+    <div class="words-grid">
+      <div class="word-card"><div class="word-num">#17</div><div class="word-en">Today</div><span class="word-type">adverb</span><div class="word-def">On this current day.</div><div class="word-ex">I have a meeting <em>today</em>.</div></div>
+      <div class="word-card"><div class="word-num">#18</div><div class="word-en">Yesterday</div><span class="word-type">adverb</span><div class="word-def">The day before today.</div><div class="word-ex">I worked late <em>yesterday</em>.</div></div>
+      <div class="word-card"><div class="word-num">#19</div><div class="word-en">Tomorrow</div><span class="word-type">adverb</span><div class="word-def">The day after today.</div><div class="word-ex">We will meet <em>tomorrow</em>.</div></div>
+      <div class="word-card"><div class="word-num">#20</div><div class="word-en">Now</div><span class="word-type">adverb</span><div class="word-def">At this present moment.</div><div class="word-ex">I am busy right <em>now</em>.</div></div>
+      <div class="word-card"><div class="word-num">#21</div><div class="word-en">Soon</div><span class="word-type">adverb</span><div class="word-def">In a short time from now.</div><div class="word-ex">I will finish <em>soon</em>.</div></div>
+      <div class="word-card"><div class="word-num">#22</div><div class="word-en">Always / Never</div><span class="word-type">adverb</span><div class="word-def">At all times (always) or at no time (never).</div><div class="word-ex">I <em>always</em> arrive on time. I <em>never</em> miss a deadline.</div></div>
+    </div>
+  </div>
+
+  <!-- QUESTION WORDS -->
+  <div class="cat-section r">
+    <div class="cat-title">❓ Question Words</div>
+    <div class="words-grid">
+      <div class="word-card"><div class="word-num">#23</div><div class="word-en">What</div><span class="word-type">pronoun</span><div class="word-def">Used to ask about things or information.</div><div class="word-ex"><em>What</em> is your name?</div></div>
+      <div class="word-card"><div class="word-num">#24</div><div class="word-en">Where</div><span class="word-type">adverb</span><div class="word-def">Used to ask about a place or location.</div><div class="word-ex"><em>Where</em> is the meeting room?</div></div>
+      <div class="word-card"><div class="word-num">#25</div><div class="word-en">When</div><span class="word-type">adverb</span><div class="word-def">Used to ask about time.</div><div class="word-ex"><em>When</em> does the class start?</div></div>
+      <div class="word-card"><div class="word-num">#26</div><div class="word-en">Why</div><span class="word-type">adverb</span><div class="word-def">Used to ask for a reason or explanation.</div><div class="word-ex"><em>Why</em> are you learning English?</div></div>
+      <div class="word-card"><div class="word-num">#27</div><div class="word-en">How</div><span class="word-type">adverb</span><div class="word-def">Used to ask about the way something is done or someone's state.</div><div class="word-ex"><em>How</em> are you? / <em>How</em> do I do this?</div></div>
+      <div class="word-card"><div class="word-num">#28</div><div class="word-en">Who</div><span class="word-type">pronoun</span><div class="word-def">Used to ask about a person.</div><div class="word-ex"><em>Who</em> is your manager?</div></div>
+    </div>
+  </div>
+
+  <div class="prose r">
+    <h2>5 Smart Tips to Remember Vocabulary Faster</h2>
+  </div>
+  <div class="tips-grid r">
+    <div class="tip-card"><div class="tip-icon">📝</div><div class="tip-title">Use it in a sentence</div><div class="tip-body">Don't just memorise a word in isolation. Write one sentence using it right away — context makes words stick far longer.</div></div>
+    <div class="tip-card"><div class="tip-icon">🔁</div><div class="tip-title">Repeat after 24 hours</div><div class="tip-body">The best time to review a new word is one day later. This doubles your chance of remembering it long-term.</div></div>
+    <div class="tip-card"><div class="tip-icon">🗣️</div><div class="tip-title">Say it out loud</div><div class="tip-body">Speaking a word activates a different part of your brain than reading it. Always say new words aloud at least twice.</div></div>
+    <div class="tip-card"><div class="tip-icon">🌍</div><div class="tip-title">Learn words in groups</div><div class="tip-body">Words are easier to learn in thematic groups — like all time words together, or all greeting phrases together.</div></div>
+  </div>
+
+  <div class="practice r">
+    <h3>✍️ Quick Practice</h3>
+    <p>Use words from this article to complete these sentences. Answers are shown below.</p>
+    <div class="pi">I _____ (want/know) the answer to this question.<span>→ I know the answer to this question.</span></div>
+    <div class="pi">_____ is your name? (What/Where/When)<span>→ What is your name?</span></div>
+    <div class="pi">I have a presentation _____. (today/yesterday/never)<span>→ I have a presentation today.</span></div>
+    <div class="pi">_____ me, where is the bathroom? (Sorry/Excuse/Please)<span>→ Excuse me, where is the bathroom?</span></div>
+  </div>
+
+  <div class="callout r"><div class="callout-icon">🌿</div><p><strong>Your challenge this week:</strong> Pick 10 words from this article. Write them on small sticky notes and place them around your home or desk. Every time you see them, say them in a sentence. By day 7, they will feel like old friends.</p></div>
+
+  <div class="next r">
+    <div><span class="next-lbl">🎯 Next — Vocabulary #02</span><div class="next-ttl">Opposite Words: Expand Your Vocabulary by Thinking in Pairs</div></div>
+    <span class="arrow">→</span>
+  </div>
+</div>
+<script>
+  window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('prog').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}}),{threshold:.1});
+  document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+
+  <!-- ═══════════════════════════════ ARTICLE 2 ═══════════════════════════════ -->
+  <div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem">
+    <div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem">
+      <span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #02</span>
+    </div>
+  </div>
+  <div class="hero" style="padding-top:2rem">
+    <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag t-lvl">🌱 Beginner</span><span class="tag t-time">⏱ 3 min read</span></div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Opposite Words: Expand Your Vocabulary<br/>by Thinking in <em style="font-style:italic;color:var(--mid)">Pairs</em></h1>
+    <p class="hero-sub">A clever learning trick — learn two words at once by pairing opposites together. Double your vocabulary in half the time with this simple, memorable technique.</p>
+    <div class="hero-meta"><span>📅 March 31, 2026</span><span>✍️ English Language Blog</span><span>📖 Vocabulary · Article #02</span></div>
+  </div>
+  <div class="body">
+    <div class="prose r"><p>Here is one of the most effective vocabulary tricks that most learners never use: <strong>learn words in opposite pairs.</strong> When you learn "hot", immediately learn "cold". When you learn "fast", immediately learn "slow". Your brain naturally remembers contrasts — making both words stick twice as strongly.</p><p>Below you will find 50 essential opposite pairs, organised by theme. Read them, say them out loud, and try using each one in a sentence today.</p></div>
+    <div class="callout r"><div class="callout-icon">💡</div><p><strong>Why pairs work:</strong> Our memory is associative — it connects new information to things we already know. By linking two new words together as opposites, you create a mental anchor that makes both far easier to recall.</p></div>
+
+    <div class="cat-section r">
+      <div class="cat-title">😊 Feelings & States</div>
+      <div class="words-grid">
+        <div class="word-card"><div class="word-num">Pair 01</div><div class="word-en">Happy ↔ Sad</div><span class="word-type">adjective</span><div class="word-def">Happy = feeling joy and pleasure. Sad = feeling unhappy or sorrowful.</div><div class="word-ex">I am <em>happy</em> today. She felt <em>sad</em> after the news.</div></div>
+        <div class="word-card"><div class="word-num">Pair 02</div><div class="word-en">Excited ↔ Bored</div><span class="word-type">adjective</span><div class="word-def">Excited = enthusiastic and eager. Bored = uninterested and restless.</div><div class="word-ex">He was <em>excited</em> about the trip. I am so <em>bored</em> right now.</div></div>
+        <div class="word-card"><div class="word-num">Pair 03</div><div class="word-en">Confident ↔ Nervous</div><span class="word-type">adjective</span><div class="word-def">Confident = sure of yourself. Nervous = anxious or worried.</div><div class="word-ex">She spoke in a <em>confident</em> voice. He felt <em>nervous</em> before the exam.</div></div>
+        <div class="word-card"><div class="word-num">Pair 04</div><div class="word-en">Calm ↔ Stressed</div><span class="word-type">adjective</span><div class="word-def">Calm = relaxed and peaceful. Stressed = feeling pressure or anxiety.</div><div class="word-ex">Stay <em>calm</em> and breathe. I feel very <em>stressed</em> this week.</div></div>
+      </div>
+    </div>
+
+    <div class="cat-section r">
+      <div class="cat-title">📏 Size & Quantity</div>
+      <div class="words-grid">
+        <div class="word-card"><div class="word-num">Pair 05</div><div class="word-en">Big ↔ Small</div><span class="word-type">adjective</span><div class="word-def">Big = large in size. Small = little in size.</div><div class="word-ex">That is a <em>big</em> building. I have a <em>small</em> office.</div></div>
+        <div class="word-card"><div class="word-num">Pair 06</div><div class="word-en">Many ↔ Few</div><span class="word-type">determiner</span><div class="word-def">Many = a large number of (countable). Few = not many, a small number.</div><div class="word-ex">There are <em>many</em> options. Only a <em>few</em> people came.</div></div>
+        <div class="word-card"><div class="word-num">Pair 07</div><div class="word-en">Tall ↔ Short</div><span class="word-type">adjective</span><div class="word-def">Tall = high in height. Short = low in height (also: brief in time).</div><div class="word-ex">He is very <em>tall</em>. The meeting was <em>short</em>.</div></div>
+        <div class="word-card"><div class="word-num">Pair 08</div><div class="word-en">Full ↔ Empty</div><span class="word-type">adjective</span><div class="word-def">Full = containing all it can hold. Empty = containing nothing.</div><div class="word-ex">The room is <em>full</em>. The cup is <em>empty</em>.</div></div>
+      </div>
+    </div>
+
+    <div class="cat-section r">
+      <div class="cat-title">⚡ Speed & Time</div>
+      <div class="words-grid">
+        <div class="word-card"><div class="word-num">Pair 09</div><div class="word-en">Fast ↔ Slow</div><span class="word-type">adjective</span><div class="word-def">Fast = moving quickly. Slow = moving without speed.</div><div class="word-ex">She is a <em>fast</em> learner. The internet is very <em>slow</em> today.</div></div>
+        <div class="word-card"><div class="word-num">Pair 10</div><div class="word-en">Early ↔ Late</div><span class="word-type">adjective/adverb</span><div class="word-def">Early = before the expected time. Late = after the expected time.</div><div class="word-ex">I arrived <em>early</em>. The report is <em>late</em>.</div></div>
+        <div class="word-card"><div class="word-num">Pair 11</div><div class="word-en">New ↔ Old</div><span class="word-type">adjective</span><div class="word-def">New = recently made or discovered. Old = having existed for a long time.</div><div class="word-ex">This is a <em>new</em> idea. That is an <em>old</em> tradition.</div></div>
+        <div class="word-card"><div class="word-num">Pair 12</div><div class="word-en">Begin ↔ Finish</div><span class="word-type">verb</span><div class="word-def">Begin = to start something. Finish = to complete or end something.</div><div class="word-ex">Let's <em>begin</em> the meeting. Have you <em>finished</em> the report?</div></div>
+      </div>
+    </div>
+
+    <div class="cat-section r">
+      <div class="cat-title">💼 Work & Quality</div>
+      <div class="words-grid">
+        <div class="word-card"><div class="word-num">Pair 13</div><div class="word-en">Easy ↔ Difficult</div><span class="word-type">adjective</span><div class="word-def">Easy = not requiring much effort. Difficult = requiring a lot of effort.</div><div class="word-ex">The task was <em>easy</em>. The exam was very <em>difficult</em>.</div></div>
+        <div class="word-card"><div class="word-num">Pair 14</div><div class="word-en">Success ↔ Failure</div><span class="word-type">noun</span><div class="word-def">Success = achieving a desired goal. Failure = not achieving it.</div><div class="word-ex">The project was a <em>success</em>. Don't be afraid of <em>failure</em>.</div></div>
+        <div class="word-card"><div class="word-num">Pair 15</div><div class="word-en">Question ↔ Answer</div><span class="word-type">noun</span><div class="word-def">Question = something asked to get information. Answer = a response.</div><div class="word-ex">Do you have a <em>question</em>? Here is the <em>answer</em>.</div></div>
+        <div class="word-card"><div class="word-num">Pair 16</div><div class="word-en">Give ↔ Receive</div><span class="word-type">verb</span><div class="word-def">Give = to provide or hand over. Receive = to get or be given.</div><div class="word-ex">I will <em>give</em> you feedback. Did you <em>receive</em> my email?</div></div>
+      </div>
+    </div>
+
+    <div class="practice r"><h3>✍️ Pairs Practice</h3><p>Fill in the opposite word for each one below.</p>
+      <div class="pi">"The meeting was very long." → The opposite of "long" is _____<span>→ short</span></div>
+      <div class="pi">"She gave a wrong answer." → The opposite of "wrong" is _____<span>→ right / correct</span></div>
+      <div class="pi">"The task was very easy." → The opposite of "easy" is _____<span>→ difficult / hard</span></div>
+      <div class="pi">Now write your own sentence using ONE word from any pair above in a sentence about your work or day.<span>→ Example: "I received an email from my manager this morning."</span></div>
+    </div>
+    <div class="callout r"><div class="callout-icon">🌿</div><p><strong>Your challenge:</strong> Pick 5 pairs from today's article. Write one sentence for each word — that's 10 sentences total. By the end, all 10 words will feel natural and ready to use.</p></div>
+    <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #03</span><div class="next-ttl">Synonyms That Change Everything: Say It Better, Say It Smarter</div></div><span class="arrow">→</span></div>
+  </div>
+
+<!-- VOCAB 3 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #03</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 4 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Synonyms That Change Everything: <em style="font-style:italic;color:var(--mid)">Say It Better,</em> Say It Smarter</h1>
+  <p class="hero-sub">Replace weak, overused words with powerful alternatives and instantly elevate your English writing and speaking to the next level.</p>
+  <div class="hero-meta"><span>📅 April 7, 2026</span><span>📖 Vocabulary · Article #03</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Most English learners rely on the same 50–100 words repeatedly. "Good", "bad", "nice", "big", "said". These words are not wrong — but they are <strong>weak and forgettable.</strong> Swapping them for precise, expressive synonyms transforms your language from functional to impressive.</p></div>
+  <div class="cat-section r"><div class="cat-title">Instead of "Good"</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Excellent</div><span class="word-type">adjective</span><div class="word-def">Extremely good — higher praise than "very good".</div><div class="word-ex">The presentation was <em>excellent</em>.</div></div>
+    <div class="word-card"><div class="word-en">Outstanding</div><span class="word-type">adjective</span><div class="word-def">Exceptionally good — standing above others.</div><div class="word-ex">She did an <em>outstanding</em> job.</div></div>
+    <div class="word-card"><div class="word-en">Remarkable</div><span class="word-type">adjective</span><div class="word-def">Worthy of attention — noticeably impressive.</div><div class="word-ex">The results were <em>remarkable</em>.</div></div>
+    <div class="word-card"><div class="word-en">Commendable</div><span class="word-type">adjective</span><div class="word-def">Deserving praise — used formally.</div><div class="word-ex">Your effort has been <em>commendable</em>.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">Instead of "Bad"</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Poor</div><span class="word-type">adjective</span><div class="word-def">Below acceptable standard — neutral and professional.</div><div class="word-ex">The quality was <em>poor</em>.</div></div>
+    <div class="word-card"><div class="word-en">Inadequate</div><span class="word-type">adjective</span><div class="word-def">Not sufficient or suitable for the purpose.</div><div class="word-ex">The response was <em>inadequate</em>.</div></div>
+    <div class="word-card"><div class="word-en">Unsatisfactory</div><span class="word-type">adjective</span><div class="word-def">Not meeting required standards — formal.</div><div class="word-ex">The results were <em>unsatisfactory</em>.</div></div>
+    <div class="word-card"><div class="word-en">Concerning</div><span class="word-type">adjective</span><div class="word-def">Causing worry — diplomatic way to say something is bad.</div><div class="word-ex">The figures are <em>concerning</em>.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">Instead of "Said"</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Stated</div><span class="word-type">verb</span><div class="word-def">Said clearly and formally.</div><div class="word-ex">She <em>stated</em> that the deadline was firm.</div></div>
+    <div class="word-card"><div class="word-en">Emphasised</div><span class="word-type">verb</span><div class="word-def">Said with extra force or importance.</div><div class="word-ex">He <em>emphasised</em> the need for action.</div></div>
+    <div class="word-card"><div class="word-en">Noted</div><span class="word-type">verb</span><div class="word-def">Mentioned as an observation.</div><div class="word-ex">The report <em>noted</em> a decline in sales.</div></div>
+    <div class="word-card"><div class="word-en">Suggested</div><span class="word-type">verb</span><div class="word-def">Said as a possibility or recommendation.</div><div class="word-ex">The manager <em>suggested</em> a new approach.</div></div>
+  </div></div>
+  <div class="practice r"><h3>✍️ Word Upgrade Practice</h3><p>Replace the underlined word with a more precise synonym.</p>
+    <div class="pi">"The meeting was <u>good</u>." → Upgrade.<span>→ "The meeting was productive / excellent / highly effective."</span></div>
+    <div class="pi">"The results were <u>bad</u>." → Upgrade.<span>→ "The results were disappointing / unsatisfactory / below expectations."</span></div>
+    <div class="pi">"He <u>said</u> the project would be delayed." → Upgrade.<span>→ "He confirmed / announced / indicated the project would be delayed."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #04</span><div class="next-ttl">Collocations: The Secret to Sounding Truly Fluent</div></div><span class="arrow">→</span></div>
+</div>
+<!-- VOCAB 4 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #04</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 5 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Collocations: The Secret to Sounding <em style="font-style:italic;color:var(--mid)">Truly Fluent</em></h1>
+  <p class="hero-sub">Why "make a decision" sounds right but "do a decision" sounds wrong — and 50 more essential word partnerships that will make your English sound native.</p>
+  <div class="hero-meta"><span>📅 April 14, 2026</span><span>📖 Vocabulary · Article #04</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Fluent English is not just about knowing words — it is about knowing which words go together. A <strong>collocation</strong> is a natural word partnership: two or more words that native speakers always use together. Getting these right is what separates textbook English from truly natural English.</p></div>
+  <div class="callout r"><div class="callout-icon">💡</div><p>You can say "make a mistake" but not "do a mistake." You can "take a photo" but not "make a photo." These combinations are not logical — they are simply <strong>what native speakers say.</strong> They must be learned as pairs.</p></div>
+  <div class="cat-section r"><div class="cat-title">MAKE vs DO — The Most Common Confusion</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">MAKE +</div><span class="word-type">collocations</span><div class="word-def">Generally used for things you create or produce.</div><div class="word-ex"><em>Make</em> a decision · <em>make</em> progress · <em>make</em> a mistake · <em>make</em> an effort · <em>make</em> a suggestion</div></div>
+    <div class="word-card"><div class="word-en">DO +</div><span class="word-type">collocations</span><div class="word-def">Generally used for tasks, activities, and work.</div><div class="word-ex"><em>Do</em> research · <em>do</em> business · <em>do</em> your best · <em>do</em> damage · <em>do</em> a course</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">TAKE + noun collocations</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Take action</div><span class="word-type">collocation</span><div class="word-def">To do something about a situation.</div><div class="word-ex">We need to <em>take action</em> immediately.</div></div>
+    <div class="word-card"><div class="word-en">Take responsibility</div><span class="word-type">collocation</span><div class="word-def">To accept that something is your duty or fault.</div><div class="word-ex">She <em>took responsibility</em> for the error.</div></div>
+    <div class="word-card"><div class="word-en">Take a break</div><span class="word-type">collocation</span><div class="word-def">To stop for a rest.</div><div class="word-ex">Let's <em>take a break</em> for ten minutes.</div></div>
+    <div class="word-card"><div class="word-en">Take part in</div><span class="word-type">collocation</span><div class="word-def">To participate in something.</div><div class="word-ex">All staff will <em>take part in</em> the training.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">GIVE + noun collocations</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Give feedback</div><span class="word-type">collocation</span><div class="word-def">To share your assessment of someone's work.</div><div class="word-ex">Could you <em>give me feedback</em> on this?</div></div>
+    <div class="word-card"><div class="word-en">Give a presentation</div><span class="word-type">collocation</span><div class="word-def">To present information to an audience.</div><div class="word-ex">She will <em>give a presentation</em> on Friday.</div></div>
+    <div class="word-card"><div class="word-en">Give notice</div><span class="word-type">collocation</span><div class="word-def">To formally inform someone, especially before leaving a job.</div><div class="word-ex">He <em>gave his notice</em> last week.</div></div>
+    <div class="word-card"><div class="word-en">Give permission</div><span class="word-type">collocation</span><div class="word-def">To allow someone to do something.</div><div class="word-ex">The manager <em>gave permission</em> for the change.</div></div>
+  </div></div>
+  <div class="practice r"><h3>✍️ Collocation Practice</h3><p>Choose the correct verb: make, do, take, or give.</p>
+    <div class="pi">"We need to _____ a decision before Friday."<span>→ make a decision</span></div>
+    <div class="pi">"Could you _____ your best on this task?"<span>→ do your best</span></div>
+    <div class="pi">"She will _____ a presentation to the board."<span>→ give a presentation</span></div>
+    <div class="pi">"Let's _____ action on this matter immediately."<span>→ take action</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #05</span><div class="next-ttl">Phrasal Verbs You Actually Use Every Day</div></div><span class="arrow">→</span></div>
+</div>
+<!-- VOCAB 5 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #05</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 5 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Phrasal Verbs You <em style="font-style:italic;color:var(--mid)">Actually Use</em> Every Day</h1>
+  <p class="hero-sub">Get up, give up, look into — the 30 most common phrasal verbs with real examples, so they finally feel natural to use.</p>
+  <div class="hero-meta"><span>📅 April 21, 2026</span><span>📖 Vocabulary · Article #05</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Phrasal verbs are combinations of a verb and a particle (like up, out, in, on, off) that together create a completely new meaning. They are everywhere in natural English — and knowing them is what makes you sound truly fluent rather than textbook-correct.</p></div>
+  <div class="cat-section r"><div class="cat-title">⚡ Action & Work</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Set up</div><span class="word-type">phrasal verb</span><div class="word-def">To organise or arrange something; to establish.</div><div class="word-ex">Can you <em>set up</em> a meeting for Thursday?</div></div>
+    <div class="word-card"><div class="word-en">Follow up</div><span class="word-type">phrasal verb</span><div class="word-def">To take further action after an initial step.</div><div class="word-ex">I'll <em>follow up</em> with them tomorrow.</div></div>
+    <div class="word-card"><div class="word-en">Look into</div><span class="word-type">phrasal verb</span><div class="word-def">To investigate or research something.</div><div class="word-ex">We're <em>looking into</em> the issue.</div></div>
+    <div class="word-card"><div class="word-en">Carry out</div><span class="word-type">phrasal verb</span><div class="word-def">To perform or complete a task.</div><div class="word-ex">The team <em>carried out</em> a full audit.</div></div>
+    <div class="word-card"><div class="word-en">Hand in</div><span class="word-type">phrasal verb</span><div class="word-def">To submit or give something to someone in authority.</div><div class="word-ex">Please <em>hand in</em> your report by Friday.</div></div>
+    <div class="word-card"><div class="word-en">Take on</div><span class="word-type">phrasal verb</span><div class="word-def">To accept responsibility or a new role.</div><div class="word-ex">She decided to <em>take on</em> the project.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">💬 Communication</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Bring up</div><span class="word-type">phrasal verb</span><div class="word-def">To introduce a topic in conversation.</div><div class="word-ex">She <em>brought up</em> the budget issue.</div></div>
+    <div class="word-card"><div class="word-en">Point out</div><span class="word-type">phrasal verb</span><div class="word-def">To draw attention to a fact or problem.</div><div class="word-ex">He <em>pointed out</em> a mistake in the figures.</div></div>
+    <div class="word-card"><div class="word-en">Come across</div><span class="word-type">phrasal verb</span><div class="word-def">To seem or appear a certain way to others.</div><div class="word-ex">She <em>comes across</em> as very confident.</div></div>
+    <div class="word-card"><div class="word-en">Get back to</div><span class="word-type">phrasal verb</span><div class="word-def">To respond to someone later.</div><div class="word-ex">I'll <em>get back to</em> you by end of day.</div></div>
+    <div class="word-card"><div class="word-en">Go over</div><span class="word-type">phrasal verb</span><div class="word-def">To review or examine in detail.</div><div class="word-ex">Let's <em>go over</em> the agenda together.</div></div>
+    <div class="word-card"><div class="word-en">Put forward</div><span class="word-type">phrasal verb</span><div class="word-def">To suggest or propose an idea.</div><div class="word-ex">She <em>put forward</em> a new strategy.</div></div>
+  </div></div>
+  <div class="practice r"><h3>✍️ Phrasal Verb Practice</h3><p>Replace the underlined word/phrase with the correct phrasal verb.</p>
+    <div class="pi">"I will <u>investigate</u> that issue." → Use a phrasal verb.<span>→ "I will look into that issue."</span></div>
+    <div class="pi">"She <u>proposed</u> a new approach." → Use a phrasal verb.<span>→ "She put forward a new approach."</span></div>
+    <div class="pi">"Please <u>submit</u> your application by Monday." → Use a phrasal verb.<span>→ "Please hand in your application by Monday."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #06</span><div class="next-ttl">Nuance Words: The Difference Between "Happy", "Elated", and "Content"</div></div><span class="arrow">→</span></div>
+</div>
+<!-- VOCAB 6 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #06</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:#fce4ec;color:#880e4f">🚀 Advanced</span><span class="tag t-time">⏱ 5 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Nuance Words: The Difference Between <em style="font-style:italic;color:var(--mid)">"Happy", "Elated",</em> and "Content"</h1>
+  <p class="hero-sub">Fine-tuning your emotional vocabulary for precise, expressive communication — because the exact word you choose reveals exactly how you feel.</p>
+  <div class="hero-meta"><span>📅 April 28, 2026</span><span>📖 Vocabulary · Article #06</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>English has an extraordinary number of words for emotions — each one capturing a slightly different shade of feeling. Using the precise word does not just make you sound more fluent. It makes you <strong>understood more accurately.</strong> There is a world of difference between feeling "happy", "elated", "content", and "pleased" — even if a dictionary lists them all as synonyms.</p></div>
+  <div class="cat-section r"><div class="cat-title">😊 Shades of Happy</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Content</div><span class="word-type">adjective</span><div class="word-def">Quietly satisfied — not jumping for joy, but at peace with things.</div><div class="word-ex">I'm <em>content</em> with how things are going.</div></div>
+    <div class="word-card"><div class="word-en">Pleased</div><span class="word-type">adjective</span><div class="word-def">Satisfied with a specific outcome — mild happiness.</div><div class="word-ex">I'm <em>pleased</em> with the results.</div></div>
+    <div class="word-card"><div class="word-en">Delighted</div><span class="word-type">adjective</span><div class="word-def">Very pleased — stronger than happy, often used formally.</div><div class="word-ex">I am <em>delighted</em> to be here.</div></div>
+    <div class="word-card"><div class="word-en">Elated</div><span class="word-type">adjective</span><div class="word-def">Extremely happy, usually about a specific achievement.</div><div class="word-ex">She was <em>elated</em> after winning the award.</div></div>
+    <div class="word-card"><div class="word-en">Overjoyed</div><span class="word-type">adjective</span><div class="word-def">The highest level of joy — emotional and overwhelming.</div><div class="word-ex">He was <em>overjoyed</em> at the news.</div></div>
+    <div class="word-card"><div class="word-en">Thrilled</div><span class="word-type">adjective</span><div class="word-def">Excited and very happy — often about something upcoming.</div><div class="word-ex">I'm <em>thrilled</em> about the new project.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">😔 Shades of Sad</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Disappointed</div><span class="word-type">adjective</span><div class="word-def">Sad because something did not meet expectations.</div><div class="word-ex">I was <em>disappointed</em> by the outcome.</div></div>
+    <div class="word-card"><div class="word-en">Disheartened</div><span class="word-type">adjective</span><div class="word-def">Losing confidence or hope — deeper than disappointed.</div><div class="word-ex">Don't be <em>disheartened</em> by one setback.</div></div>
+    <div class="word-card"><div class="word-en">Melancholy</div><span class="word-type">adjective/noun</span><div class="word-def">A deep, quiet sadness — thoughtful, not dramatic.</div><div class="word-ex">There was a touch of <em>melancholy</em> in her smile.</div></div>
+    <div class="word-card"><div class="word-en">Devastated</div><span class="word-type">adjective</span><div class="word-def">Extremely upset — a strong, overwhelming sadness.</div><div class="word-ex">He was <em>devastated</em> by the news.</div></div>
+  </div></div>
+  <div class="practice r"><h3>✍️ Choose the Right Nuance</h3><p>Which word fits best in each context?</p>
+    <div class="pi">You got a good grade but nothing exceptional. You are quietly satisfied.<span>→ "I'm <strong>pleased</strong> with my grade."</span></div>
+    <div class="pi">You just got a promotion you worked years for. Extreme happiness.<span>→ "I am absolutely <strong>elated / overjoyed / thrilled</strong>."</span></div>
+    <div class="pi">You expected a better result from a project. Mild sadness at the outcome.<span>→ "I'm <strong>disappointed</strong> with how it turned out."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #07</span><div class="next-ttl">Academic & Professional Vocabulary: Words That Open Doors</div></div><span class="arrow">→</span></div>
+</div>
+<!-- VOCAB 7 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #07</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:#fce4ec;color:#880e4f">🚀 Advanced</span><span class="tag t-time">⏱ 6 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Academic & Professional Vocabulary: <em style="font-style:italic;color:var(--mid)">Words That Open Doors</em></h1>
+  <p class="hero-sub">High-value vocabulary for reports, presentations, and academic writing — the words that signal intelligence, precision, and professional authority.</p>
+  <div class="hero-meta"><span>📅 May 5, 2026</span><span>📖 Vocabulary · Article #07</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>There is a tier of English vocabulary that immediately signals education, precision, and professional credibility. These words appear in academic papers, boardroom presentations, and formal reports. Learn them and use them appropriately — and your written and spoken English will instantly command more respect.</p></div>
+  <div class="cat-section r"><div class="cat-title">📊 Analysis & Evidence</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Substantiate</div><span class="word-type">verb</span><div class="word-def">To prove or support with evidence.</div><div class="word-ex">The data <em>substantiates</em> our original hypothesis.</div></div>
+    <div class="word-card"><div class="word-en">Corroborate</div><span class="word-type">verb</span><div class="word-def">To confirm or support a claim with additional evidence.</div><div class="word-ex">These findings <em>corroborate</em> previous research.</div></div>
+    <div class="word-card"><div class="word-en">Infer</div><span class="word-type">verb</span><div class="word-def">To reach a conclusion based on evidence and reasoning.</div><div class="word-ex">We can <em>infer</em> from the data that demand is rising.</div></div>
+    <div class="word-card"><div class="word-en">Discrepancy</div><span class="word-type">noun</span><div class="word-def">A difference between two things that should match.</div><div class="word-ex">There is a <em>discrepancy</em> in the financial figures.</div></div>
+  </div></div>
+  <div class="cat-section r"><div class="cat-title">💡 Ideas & Arguments</div><div class="words-grid">
+    <div class="word-card"><div class="word-en">Advocate</div><span class="word-type">verb</span><div class="word-def">To publicly support or recommend something.</div><div class="word-ex">The report <em>advocates</em> for a change in policy.</div></div>
+    <div class="word-card"><div class="word-en">Contend</div><span class="word-type">verb</span><div class="word-def">To assert or argue a position firmly.</div><div class="word-ex">I <em>contend</em> that this approach is more effective.</div></div>
+    <div class="word-card"><div class="word-en">Acknowledge</div><span class="word-type">verb</span><div class="word-def">To recognise or admit something.</div><div class="word-ex">We must <em>acknowledge</em> the limitations of this study.</div></div>
+    <div class="word-card"><div class="word-en">Implication</div><span class="word-type">noun</span><div class="word-def">A possible consequence or indirect suggestion.</div><div class="word-ex">The <em>implications</em> of this decision are significant.</div></div>
+  </div></div>
+  <div class="practice r"><h3>✍️ Advanced Vocabulary in Use</h3><p>Replace the simple word with the more academic/professional alternative.</p>
+    <div class="pi">"The report <u>shows</u> that costs are increasing." → Upgrade.<span>→ "The report <strong>substantiates / demonstrates / corroborates</strong> that costs are increasing."</span></div>
+    <div class="pi">"There is a <u>difference</u> between the two figures." → Upgrade.<span>→ "There is a <strong>discrepancy</strong> between the two figures."</span></div>
+    <div class="pi">"She <u>supports</u> the new policy." → Upgrade.<span>→ "She <strong>advocates</strong> the new policy."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🎯 Next — Vocabulary #08</span><div class="next-ttl">Word of the Week Series: Build Your Vocabulary One Word at a Time</div></div><span class="arrow">→</span></div>
+</div>
+<!-- VOCAB 8 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #08</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🎯 Vocabulary</span><span class="tag" style="background:var(--pale);color:var(--mid)">🌍 All Levels</span><span class="tag t-time">⏱ 2 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Word of the Week Series: Build Your Vocabulary <em style="font-style:italic;color:var(--mid)">One Word at a Time</em></h1>
+  <p class="hero-sub">A recurring series — one beautiful or useful word per week, explained in depth and used in real context. Small steps, big vocabulary.</p>
+  <div class="hero-meta"><span>📅 May 12, 2026</span><span>📖 Vocabulary · Article #08</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>The best vocabulary builders are not people who study long word lists. They are people who encounter one new word, understand it deeply, and commit to using it at least three times that week. This series gives you one word per week — explained, contextualised, and made memorable.</p></div>
+  <div class="words-grid r">
+    <div class="word-card"><div class="word-num">Week 1</div><div class="word-en">Serendipity</div><span class="word-type">noun</span><div class="word-def">The occurrence of finding something wonderful by chance — a happy and unexpected discovery.</div><div class="word-ex">Meeting my best friend on that train was pure <em>serendipity</em>.</div></div>
+    <div class="word-card"><div class="word-num">Week 2</div><div class="word-en">Pragmatic</div><span class="word-type">adjective</span><div class="word-def">Focused on practical results rather than theory or ideals. A pragmatic approach deals with facts and reality.</div><div class="word-ex">We need to be <em>pragmatic</em> about the budget limitations.</div></div>
+    <div class="word-card"><div class="word-num">Week 3</div><div class="word-en">Nuance</div><span class="word-type">noun</span><div class="word-def">A subtle difference in meaning, expression, or feeling — the fine detail that changes everything.</div><div class="word-ex">The <em>nuance</em> in her tone suggested she was not entirely convinced.</div></div>
+    <div class="word-card"><div class="word-num">Week 4</div><div class="word-en">Pivotal</div><span class="word-type">adjective</span><div class="word-def">Of crucial importance — a pivotal moment is one that determines what happens next.</div><div class="word-ex">This is a <em>pivotal</em> moment for the company.</div></div>
+    <div class="word-card"><div class="word-num">Week 5</div><div class="word-en">Articulate</div><span class="word-type">adjective / verb</span><div class="word-def">As adjective: able to express ideas clearly and fluently. As verb: to express something clearly.</div><div class="word-ex">She is highly <em>articulate</em>. / Please <em>articulate</em> your concerns clearly.</div></div>
+    <div class="word-card"><div class="word-num">Week 6</div><div class="word-en">Tenacious</div><span class="word-type">adjective</span><div class="word-def">Persistent and determined — not giving up despite difficulties.</div><div class="word-ex">Her <em>tenacious</em> approach to learning is inspiring.</div></div>
+  </div>
+  <div class="callout r"><div class="callout-icon">🌿</div><p><strong>How to use this series:</strong> Each week, pick one word. Write it on a sticky note. Use it in a sentence every day for 7 days. By Friday, it will be yours forever. Vocabulary is built one beautiful word at a time. 🎉</p></div>
+  <div class="next r"><div><span class="next-lbl">🎯 Vocabulary Complete!</span><div class="next-ttl">All 8 Vocabulary articles finished. Keep building your word power!</div></div><span class="arrow">🎉</span></div>
+</div>
+</body>
+</html>
