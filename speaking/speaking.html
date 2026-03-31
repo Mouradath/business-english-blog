@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speaking — English Language Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--deep:#5c2400;--mid:#c05621;--green:#f4a261;--light:#ffcc99;--pale:#fff3e0;--mist:#fffaf5;--cream:#fffdf9;--ink:#2a1500;--soft:#6b3a1f;--accent:#52b788;--accent-pale:#d8f3dc;--blue:#1a6091;--blue-pale:#e3f2fd}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(255,253,249,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--pale)}
+    .logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--mid);text-decoration:none}.logo span{font-style:italic}
+    .nav-badge{background:var(--pale);color:var(--mid);font-size:0.78rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:50px}
+    .prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--mid),var(--accent));z-index:200;width:0;transition:width 0.1s}
+    .hero{padding:7rem 3rem 3rem;max-width:860px;margin:0 auto;text-align:center}
+    .hero-tags{display:flex;justify-content:center;gap:0.7rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .tag{font-size:0.75rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:50px}
+    .t-cat{background:var(--pale);color:var(--mid)}.t-lvl{background:#e8f5e9;color:#2e7d32}.t-time{background:var(--accent-pale);color:#2d6a4f}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+    .hero h1 em{font-style:italic;color:var(--mid)}
+    .hero-sub{font-size:1.05rem;color:var(--soft);line-height:1.7;max-width:580px;margin:0 auto 2rem}
+    .hero-meta{display:flex;justify-content:center;gap:1.5rem;font-size:0.82rem;color:var(--soft);padding-top:1.2rem;border-top:1px solid var(--pale);flex-wrap:wrap}
+    .body{max-width:720px;margin:0 auto;padding:0 3rem 6rem}
+    .prose{margin:2rem 0}
+    .prose h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;margin-bottom:0.8rem;color:var(--ink)}
+    .prose p{font-size:0.96rem;color:var(--soft);line-height:1.8;margin-bottom:0.9rem}
+    .prose p strong{color:var(--ink)}
+    .callout{background:var(--pale);border-left:4px solid var(--mid);border-radius:14px;padding:1.3rem 1.5rem;margin:1.8rem 0;display:flex;gap:0.9rem;align-items:flex-start}
+    .callout-icon{font-size:1.4rem;flex-shrink:0}
+    .callout p{font-size:0.91rem;color:var(--ink);line-height:1.7;margin:0}
+    .callout p strong{color:var(--mid)}
+    /* INTRO SCRIPT */
+    .script-box{background:#fff;border-radius:20px;padding:2rem;border:1.5px solid var(--pale);margin:2rem 0;position:relative}
+    .script-box::before{content:'"';font-family:'Playfair Display',serif;font-size:6rem;color:var(--pale);position:absolute;top:-1rem;left:1rem;line-height:1;pointer-events:none}
+    .script-label{font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);margin-bottom:1rem;display:block}
+    .script-line{font-size:0.95rem;color:var(--ink);line-height:1.8;margin-bottom:0.6rem;padding-left:1rem;border-left:3px solid var(--pale)}
+    .script-line em{font-style:normal;font-weight:700;color:var(--mid)}
+    .script-note{font-size:0.78rem;color:var(--soft);font-style:italic;margin-top:0.3rem;padding-left:1rem}
+    /* FRAMEWORK STEPS */
+    .framework{display:flex;flex-direction:column;gap:0;margin:2rem 0}
+    .fw-step{background:#fff;border:1.5px solid var(--pale);padding:1.5rem;display:flex;gap:1.2rem;align-items:flex-start;transition:all .2s}
+    .fw-step:first-child{border-radius:16px 16px 0 0}
+    .fw-step:last-child{border-radius:0 0 16px 16px}
+    .fw-step:not(:last-child){border-bottom:none}
+    .fw-step:hover{background:var(--mist);transform:translateX(4px)}
+    .fw-num{width:36px;height:36px;border-radius:50%;background:var(--mid);color:#fff;font-weight:700;font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .fw-content{flex:1}
+    .fw-title{font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:0.3rem}
+    .fw-body{font-size:0.88rem;color:var(--soft);line-height:1.6}
+    .fw-phrase{margin-top:0.6rem;background:var(--pale);border-radius:8px;padding:0.5rem 0.8rem;font-size:0.85rem;color:var(--ink)}
+    .fw-phrase em{font-style:normal;font-weight:700;color:var(--mid)}
+    /* COMPARE */
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+    .cbox{border-radius:14px;padding:1.3rem}
+    .cbox.shy{background:#fff5f5;border:1.5px solid #ffcdd2}
+    .cbox.conf{background:#f1f8e9;border:1.5px solid #c5e1a5}
+    .clbl{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:0.7rem}
+    .cbox.shy .clbl{color:#c62828}.cbox.conf .clbl{color:#2e7d32}
+    .ctxt{font-size:0.9rem;color:var(--ink);line-height:1.7}
+    /* DAILY HABIT */
+    .habits{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+    .habit{background:#fff;border-radius:14px;padding:1.2rem;border:1.5px solid var(--pale);text-align:center;transition:transform .2s}
+    .habit:hover{transform:translateY(-3px)}
+    .habit-icon{font-size:2rem;margin-bottom:0.5rem}
+    .habit-time{font-family:'Caveat',cursive;font-size:0.95rem;color:var(--mid);margin-bottom:0.2rem}
+    .habit-act{font-weight:600;font-size:0.88rem;color:var(--ink);margin-bottom:0.3rem}
+    .habit-desc{font-size:0.78rem;color:var(--soft);line-height:1.5}
+    /* PRACTICE */
+    .practice{background:var(--deep);border-radius:20px;padding:2rem;margin:2.5rem 0;color:#fff}
+    .practice h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;margin-bottom:0.5rem}
+    .practice p{font-size:0.87rem;color:rgba(255,255,255,.7);margin-bottom:1.1rem;line-height:1.6}
+    .pi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:0.8rem 1rem;font-size:0.87rem;color:#fff;line-height:1.5;margin-bottom:0.6rem}
+    .pi span{font-family:'Caveat',cursive;color:var(--light);display:block;margin-top:0.3rem;font-size:1rem}
+    .next{background:#fff;border-radius:18px;padding:1.8rem;border:1.5px solid var(--pale);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2.5rem 0;transition:all .2s;cursor:pointer}
+    .next:hover{border-color:var(--mid);box-shadow:0 8px 25px rgba(192,86,33,.1);transform:translateY(-2px)}
+    .next-lbl{font-family:'Caveat',cursive;color:var(--mid);font-size:1rem;display:block;margin-bottom:0.3rem}
+    .next-ttl{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink)}
+    .arrow{font-size:1.5rem;color:var(--mid)}
+    .r{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.r.v{opacity:1;transform:translateY(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .a1{animation:fadeUp .5s ease both}.a2{animation:fadeUp .5s .1s ease both}.a3{animation:fadeUp .5s .2s ease both}.a4{animation:fadeUp .5s .3s ease both}
+    @media(max-width:700px){nav{padding:1rem 1.5rem}.hero,.body{padding-left:1.5rem;padding-right:1.5rem}.compare{grid-template-columns:1fr}.habits{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<nav><a href="english-language-blog.html" class="logo">English <span>Language</span></a><span class="nav-badge">🗣️ Speaking</span></nav>
+<div class="hero">
+  <div class="hero-tags a1"><span class="tag t-cat">🗣️ Speaking</span><span class="tag t-lvl">🌱 Beginner</span><span class="tag t-time">⏱ 3 min read</span></div>
+  <h1 class="a2">How to <em>Introduce Yourself</em> in English:<br/>Simple, Confident, Natural</h1>
+  <p class="hero-sub a3">Your name, your job, your interests — a simple framework that always works, with real scripts you can practise and use immediately in any situation.</p>
+  <div class="hero-meta a4"><span>📅 March 24, 2026</span><span>✍️ English Language Blog</span><span>📖 Speaking · Article #01</span></div>
+</div>
+<div class="body">
+  <div class="prose r">
+    <p>The moment someone says "Tell me about yourself" in English, many learners freeze. The mind goes blank. The words disappear. But here is the truth — <strong>introducing yourself in English is not about being perfect. It is about being clear, warm, and memorable.</strong></p>
+    <p>In this article, you will learn a simple four-part framework for introducing yourself, real phrases you can use right away, and a complete model script you can adapt and practise tonight.</p>
+  </div>
+  <div class="callout r"><div class="callout-icon">💡</div><p><strong>Remember:</strong> A good introduction is not a speech. It is a conversation starter. Aim for 30–60 seconds — enough to be interesting, short enough to invite a response.</p></div>
+
+  <div class="prose r"><h2>The 4-Part Introduction Framework</h2><p>Every great self-introduction follows this simple pattern. Master these four parts and you can introduce yourself confidently in any situation — at work, at school, or at a social event.</p></div>
+
+  <div class="framework r">
+    <div class="fw-step">
+      <div class="fw-num">1</div>
+      <div class="fw-content">
+        <div class="fw-title">Your Name</div>
+        <div class="fw-body">Start simple. Say your name clearly. If it is difficult to pronounce, say it slowly or offer a shorter version people can use.</div>
+        <div class="fw-phrase"><em>"My name is Sara."</em> / <em>"I'm Ahmed — people usually call me Ahmed."</em></div>
+      </div>
+    </div>
+    <div class="fw-step">
+      <div class="fw-num">2</div>
+      <div class="fw-content">
+        <div class="fw-title">Where You Are From or What You Do</div>
+        <div class="fw-body">Add one piece of context — your country, city, or your job. This gives the other person something to connect with or ask about.</div>
+        <div class="fw-phrase"><em>"I'm from Morocco."</em> / <em>"I work as an accountant."</em> / <em>"I'm a student at the university."</em></div>
+      </div>
+    </div>
+    <div class="fw-step">
+      <div class="fw-num">3</div>
+      <div class="fw-content">
+        <div class="fw-title">One Interest or Fact About You</div>
+        <div class="fw-body">Share something personal — a hobby, a goal, or something you enjoy. This is what makes you memorable and turns an introduction into a conversation.</div>
+        <div class="fw-phrase"><em>"I love learning languages."</em> / <em>"I enjoy cooking in my free time."</em> / <em>"I am currently learning to play guitar."</em></div>
+      </div>
+    </div>
+    <div class="fw-step">
+      <div class="fw-num">4</div>
+      <div class="fw-content">
+        <div class="fw-title">Open the Conversation</div>
+        <div class="fw-body">End your introduction with an invitation. Ask a question or say you are happy to meet them. This shows warmth and keeps the conversation going naturally.</div>
+        <div class="fw-phrase"><em>"It's great to meet you!"</em> / <em>"I'd love to hear about you."</em> / <em>"What brings you here today?"</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose r"><h2>A Complete Model Introduction</h2><p>Here is the full framework in action. Read it, say it out loud, then replace the details with your own information.</p></div>
+
+  <div class="script-box r">
+    <span class="script-label">📋 Model Script — Formal (work or professional setting)</span>
+    <div class="script-line"><em>"Hello, my name is Sara."</em><div class="script-note">Simple, clear, confident. No need for more.</div></div>
+    <div class="script-line"><em>"I am from Morocco, and I currently work as a marketing assistant."</em><div class="script-note">Location + job = instant context for the listener.</div></div>
+    <div class="script-line"><em>"I am very passionate about language learning and communication."</em><div class="script-note">One personal detail that makes you memorable.</div></div>
+    <div class="script-line"><em>"It is a pleasure to meet you. I look forward to working together."</em><div class="script-note">Warm, professional close that invites connection.</div></div>
+  </div>
+
+  <div class="script-box r">
+    <span class="script-label">💬 Model Script — Casual (social or informal setting)</span>
+    <div class="script-line"><em>"Hi! I'm Sara."</em><div class="script-note">Warm and immediate — matches the casual tone.</div></div>
+    <div class="script-line"><em>"I'm from Morocco, living here for about two years now."</em><div class="script-note">Adds a story element — people find this interesting.</div></div>
+    <div class="script-line"><em>"I love cooking and trying new restaurants — especially anything spicy!"</em><div class="script-note">Personal detail with a little personality. People remember this.</div></div>
+    <div class="script-line"><em>"What about you — are you from here originally?"</em><div class="script-note">Turns the introduction into a real conversation.</div></div>
+  </div>
+
+  <div class="prose r"><h2>Shy vs Confident: The Same Words, Different Energy</h2><p>The words matter — but so does <strong>how you say them</strong>. Notice the difference:</p></div>
+  <div class="compare r">
+    <div class="cbox shy"><div class="clbl">😟 Sounds Uncertain</div><div class="ctxt">"Erm... my name is... Sara? I think I work in marketing... I don't know... nice to meet you I guess..."</div></div>
+    <div class="cbox conf"><div class="clbl">😊 Sounds Confident</div><div class="ctxt">"Hi, I'm Sara. I work in marketing and I love what I do. Really nice to meet you!"</div></div>
+  </div>
+  <div class="prose r"><p>The second version uses almost the same information — but it is <strong>direct, warm, and ends with energy</strong>. The secret is to speak slowly, use short sentences, and end on a positive note.</p></div>
+
+  <div class="prose r"><h2>Daily Habits to Build Speaking Confidence</h2></div>
+  <div class="habits r">
+    <div class="habit"><div class="habit-icon">🪞</div><div class="habit-time">Morning · 2 min</div><div class="habit-act">Mirror Practice</div><div class="habit-desc">Introduce yourself to your reflection. Say it until it feels natural.</div></div>
+    <div class="habit"><div class="habit-icon">📱</div><div class="habit-time">Afternoon · 3 min</div><div class="habit-act">Record Yourself</div><div class="habit-desc">Use your phone to record your introduction and listen back. Notice what sounds good.</div></div>
+    <div class="habit"><div class="habit-icon">✍️</div><div class="habit-time">Evening · 5 min</div><div class="habit-act">Write a New Version</div><div class="habit-desc">Try writing your introduction in a different context — formal, casual, at a party.</div></div>
+    <div class="habit"><div class="habit-icon">🧑‍🤝‍🧑</div><div class="habit-time">Weekly</div><div class="habit-act">Introduce to Someone</div><div class="habit-desc">Introduce yourself to one new person in English — online or in person.</div></div>
+  </div>
+
+  <div class="practice r">
+    <h3>✍️ Your Turn — Fill in the Framework</h3>
+    <p>Complete your own personal introduction using the four-part structure. There are no wrong answers — just your story.</p>
+    <div class="pi">Part 1 — Your name: <strong>"My name is _____."</strong><span>Fill in your own name and say it confidently.</span></div>
+    <div class="pi">Part 2 — Where you're from / what you do: <strong>"I am from _____ and I work as a _____."</strong><span>Give the listener a clear picture of who you are.</span></div>
+    <div class="pi">Part 3 — One personal detail: <strong>"In my free time, I enjoy _____."</strong><span>Make it something real and genuine — that's what people remember.</span></div>
+    <div class="pi">Part 4 — Open the conversation: <strong>"It's great to meet you! _____ ?"</strong><span>Ask a simple question — "What do you do?" or "Are you enjoying the event?"</span></div>
+  </div>
+
+  <div class="callout r"><div class="callout-icon">🌿</div><p><strong>Your challenge:</strong> Write your full introduction using the four parts above. Then say it out loud three times — once slowly, once at normal speed, once with a smile. You are more ready than you think. 🌟</p></div>
+
+  <div class="next r">
+    <div><span class="next-lbl">🗣️ Next — Speaking #02</span><div class="next-ttl">Small Talk Starters: How to Begin Any Conversation in English</div></div>
+    <span class="arrow">→</span>
+  </div>
+</div>
+<script>
+  window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('prog').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'});
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}}),{threshold:.1});
+  document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+
+  <!-- ═══════════════════════════════ ARTICLE 2 ═══════════════════════════════ -->
+  <div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem">
+    <div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem">
+      <span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #02</span>
+    </div>
+  </div>
+  <div class="hero" style="padding-top:2rem">
+    <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag t-lvl">🌱 Beginner</span><span class="tag t-time">⏱ 4 min read</span></div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Small Talk Starters: How to Begin<br/><em style="font-style:italic;color:var(--mid)">Any Conversation</em> in English</h1>
+    <p class="hero-sub">Weather, weekends, and work — the three pillars of English small talk explained, with 30 ready-to-use conversation starters for every situation.</p>
+    <div class="hero-meta"><span>📅 March 31, 2026</span><span>✍️ English Language Blog</span><span>📖 Speaking · Article #02</span></div>
+  </div>
+  <div class="body">
+    <div class="prose r"><p>Small talk is one of the most important — and most underestimated — skills in English. It is not about saying something profound. It is about creating a moment of warmth and connection before the real conversation begins. <strong>In English-speaking cultures, small talk is not optional — it is expected.</strong></p><p>Jumping straight into business without any small talk can feel abrupt or cold. But with just a few reliable phrases, you can open any conversation naturally and confidently.</p></div>
+    <div class="callout r"><div class="callout-icon">💡</div><p><strong>Cultural note:</strong> In many English-speaking countries (especially the UK and USA), small talk is a social ritual. It signals: "I see you, I respect you, and I am happy to talk with you." Skipping it can accidentally seem rude — even if that was never your intention.</p></div>
+
+    <div class="prose r"><h2>The 3 Universal Small Talk Topics</h2><p>When in doubt, these three topics are safe, easy, and work in almost any situation.</p></div>
+
+    <div class="framework r">
+      <div class="fw-step">
+        <div class="fw-num">1</div>
+        <div class="fw-content">
+          <div class="fw-title">☁️ The Weather</div>
+          <div class="fw-body">The most classic English small talk topic — especially in the UK! It is neutral, always relevant, and instantly relatable. You can never go wrong starting with the weather.</div>
+          <div class="fw-phrase">
+            <em>"Lovely weather today, isn't it?"</em><br/>
+            <em>"Can you believe how hot it's been lately?"</em><br/>
+            <em>"I heard it's going to rain this weekend."</em>
+          </div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-num">2</div>
+        <div class="fw-content">
+          <div class="fw-title">📅 The Weekend</div>
+          <div class="fw-body">Asking about someone's weekend shows genuine interest and is completely safe in any professional or social context. Use it on Monday mornings or Friday afternoons especially.</div>
+          <div class="fw-phrase">
+            <em>"Did you have a good weekend?"</em><br/>
+            <em>"Any plans for the weekend?"</em><br/>
+            <em>"I had a lovely weekend — how about you?"</em>
+          </div>
+        </div>
+      </div>
+      <div class="fw-step">
+        <div class="fw-num">3</div>
+        <div class="fw-content">
+          <div class="fw-title">💼 Work (Lightly)</div>
+          <div class="fw-body">Light work topics — like how busy things are or a recent project — are perfect for professional settings. Keep it positive and brief. Don't complain heavily in small talk.</div>
+          <div class="fw-phrase">
+            <em>"It's been a busy week!"</em><br/>
+            <em>"Are you working on anything interesting at the moment?"</em><br/>
+            <em>"How's everything going with the new project?"</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose r"><h2>30 Ready-to-Use Small Talk Starters</h2></div>
+    <div class="compare r">
+      <div class="cbox conf"><div class="clbl">🤝 Starting a conversation</div><div class="ctxt" style="font-size:0.85rem;line-height:1.9">
+        "How are you doing today?"<br/>
+        "It's nice to see you again!"<br/>
+        "Have you been here before?"<br/>
+        "I don't think we've met — I'm Sara."<br/>
+        "How long have you been with the company?"
+      </div></div>
+      <div class="cbox conf"><div class="clbl">💬 Keeping it going</div><div class="ctxt" style="font-size:0.85rem;line-height:1.9">
+        "Oh really? That's interesting!"<br/>
+        "I know exactly what you mean."<br/>
+        "How did that go for you?"<br/>
+        "Have you tried that new place nearby?"<br/>
+        "What do you think about...?"
+      </div></div>
+    </div>
+    <div class="compare r">
+      <div class="cbox conf"><div class="clbl">😊 Responding warmly</div><div class="ctxt" style="font-size:0.85rem;line-height:1.9">
+        "Not bad at all, thanks!"<br/>
+        "Pretty good — keeping busy!"<br/>
+        "Can't complain, to be honest."<br/>
+        "Really well, thank you for asking."<br/>
+        "A bit tired but doing well!"
+      </div></div>
+      <div class="cbox conf"><div class="clbl">🚪 Ending politely</div><div class="ctxt" style="font-size:0.85rem;line-height:1.9">
+        "It was great catching up with you!"<br/>
+        "I'll let you get back to it."<br/>
+        "We should catch up properly soon."<br/>
+        "Enjoy the rest of your day!"<br/>
+        "Take care — speak soon!"
+      </div></div>
+    </div>
+
+    <div class="prose r"><h2>What to Avoid in Small Talk</h2><p>Some topics are considered too personal or controversial for small talk in English-speaking cultures. As a general rule, avoid these unless you know the person very well:</p></div>
+    <div class="compare r">
+      <div class="cbox shy"><div class="clbl">❌ Avoid in small talk</div><div class="ctxt">Politics · Religion · Personal income or salary · Health problems · Age · Relationship status · Controversial opinions</div></div>
+      <div class="cbox conf"><div class="clbl">✅ Safe for small talk</div><div class="ctxt">Weather · Weekends · Holidays · Food · Sport (lightly) · Local events · Travel · Work (positively) · TV or films · Hobbies</div></div>
+    </div>
+
+    <div class="practice r"><h3>✍️ Small Talk Practice</h3><p>What would you say in each of these situations?</p>
+      <div class="pi">You arrive at work on a Monday morning and see a colleague in the lift.<span>→ "Good morning! Did you have a nice weekend?" or "Morning! How was your weekend?"</span></div>
+      <div class="pi">You are waiting for a meeting to start and there is a colleague you don't know well.<span>→ "I don't think we've met properly — I'm [name]. Have you been with the team long?"</span></div>
+      <div class="pi">A colleague says "How are you?" — give a natural, warm response (not just "fine").<span>→ "Really well, thanks — keeping busy! How about you?"</span></div>
+    </div>
+    <div class="callout r"><div class="callout-icon">🌿</div><p><strong>Your challenge this week:</strong> Start one conversation in English using small talk — with a colleague, a neighbour, or even online. Use one of the starters from this article. Notice how much easier the rest of the conversation becomes once you have warmed things up. 😊</p></div>
+    <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #03</span><div class="next-ttl">Filler Words: How to Sound Natural While You Think</div></div><span class="arrow">→</span></div>
+  </div>
+
+<!-- SPEAKING 3 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #03</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 4 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Filler Words: How to Sound Natural <em style="font-style:italic;color:var(--mid)">While You Think</em></h1>
+  <p class="hero-sub">"Well...", "I mean...", "You know..." — using fillers naturally without overdoing it, and the thinking phrases that sound confident and polished.</p>
+  <div class="hero-meta"><span>📅 April 7, 2026</span><span>📖 Speaking · Article #03</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Native English speakers use filler words constantly — and learners often feel they should avoid them entirely. The truth is more nuanced: <strong>used well, fillers make you sound natural and fluent. Used too much, they make you sound uncertain.</strong> This article shows you the difference and gives you better alternatives.</p></div>
+  <div class="prose r"><h2>Common Filler Words — What They Signal</h2></div>
+  <table class="ref-table r"><thead><tr><th>Filler</th><th>What It Signals</th><th>Best Used When</th></tr></thead><tbody>
+    <tr><td><strong>"Well..."</strong></td><td>I'm about to give a considered answer</td><td>Starting a thoughtful reply</td></tr>
+    <tr><td><strong>"I mean..."</strong></td><td>I'm clarifying or rephrasing what I said</td><td>Adding explanation</td></tr>
+    <tr><td><strong>"You know..."</strong></td><td>I expect you to understand this</td><td>Casual conversation only</td></tr>
+    <tr><td><strong>"Actually..."</strong></td><td>I'm about to correct or add something</td><td>Introducing a contrasting point</td></tr>
+    <tr><td><strong>"Basically..."</strong></td><td>I'm simplifying something complex</td><td>Explaining or summarising</td></tr>
+    <tr><td><strong>"Right..."</strong></td><td>I'm acknowledging and moving forward</td><td>Transitions in conversation</td></tr>
+  </tbody></table>
+  <div class="prose r"><h2>Professional Thinking Phrases — Fillers That Sound Polished</h2><p>Instead of "um" and "uh", use these phrases that buy you thinking time AND sound intelligent:</p></div>
+  <div class="framework r">
+    <div class="fw-step"><div class="fw-num">1</div><div class="fw-content"><div class="fw-title">Buying time gracefully</div><div class="fw-phrase"><em>"That's a great question — let me think about that for a moment."</em><br/><em>"If I understand correctly, you're asking about..."</em><br/><em>"Let me make sure I give you an accurate answer."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">2</div><div class="fw-content"><div class="fw-title">Rephrasing as you think</div><div class="fw-phrase"><em>"What I'm trying to say is..."</em><br/><em>"To put it another way..."</em><br/><em>"In other words..."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">3</div><div class="fw-content"><div class="fw-title">Signalling you're building to a point</div><div class="fw-phrase"><em>"The key thing here is..."</em><br/><em>"What this really comes down to is..."</em><br/><em>"If I had to summarise..."</em></div></div></div>
+  </div>
+  <div class="compare r">
+    <div class="cbox shy"><div class="clbl">❌ Filler-heavy</div><div class="ctxt">"Um... so... I think... you know... it's basically... um... a good idea? I mean... yeah."</div></div>
+    <div class="cbox conf"><div class="clbl">✅ Naturally fluent</div><div class="ctxt">"Well, I think it's a strong idea. What I mean is — the timing feels right and the data supports it."</div></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #04</span><div class="next-ttl">Pronunciation Secrets: Sounds That Trip Up Every Learner</div></div><span class="arrow">→</span></div>
+</div>
+<!-- SPEAKING 4 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #04</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 5 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Pronunciation Secrets: Sounds That <em style="font-style:italic;color:var(--mid)">Trip Up Every Learner</em></h1>
+  <p class="hero-sub">The TH sound, silent letters, and word stress — the three pronunciation challenges that affect almost every English learner, tackled with clear, practical guidance.</p>
+  <div class="hero-meta"><span>📅 April 14, 2026</span><span>📖 Speaking · Article #04</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Pronunciation is not about having a perfect accent — it is about being clearly understood. A few persistent sounds trip up learners from almost every language background. <strong>Fix these three and your spoken English will immediately become clearer and more confident.</strong></p></div>
+  <div class="framework r">
+    <div class="fw-step"><div class="fw-num">1</div><div class="fw-content"><div class="fw-title">The TH Sound — Two versions!</div><div class="fw-body">English has two TH sounds and most languages have neither. Place your tongue lightly between your teeth and blow air through.</div><div class="fw-phrase">Voiced TH (vibrates): <em>this, that, the, they, there, although</em><br/>Voiceless TH (no vibration): <em>think, thank, three, through, teeth, path</em><br/><br/>Common error: replacing TH with D, T, S, or Z — "dis" instead of "this"</div></div></div>
+    <div class="fw-step"><div class="fw-num">2</div><div class="fw-content"><div class="fw-title">Silent Letters — Letters You Don't Say</div><div class="fw-body">English has many letters that appear in spelling but are completely silent. Pronouncing them is one of the most common errors.</div><div class="fw-phrase">Silent K: <em>know, knife, knock, kneel</em> → say "no", "nife", "nock"<br/>Silent W: <em>write, wrong, wrap, wrist</em> → say "rite", "rong"<br/>Silent GH: <em>night, light, thought, though</em> → say "nite", "lite"<br/>Silent H: <em>honest, hour, heir</em> → say "onest", "our"</div></div></div>
+    <div class="fw-step"><div class="fw-num">3</div><div class="fw-content"><div class="fw-title">Word Stress — The Most Misunderstood Rule</div><div class="fw-body">English uses stress to show which syllable is most important. Getting stress wrong changes meaning — or makes words unrecognisable.</div><div class="fw-phrase">PREsent (noun) vs preSENT (verb)<br/>REcord (noun) vs reCORD (verb)<br/>IMport (noun) vs imPORT (verb)<br/><br/>Tip: When in doubt, stress the first syllable for nouns and the second for verbs.</div></div></div>
+  </div>
+  <div class="practice r"><h3>✍️ Pronunciation Practice</h3><p>Say these words out loud — focus on the TH sound.</p>
+    <div class="pi">Practice these: "Think", "Thank you", "Three", "Together", "Whether"<span>→ All need tongue between teeth. "Think" and "Three" = voiceless. "Together" and "Whether" = voiced.</span></div>
+    <div class="pi">Which letter is silent? "Knight", "Psychology", "Wednesday"<span>→ Knight (k silent) · Psychology (p silent) · Wednesday (d silent — say "Wensday")</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #05</span><div class="next-ttl">How to Give Your Opinion Politely in Any Situation</div></div><span class="arrow">→</span></div>
+</div>
+<!-- SPEAKING 5 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #05</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:#fff3e0;color:#e65100">📈 Intermediate</span><span class="tag t-time">⏱ 4 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">How to Give Your Opinion <em style="font-style:italic;color:var(--mid)">Politely</em> in Any Situation</h1>
+  <p class="hero-sub">"In my opinion", "I tend to think", "From my perspective" — and when to use each one so you always sound thoughtful and confident.</p>
+  <div class="hero-meta"><span>📅 April 21, 2026</span><span>📖 Speaking · Article #05</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Sharing your opinion in English is not just about what you say — it is about <strong>how you frame it.</strong> The right opener signals confidence without arrogance, openness without uncertainty. Here is your complete toolkit for sharing opinions at every level of formality.</p></div>
+  <table class="ref-table r"><thead><tr><th>Strength</th><th>Opinion Phrase</th><th>Context</th></tr></thead><tbody>
+    <tr><td>Personal view</td><td class="phrase">"In my opinion..."</td><td>Any situation — universal</td></tr>
+    <tr><td>Personal view</td><td class="phrase">"From my perspective..."</td><td>Professional and formal</td></tr>
+    <tr><td>Tentative view</td><td class="phrase">"I tend to think that..."</td><td>When you're not 100% certain</td></tr>
+    <tr><td>Reasoned view</td><td class="phrase">"As I see it..."</td><td>When offering analysis</td></tr>
+    <tr><td>Strong conviction</td><td class="phrase">"I firmly believe that..."</td><td>When you feel strongly</td></tr>
+    <tr><td>Open view</td><td class="phrase">"I may be wrong, but..."</td><td>When inviting discussion</td></tr>
+    <tr><td>Acknowledging others</td><td class="phrase">"While I understand your point, I feel that..."</td><td>Polite disagreement</td></tr>
+    <tr><td>Balanced view</td><td class="phrase">"There are merits to both sides, but I lean towards..."</td><td>Nuanced discussions</td></tr>
+  </tbody></table>
+  <div class="prose r"><h2>Opinion + Evidence = Credibility</h2><p>The most persuasive opinions are always backed by a reason. Here is the formula:</p></div>
+  <div class="framework r">
+    <div class="fw-step"><div class="fw-num">1</div><div class="fw-content"><div class="fw-title">State your opinion</div><div class="fw-phrase"><em>"In my opinion, remote working is more productive."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">2</div><div class="fw-content"><div class="fw-title">Give your reason</div><div class="fw-phrase"><em>"This is because employees tend to have fewer interruptions and more focused time."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">3</div><div class="fw-content"><div class="fw-title">Invite the other person</div><div class="fw-phrase"><em>"What's your take on it?"</em></div></div></div>
+  </div>
+  <div class="practice r"><h3>✍️ Opinion Practice</h3><p>Use an opinion phrase to share your view on each topic.</p>
+    <div class="pi">What do you think about learning English online vs in a classroom?<span>→ Example: "From my perspective, learning online offers more flexibility, which makes it easier to build a daily habit."</span></div>
+    <div class="pi">Do you think speaking or writing is more important in English?<span>→ Example: "I tend to think speaking is more immediately useful, as it builds confidence faster — though both are ultimately essential."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #06</span><div class="next-ttl">Hedging Language: How to Sound Confident While Staying Flexible</div></div><span class="arrow">→</span></div>
+</div>
+<!-- SPEAKING 6 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #06</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:#fce4ec;color:#880e4f">🚀 Advanced</span><span class="tag t-time">⏱ 6 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Hedging Language: How to Sound Confident <em style="font-style:italic;color:var(--mid)">While Staying Flexible</em></h1>
+  <p class="hero-sub">Phrases like "It would appear that..." and "There's a tendency to..." — and why advanced speakers use hedging to sound more authoritative, not less.</p>
+  <div class="hero-meta"><span>📅 April 28, 2026</span><span>📖 Speaking · Article #06</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Hedging sounds counterintuitive: why would adding uncertainty make you sound more credible? Because <strong>overconfident claims invite challenge, while hedged claims invite agreement.</strong> Academic speakers, politicians, and expert communicators hedge constantly — it signals caution, intelligence, and intellectual honesty.</p></div>
+  <div class="prose r"><h2>Hedging Vocabulary — From Mild to Moderate</h2></div>
+  <table class="ref-table r"><thead><tr><th>Hedging Function</th><th>Phrases</th></tr></thead><tbody>
+    <tr><td>Showing probability</td><td class="phrase">"It would appear that..." / "It seems likely that..."</td></tr>
+    <tr><td>Limiting scope</td><td class="phrase">"In most cases..." / "Generally speaking..." / "As a rule..."</td></tr>
+    <tr><td>Distancing from opinion</td><td class="phrase">"It has been suggested that..." / "Some would argue..."</td></tr>
+    <tr><td>Indicating tendency</td><td class="phrase">"There is a tendency to..." / "This tends to result in..."</td></tr>
+    <tr><td>Acknowledging uncertainty</td><td class="phrase">"To the best of my knowledge..." / "As far as I'm aware..."</td></tr>
+    <tr><td>Softening strong claims</td><td class="phrase">"This may indicate..." / "The evidence suggests..."</td></tr>
+  </tbody></table>
+  <div class="compare r">
+    <div class="cbox shy"><div class="clbl">⚠️ Overconfident — invites challenge</div><div class="ctxt">"Remote working definitely increases productivity in all companies."</div></div>
+    <div class="cbox conf"><div class="clbl">✅ Hedged — sounds authoritative</div><div class="ctxt">"The evidence suggests that remote working tends to increase productivity in many professional contexts."</div></div>
+  </div>
+  <div class="practice r"><h3>✍️ Hedge These Claims</h3><p>Add hedging language to make each claim more credible and nuanced.</p>
+    <div class="pi">"Social media causes anxiety." → Hedge it.<span>→ "There is growing evidence to suggest that excessive social media use may contribute to anxiety in some individuals."</span></div>
+    <div class="pi">"Learning a language takes 5 years." → Hedge it.<span>→ "Research tends to suggest that reaching fluency generally takes between 3 and 7 years, depending on the learner's background."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #07</span><div class="next-ttl">Public Speaking in English: Structure, Presence, and Persuasion</div></div><span class="arrow">→</span></div>
+</div>
+<!-- SPEAKING 7 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #07</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:#fce4ec;color:#880e4f">🚀 Advanced</span><span class="tag t-time">⏱ 8 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Public Speaking in English: <em style="font-style:italic;color:var(--mid)">Structure, Presence,</em> and Persuasion</h1>
+  <p class="hero-sub">How to open strongly, keep attention, and close with impact — the language and structure that makes presentations in English truly memorable.</p>
+  <div class="hero-meta"><span>📅 May 5, 2026</span><span>📖 Speaking · Article #07</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>A great presentation is not about perfect English — it is about a clear message, delivered with confidence and structure. <strong>Even with an accent, even with occasional grammar slips, a well-structured, passionate speaker captivates any room.</strong> Here is the framework that makes it happen.</p></div>
+  <div class="framework r">
+    <div class="fw-step"><div class="fw-num">1</div><div class="fw-content"><div class="fw-title">The Strong Opening</div><div class="fw-body">Never start with "Good morning, today I'm going to talk about..." — it is forgettable. Instead, open with a question, a surprising fact, or a bold statement.</div><div class="fw-phrase"><em>"What would you do if you had to explain your entire strategy in 30 seconds?"</em><br/><em>"Research shows that 70% of presentations fail in the first 30 seconds."</em><br/><em>"I want to start with a question that changed everything for me."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">2</div><div class="fw-content"><div class="fw-title">Signpost Language — Guide Your Audience</div><div class="fw-body">Professional speakers constantly tell their audience where they are and where they are going. This is called signposting.</div><div class="fw-phrase"><em>"I'll begin by..." / "Moving on to..." / "As I mentioned earlier..."</em><br/><em>"Let me now turn to..." / "Before I conclude..." / "To summarise..."</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">3</div><div class="fw-content"><div class="fw-title">Engaging the Audience Mid-Presentation</div><div class="fw-body">The best presenters involve their audience regularly to maintain attention and energy.</div><div class="fw-phrase"><em>"Can I ask — how many of you have experienced this?"</em><br/><em>"Take a moment to think about..."</em><br/><em>"I'd love to hear a thought on this — anyone?"</em></div></div></div>
+    <div class="fw-step"><div class="fw-num">4</div><div class="fw-content"><div class="fw-title">The Powerful Close</div><div class="fw-body">End with a clear call to action, a memorable quote, or a return to your opening theme. Never fade out — land your close with intention.</div><div class="fw-phrase"><em>"So I'll leave you with this one thought..."</em><br/><em>"The next step is simple: all it takes is..."</em><br/><em>"Thank you — and I'm happy to take any questions."</em></div></div></div>
+  </div>
+  <div class="practice r"><h3>✍️ Opening Line Practice</h3><p>Rewrite these weak openings into powerful ones.</p>
+    <div class="pi">"Hi, today I will talk about the importance of communication." → Make it powerful.<span>→ "What if I told you that poor communication costs companies an average of $400,000 per year? Today I'm going to change the way you think about this."</span></div>
+    <div class="pi">"This presentation is about our new product." → Open with impact.<span>→ "Six months ago, this product didn't exist. Today, it's about to change how our customers experience everything we do."</span></div>
+  </div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Next — Speaking #08</span><div class="next-ttl">Daily Speaking Habits: 10 Minutes a Day to Fluency</div></div><span class="arrow">→</span></div>
+</div>
+<!-- SPEAKING 8 -->
+<div style="max-width:720px;margin:0 auto;padding:0 3rem 2rem"><div style="border-top:2px dashed var(--pale);padding-top:3rem;text-align:center;margin-bottom:2rem"><span style="font-family:'Caveat',cursive;font-size:1rem;color:var(--mid);background:var(--pale);padding:0.3rem 1rem;border-radius:50px">Article #08</span></div></div>
+<div class="hero" style="padding-top:2rem">
+  <div class="hero-tags"><span class="tag t-cat">🗣️ Speaking</span><span class="tag" style="background:var(--pale);color:var(--mid)">🌍 All Levels</span><span class="tag t-time">⏱ 4 min read</span></div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem">Daily Speaking Habits: <em style="font-style:italic;color:var(--mid)">10 Minutes a Day</em> to Fluency</h1>
+  <p class="hero-sub">Simple daily routines that build fluency gradually — no classroom needed, no expensive lessons required, just 10 committed minutes every day.</p>
+  <div class="hero-meta"><span>📅 May 12, 2026</span><span>📖 Speaking · Article #08</span></div>
+</div>
+<div class="body">
+  <div class="prose r"><p>Fluency is not built in one long study session per week. It is built in <strong>consistent, daily contact with the language</strong>. Ten minutes of focused speaking practice every day will produce better results than two hours on a weekend. Here is your daily speaking system.</p></div>
+  <div class="habits r">
+    <div class="habit"><div class="habit-icon">🪞</div><div class="habit-time">2 min · Morning</div><div class="habit-act">Mirror Talk</div><div class="habit-desc">Describe your morning routine out loud in English. "I woke up at 7, I made coffee, I am getting ready for work."</div></div>
+    <div class="habit"><div class="habit-icon">🎧</div><div class="habit-time">5 min · Commute</div><div class="habit-act">Listen & Repeat</div><div class="habit-desc">Listen to one English sentence on BBC or a podcast. Pause. Repeat it out loud — matching the rhythm and stress.</div></div>
+    <div class="habit"><div class="habit-icon">📱</div><div class="habit-time">2 min · Lunch</div><div class="habit-act">Voice Note</div><div class="habit-desc">Record a 60-second voice note describing something that happened today — in English. Then listen back once.</div></div>
+    <div class="habit"><div class="habit-icon">💬</div><div class="habit-time">3 min · Evening</div><div class="habit-act">Think in English</div><div class="habit-desc">Before bed, think about your day in English for 3 minutes. Don't translate — just think directly in the language.</div></div>
+  </div>
+  <div class="prose r"><h2>The 3 Fluency Principles</h2></div>
+  <div class="steps r">
+    <div class="step"><div class="step-num">Principle 1</div><div class="step-title">Volume over perfection</div><div class="step-body">Speak more, worry less about errors. Fluency is built through volume of output — not through perfect grammar. The errors will correct themselves naturally over time as you absorb more input.</div></div>
+    <div class="step"><div class="step-num">Principle 2</div><div class="step-title">Imitate, don't just study</div><div class="step-body">Find speakers you admire — presenters, podcasters, actors. Listen and imitate their rhythm, stress, and pace. Imitation is how children learn, and it works for adults too.</div></div>
+    <div class="step"><div class="step-num">Principle 3</div><div class="step-title">Speak to create, not to perform</div><div class="step-body">Stop thinking of speaking as a performance that will be judged. Think of it as creative communication — you are building something, not being tested on it.</div></div>
+  </div>
+  <div class="callout r"><div class="callout-icon">🌿</div><p><strong>You have completed all 8 Speaking articles.</strong> That is a significant achievement. Your voice in English is growing stronger with every page you read. Now the most important step of all: go speak. 🗣️🎉</p></div>
+  <div class="next r"><div><span class="next-lbl">🗣️ Speaking Complete!</span><div class="next-ttl">All 8 Speaking articles finished. Your confidence is growing!</div></div><span class="arrow">🎉</span></div>
+</div>
+</body>
+</html>
