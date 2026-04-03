@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Word Families: Nouns, Verbs and Adjectives - PLU Blog</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--green-pale);color:var(--ink);line-height:1.7;}
+    header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
+    .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
+    nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
+    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
+    .hero-tag{display:inline-block;background:var(--green-bright);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;margin-bottom:1rem;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.8rem;line-height:1.2;}
+    .hero p{color:var(--green-light);max-width:560px;margin:0 auto;font-size:0.97rem;}
+    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
+    .article{max-width:740px;margin:2.5rem auto;padding:0 1.5rem 4rem;}
+    .article h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 0.8rem;}
+    .article h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--green-mid);margin:1.5rem 0 0.6rem;}
+    .article p{margin-bottom:1rem;color:var(--ink-soft);font-size:0.97rem;}
+    .example-box{background:var(--white);border-left:4px solid var(--green-bright);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.2rem 0;}
+    .example-box p{margin:0.3rem 0;color:var(--ink);}
+    .example-box .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--green-mid);letter-spacing:0.08em;margin-bottom:0.5rem;}
+    .tip-box{background:var(--green-pale);border:1.5px solid var(--green-light);border-radius:12px;padding:1.2rem 1.5rem;margin:1.5rem 0;}
+    .tip-box .tip-title{font-weight:700;color:var(--green-dark);margin-bottom:0.4rem;font-size:0.9rem;}
+    .tip-box p{margin:0;font-size:0.9rem;}
+    .highlight{background:var(--green-bright);color:var(--green-dark);padding:0.1rem 0.4rem;border-radius:4px;font-weight:600;}
+    .compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:12px;overflow:hidden;}
+    .compare-table th{background:var(--green-dark);color:var(--white);padding:0.8rem 1rem;text-align:left;font-size:0.9rem;}
+    .compare-table td{padding:0.8rem 1rem;border-bottom:1px solid var(--green-light);font-size:0.88rem;color:var(--ink-soft);}
+    .compare-table tr:last-child td{border-bottom:none;}
+    .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.8rem;margin:1.2rem 0;}
+    .word-card{background:var(--white);border:1.5px solid var(--green-light);border-radius:10px;padding:0.8rem 1rem;}
+    .word-card strong{color:var(--green-dark);display:block;font-size:0.95rem;}
+    .word-card span{color:var(--ink-soft);font-size:0.82rem;}
+    .nav-articles{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1.5px solid var(--green-light);}
+    .nav-btn{background:var(--white);border:1.5px solid var(--green-light);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;color:var(--ink);font-size:0.85rem;flex:1;transition:border-color 0.2s;}
+    .nav-btn:hover{border-color:var(--green-bright);}
+    .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
+    footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
+</style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">PLU Blog</a>
+    <nav><a href="../index.html">Vocabulary</a></nav>
+  </header>
+  <section class="hero">
+    <div class="hero-tag">🟠 Intermediate · Vocabulary</div>
+    <h1>Word Families: Nouns, Verbs and Adjectives</h1>
+    <p>Triple your vocabulary by learning how words change form in English.</p>
+  </section>
+  <a href="../index.html" class="back-link">&larr; Back to Vocabulary</a>
+  <article class="article">
+
+    <h2>What Are Word Families?</h2>
+    <p>A word family is a group of words that share the same root but have different forms. Learning one word can help you learn three or four at the same time!</p>
+    <table class="compare-table">
+      <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+      <tr><td>education</td><td>educate</td><td>educational</td><td>educationally</td></tr>
+      <tr><td>beauty</td><td>beautify</td><td>beautiful</td><td>beautifully</td></tr>
+      <tr><td>success</td><td>succeed</td><td>successful</td><td>successfully</td></tr>
+      <tr><td>decision</td><td>decide</td><td>decisive</td><td>decisively</td></tr>
+      <tr><td>creation</td><td>create</td><td>creative</td><td>creatively</td></tr>
+    </table>
+    <h2>Common Suffixes to Learn</h2>
+    <div class="example-box">
+      <p class="label">Noun suffixes</p>
+      <p><strong>-tion / -sion:</strong> education, decision, information</p>
+      <p><strong>-ment:</strong> development, government, achievement</p>
+      <p><strong>-ness:</strong> happiness, darkness, kindness</p>
+    </div>
+    <div class="example-box">
+      <p class="label">Adjective suffixes</p>
+      <p><strong>-ful:</strong> beautiful, helpful, powerful</p>
+      <p><strong>-less:</strong> useless, helpless, hopeless</p>
+      <p><strong>-ous:</strong> dangerous, famous, nervous</p>
+    </div>
+    <div class="tip-box">
+      <p class="tip-title">&check; What You Learned</p>
+      <p>Word families share the same root with different suffixes. Learn the suffixes and you can recognise thousands of new words. Always learn words in their different forms!</p>
+    </div>
+
+    <div class="nav-articles">
+      <a href="article-3.html" class="nav-btn"><span>&larr; Previous</span>Feelings and Emotions</a>
+      <a href="article-5.html" class="nav-btn" style="text-align:right;"><span>Next Article &rarr;</span>Collocations You Need to Know</a>
+    </div>
+  </article>
+  <footer>&copy; 2026 PLU Blog &middot; Built with passion for English learners everywhere</footer>
+</body>
+</html>
