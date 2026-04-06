@@ -12,10 +12,17 @@
     header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
     .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
     nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
-    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
+    .progress-bar-wrap{background:var(--green-dark);padding:0.6rem 2rem;display:flex;align-items:center;gap:1rem;}
+    .progress-label{color:var(--green-light);font-size:0.78rem;white-space:nowrap;}
+    .progress-track{flex:1;height:6px;background:rgba(255,255,255,0.15);border-radius:100px;overflow:hidden;}
+    .progress-fill{height:100%;background:var(--green-bright);border-radius:100px;transition:width 0.4s ease;}
+    .progress-count{color:var(--green-bright);font-size:0.78rem;font-weight:700;white-space:nowrap;}
+    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem 0;text-align:center;}
     .hero-tag{display:inline-block;background:var(--green-bright);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;margin-bottom:1rem;}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.8rem;line-height:1.2;}
-    .hero p{color:var(--green-light);max-width:560px;margin:0 auto;font-size:0.97rem;}
+    .hero p{color:var(--green-light);max-width:560px;margin:0 auto 2rem;font-size:0.97rem;}
+    .illus-wrap{max-width:740px;margin:0 auto;padding:0 1.5rem;}
+    .illus-svg{width:100%;border-radius:16px 16px 0 0;display:block;}
     .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
     .article{max-width:740px;margin:2.5rem auto;padding:0 1.5rem 4rem;}
     .article h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 0.8rem;}
@@ -32,15 +39,34 @@
     .compare-table th{background:var(--green-dark);color:var(--white);padding:0.8rem 1rem;text-align:left;font-size:0.9rem;}
     .compare-table td{padding:0.8rem 1rem;border-bottom:1px solid var(--green-light);font-size:0.88rem;color:var(--ink-soft);}
     .compare-table tr:last-child td{border-bottom:none;}
-    .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.8rem;margin:1.2rem 0;}
+    .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.8rem;margin:1.2rem 0;}
     .word-card{background:var(--white);border:1.5px solid var(--green-light);border-radius:10px;padding:0.8rem 1rem;}
     .word-card strong{color:var(--green-dark);display:block;font-size:0.95rem;}
     .word-card span{color:var(--ink-soft);font-size:0.82rem;}
+    .quiz-section{background:var(--white);border:2px solid var(--green-light);border-radius:16px;padding:2rem;margin:2.5rem 0;}
+    .quiz-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green-dark);margin-bottom:0.4rem;}
+    .quiz-subtitle{color:var(--ink-soft);font-size:0.88rem;margin-bottom:1.5rem;}
+    .question{margin-bottom:1.8rem;}
+    .question p{font-weight:600;color:var(--ink);margin-bottom:0.8rem;font-size:0.95rem;}
+    .options{display:flex;flex-direction:column;gap:0.5rem;}
+    .option{display:flex;align-items:center;gap:0.8rem;padding:0.75rem 1rem;border:1.5px solid var(--green-light);border-radius:10px;cursor:pointer;transition:all 0.2s;background:var(--green-pale);}
+    .option:hover{border-color:var(--green-bright);background:var(--white);}
+    .option.correct{border-color:#22c55e;background:#f0fdf4;color:#166534;}
+    .option.wrong{border-color:#ef4444;background:#fef2f2;color:#991b1b;}
+    .option input{accent-color:var(--green-bright);}
+    .quiz-btn{background:var(--green-dark);color:var(--white);border:none;padding:0.85rem 2rem;border-radius:100px;font-size:0.95rem;font-weight:600;cursor:pointer;margin-top:1rem;transition:background 0.2s;}
+    .quiz-btn:hover{background:var(--green-mid);}
+    .quiz-result{display:none;margin-top:1.5rem;padding:1.2rem;border-radius:12px;text-align:center;font-weight:600;font-size:1rem;}
+    .quiz-result.show{display:block;}
+    .quiz-result.pass{background:#f0fdf4;color:#166534;border:1.5px solid #86efac;}
+    .quiz-result.fail{background:#fef2f2;color:#991b1b;border:1.5px solid #fca5a5;}
+    .score-stars{font-size:1.5rem;margin-bottom:0.4rem;}
     .nav-articles{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1.5px solid var(--green-light);}
     .nav-btn{background:var(--white);border:1.5px solid var(--green-light);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;color:var(--ink);font-size:0.85rem;flex:1;transition:border-color 0.2s;}
     .nav-btn:hover{border-color:var(--green-bright);}
     .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
     footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
+    @media(max-width:600px){.nav-articles{flex-direction:column;}nav{display:none;}}
 </style>
 </head>
 <body>
@@ -48,19 +74,34 @@
     <a href="../index.html" class="logo">PLU Blog</a>
     <nav><a href="../index.html">Miscellaneous</a></nav>
   </header>
+  <div class="progress-bar-wrap">
+    <span class="progress-label">Miscellaneous progress:</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span class="progress-count" id="progressCount">0 / 8 articles</span>
+  </div>
   <section class="hero">
-    <div class="hero-tag">🟠 Intermediate · Miscellaneous</div>
+    <div class="hero-tag">🟠 Intermediate · Miscellaneous · Article 5 of 8</div>
     <h1>How to Think in English</h1>
-    <p>Practical strategies to stop translating and start thinking directly in English.</p>
+    <p>Stop translating and start thinking directly in English.</p>
+    <div class="illus-wrap"><svg class="illus-svg" viewBox="0 0 740 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="740" height="180" fill="#0f2d1e"/>
+  <rect x="40" y="40" width="200" height="100" rx="12" fill="#2d6a4f"/>
+  <text x="140" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">OBSERVE</text>
+  <text x="140" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">name objects in English</text>
+  <rect x="270" y="40" width="200" height="100" rx="12" fill="#2d6a4f"/>
+  <text x="370" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">MONOLOGUE</text>
+  <text x="370" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">think in English</text>
+  <rect x="500" y="40" width="200" height="100" rx="12" fill="#1a3c2e" stroke="#40c074" stroke-width="1.5"/>
+  <text x="600" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">LABEL</text>
+  <text x="600" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">sticky notes at home</text>
+</svg></div>
   </section>
   <a href="../index.html" class="back-link">&larr; Back to Miscellaneous</a>
   <article class="article">
 
-    <h2>The Translation Trap</h2>
-    <p>Most learners think in their native language and translate to English. This makes speaking slow and unnatural. The goal is to think directly in English.</p>
     <h2>Start with Simple Thoughts</h2>
     <div class="example-box">
-      <p>Look around your room and name objects in English.</p>
+      <p>Look around and name objects in English.</p>
       <p>Describe what you are doing: "I am making coffee."</p>
       <p>Comment on the weather: "It's cloudy today."</p>
     </div>
@@ -68,24 +109,57 @@
     <div class="example-box">
       <p>Give yourself instructions: "I need to buy milk."</p>
       <p>Plan your day: "This morning I'll work on emails..."</p>
-      <p>React to things: "That's interesting!" / "I'm not sure about that."</p>
+      <p>React to things: "That's interesting!"</p>
     </div>
     <h2>Label Your Environment</h2>
     <div class="example-box">
       <p>Put sticky notes on objects with their English names.</p>
       <p>Change your phone language to English.</p>
-      <p>Think in English when shopping, commuting or exercising.</p>
     </div>
-    <div class="tip-box">
-      <p class="tip-title">&check; What You Learned</p>
-      <p>Thinking in English is a skill that develops gradually. Start with simple observations, build to longer thoughts, and use English in your internal monologue every day.</p>
+    <div class="tip-box"><p class="tip-title">&check; What You Learned</p><p>Thinking in English develops gradually. Start with simple observations and build to longer thoughts every day.</p></div>
+   
+    <div class="quiz-section">
+      <div class="quiz-title">&#x1F9E0; Quick Quiz</div>
+      <p class="quiz-subtitle">Test what you've learned — choose the best answer!</p>
+      <div class="question"><p>1. Why is it important to think in English?</p><div class="options"><label class="option"><input type="radio" name="q1" value="a"> It makes you sound more intelligent</label><label class="option"><input type="radio" name="q1" value="b"> It stops you from translating and makes speaking faster</label><label class="option"><input type="radio" name="q1" value="c"> It impresses native speakers</label></div></div><div class="question"><p>2. Which is an example of using an internal monologue in English?</p><div class="options"><label class="option"><input type="radio" name="q2" value="a"> Writing an essay</label><label class="option"><input type="radio" name="q2" value="b"> Saying 'I need to buy milk' to yourself in English</label><label class="option"><input type="radio" name="q2" value="c"> Reading a book in English</label></div></div><div class="question"><p>3. Changing your phone language to English helps because...</p><div class="options"><label class="option"><input type="radio" name="q3" value="a"> It makes your phone faster</label><label class="option"><input type="radio" name="q3" value="b"> You see English constantly in everyday life</label><label class="option"><input type="radio" name="q3" value="c"> Your friends will be impressed</label></div></div><div class="question"><p>4. Which is the best first step to thinking in English?</p><div class="options"><label class="option"><input type="radio" name="q4" value="a"> Think in very complex sentences immediately</label><label class="option"><input type="radio" name="q4" value="b"> Start by naming simple objects around you</label><label class="option"><input type="radio" name="q4" value="c"> Write long essays every day</label></div></div>
+      <button class="quiz-btn" onclick="checkQuiz()">Check My Answers &#10003;</button>
+      <div class="quiz-result" id="quizResult"></div>
     </div>
-
     <div class="nav-articles">
-      <a href="article-4.html" class="nav-btn"><span>&larr; Previous</span>Learning Through Movies and TV</a>
+      <a href="article-4.html" class="nav-btn"><span>&larr; Previous</span>Learning Through Movies</a>
       <a href="article-6.html" class="nav-btn" style="text-align:right;"><span>Next Article &rarr;</span>Overcoming the Intermediate Plateau</a>
     </div>
   </article>
   <footer>&copy; 2026 PLU Blog &middot; Built with passion for English learners everywhere</footer>
+  <script>
+  const TOTAL = 8;
+  const KEY = 'miscellaneous_progress';
+  let read = JSON.parse(localStorage.getItem(KEY) || '[]');
+  if (!read.includes('m5')) { read.push('m5'); localStorage.setItem(KEY, JSON.stringify(read)); }
+  const pct = Math.round((read.length / TOTAL) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressCount').textContent = read.length + ' / ' + TOTAL + ' articles';
+  const ANSWERS = {"q1": "b", "q2": "b", "q3": "b", "q4": "b"};
+  function checkQuiz() {
+    let score = 0, allAnswered = true;
+    for (const [q, correct] of Object.entries(ANSWERS)) {
+      const sel = document.querySelector('input[name="' + q + '"]:checked');
+      if (!sel) { allAnswered = false; continue; }
+      document.querySelectorAll('input[name="' + q + '"]').forEach(opt => {
+        opt.parentElement.classList.remove('correct','wrong');
+        if (opt.value === correct) opt.parentElement.classList.add('correct');
+        else if (opt.checked) opt.parentElement.classList.add('wrong');
+        opt.disabled = true;
+      });
+      if (sel.value === correct) score++;
+    }
+    if (!allAnswered) { alert('Please answer all questions!'); return; }
+    const r = document.getElementById('quizResult');
+    const stars = score===4?'⭐⭐⭐⭐':score===3?'⭐⭐⭐':score===2?'⭐⭐':'⭐';
+    const msg = score===4?'Perfect score! You mastered this lesson!':score===3?'Great job! Almost perfect!':score===2?'Good effort! Review and try again.':'Keep practising! Read the article again.';
+    r.className = 'quiz-result show ' + (score>=3?'pass':'fail');
+    r.innerHTML = '<div class="score-stars">'+stars+'</div>You scored <strong>'+score+' out of 4</strong><br>'+msg;
+  }
+</script>
 </body>
 </html>
