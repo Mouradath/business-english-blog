@@ -12,10 +12,17 @@
     header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
     .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
     nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
-    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
+    .progress-bar-wrap{background:var(--green-dark);padding:0.6rem 2rem;display:flex;align-items:center;gap:1rem;}
+    .progress-label{color:var(--green-light);font-size:0.78rem;white-space:nowrap;}
+    .progress-track{flex:1;height:6px;background:rgba(255,255,255,0.15);border-radius:100px;overflow:hidden;}
+    .progress-fill{height:100%;background:var(--green-bright);border-radius:100px;transition:width 0.4s ease;}
+    .progress-count{color:var(--green-bright);font-size:0.78rem;font-weight:700;white-space:nowrap;}
+    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem 0;text-align:center;}
     .hero-tag{display:inline-block;background:var(--green-bright);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;margin-bottom:1rem;}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.8rem;line-height:1.2;}
-    .hero p{color:var(--green-light);max-width:560px;margin:0 auto;font-size:0.97rem;}
+    .hero p{color:var(--green-light);max-width:560px;margin:0 auto 2rem;font-size:0.97rem;}
+    .illus-wrap{max-width:740px;margin:0 auto;padding:0 1.5rem;}
+    .illus-svg{width:100%;border-radius:16px 16px 0 0;display:block;}
     .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
     .article{max-width:740px;margin:2.5rem auto;padding:0 1.5rem 4rem;}
     .article h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 0.8rem;}
@@ -32,15 +39,34 @@
     .compare-table th{background:var(--green-dark);color:var(--white);padding:0.8rem 1rem;text-align:left;font-size:0.9rem;}
     .compare-table td{padding:0.8rem 1rem;border-bottom:1px solid var(--green-light);font-size:0.88rem;color:var(--ink-soft);}
     .compare-table tr:last-child td{border-bottom:none;}
-    .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.8rem;margin:1.2rem 0;}
+    .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.8rem;margin:1.2rem 0;}
     .word-card{background:var(--white);border:1.5px solid var(--green-light);border-radius:10px;padding:0.8rem 1rem;}
     .word-card strong{color:var(--green-dark);display:block;font-size:0.95rem;}
     .word-card span{color:var(--ink-soft);font-size:0.82rem;}
+    .quiz-section{background:var(--white);border:2px solid var(--green-light);border-radius:16px;padding:2rem;margin:2.5rem 0;}
+    .quiz-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--green-dark);margin-bottom:0.4rem;}
+    .quiz-subtitle{color:var(--ink-soft);font-size:0.88rem;margin-bottom:1.5rem;}
+    .question{margin-bottom:1.8rem;}
+    .question p{font-weight:600;color:var(--ink);margin-bottom:0.8rem;font-size:0.95rem;}
+    .options{display:flex;flex-direction:column;gap:0.5rem;}
+    .option{display:flex;align-items:center;gap:0.8rem;padding:0.75rem 1rem;border:1.5px solid var(--green-light);border-radius:10px;cursor:pointer;transition:all 0.2s;background:var(--green-pale);}
+    .option:hover{border-color:var(--green-bright);background:var(--white);}
+    .option.correct{border-color:#22c55e;background:#f0fdf4;color:#166534;}
+    .option.wrong{border-color:#ef4444;background:#fef2f2;color:#991b1b;}
+    .option input{accent-color:var(--green-bright);}
+    .quiz-btn{background:var(--green-dark);color:var(--white);border:none;padding:0.85rem 2rem;border-radius:100px;font-size:0.95rem;font-weight:600;cursor:pointer;margin-top:1rem;transition:background 0.2s;}
+    .quiz-btn:hover{background:var(--green-mid);}
+    .quiz-result{display:none;margin-top:1.5rem;padding:1.2rem;border-radius:12px;text-align:center;font-weight:600;font-size:1rem;}
+    .quiz-result.show{display:block;}
+    .quiz-result.pass{background:#f0fdf4;color:#166534;border:1.5px solid #86efac;}
+    .quiz-result.fail{background:#fef2f2;color:#991b1b;border:1.5px solid #fca5a5;}
+    .score-stars{font-size:1.5rem;margin-bottom:0.4rem;}
     .nav-articles{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1.5px solid var(--green-light);}
     .nav-btn{background:var(--white);border:1.5px solid var(--green-light);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;color:var(--ink);font-size:0.85rem;flex:1;transition:border-color 0.2s;}
     .nav-btn:hover{border-color:var(--green-bright);}
     .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
     footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
+    @media(max-width:600px){.nav-articles{flex-direction:column;}nav{display:none;}}
 </style>
 </head>
 <body>
@@ -48,16 +74,31 @@
     <a href="../index.html" class="logo">PLU Blog</a>
     <nav><a href="../index.html">Writing</a></nav>
   </header>
+  <div class="progress-bar-wrap">
+    <span class="progress-label">Writing progress:</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span class="progress-count" id="progressCount">0 / 8 articles</span>
+  </div>
   <section class="hero">
-    <div class="hero-tag">🔵 Elementary · Writing</div>
+    <div class="hero-tag">🔵 Elementary · Writing · Article 2 of 8</div>
     <h1>Writing Short Paragraphs in English</h1>
-    <p>Learn how to group sentences into a clear and focused paragraph.</p>
+    <p>Group sentences into a clear and focused paragraph.</p>
+    <div class="illus-wrap"><svg class="illus-svg" viewBox="0 0 740 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="740" height="180" fill="#0f2d1e"/>
+  <rect x="40" y="40" width="200" height="100" rx="12" fill="#2d6a4f"/>
+  <text x="140" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">TOPIC SENTENCE</text>
+  <text x="140" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">states main idea</text>
+  <rect x="270" y="40" width="200" height="100" rx="12" fill="#2d6a4f"/>
+  <text x="370" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">SUPPORT</text>
+  <text x="370" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">examples, details</text>
+  <rect x="500" y="40" width="200" height="100" rx="12" fill="#1a3c2e" stroke="#40c074" stroke-width="1.5"/>
+  <text x="600" y="82" text-anchor="middle" fill="#40c074" font-size="13" font-family="sans-serif" font-weight="bold">CLOSING</text>
+  <text x="600" y="108" text-anchor="middle" fill="#b7e4c7" font-size="11" font-family="sans-serif">summarises</text>
+</svg></div>
   </section>
   <a href="../index.html" class="back-link">&larr; Back to Writing</a>
   <article class="article">
 
-    <h2>What Is a Paragraph?</h2>
-    <p>A paragraph is a group of sentences about one main idea. A good paragraph has a clear beginning, middle and end.</p>
     <h2>The Three Parts of a Paragraph</h2>
     <div class="example-box">
       <p><strong>1. Topic sentence</strong> &mdash; states the main idea</p>
@@ -66,22 +107,55 @@
     </div>
     <h2>Example Paragraph</h2>
     <div class="example-box">
-      <p class="label">Topic: My favourite season</p>
       <p><strong>[Topic]</strong> My favourite season is autumn.</p>
       <p><strong>[Support]</strong> I love the orange and red colours of the leaves.</p>
       <p><strong>[Support]</strong> The weather is cool but not too cold.</p>
       <p><strong>[Closing]</strong> For these reasons, autumn is the perfect season for me.</p>
     </div>
-    <div class="tip-box">
-      <p class="tip-title">&check; What You Learned</p>
-      <p>Every paragraph needs a topic sentence, supporting sentences and a closing sentence. One paragraph = one main idea. This makes your writing clear and easy to read.</p>
+    <div class="tip-box"><p class="tip-title">&check; What You Learned</p><p>One paragraph = one main idea. Topic sentence + support + closing sentence makes your writing clear and easy to read.</p></div>
+   
+    <div class="quiz-section">
+      <div class="quiz-title">&#x1F9E0; Quick Quiz</div>
+      <p class="quiz-subtitle">Test what you've learned — choose the best answer!</p>
+      <div class="question"><p>1. What does the topic sentence do?</p><div class="options"><label class="option"><input type="radio" name="q1" value="a"> Summarises the paragraph</label><label class="option"><input type="radio" name="q1" value="b"> States the main idea</label><label class="option"><input type="radio" name="q1" value="c"> Gives an example</label></div></div><div class="question"><p>2. How many main ideas should one paragraph have?</p><div class="options"><label class="option"><input type="radio" name="q2" value="a"> As many as possible</label><label class="option"><input type="radio" name="q2" value="b"> Two</label><label class="option"><input type="radio" name="q2" value="c"> One</label></div></div><div class="question"><p>3. What does the closing sentence do?</p><div class="options"><label class="option"><input type="radio" name="q3" value="a"> Introduces a new idea</label><label class="option"><input type="radio" name="q3" value="b"> Summarises or concludes</label><label class="option"><input type="radio" name="q3" value="c"> Gives more examples</label></div></div><div class="question"><p>4. Which is a good topic sentence?</p><div class="options"><label class="option"><input type="radio" name="q4" value="a"> Because it was raining.</label><label class="option"><input type="radio" name="q4" value="b"> My favourite food is pizza.</label><label class="option"><input type="radio" name="q4" value="c"> Also, I like cheese.</label></div></div>
+      <button class="quiz-btn" onclick="checkQuiz()">Check My Answers &#10003;</button>
+      <div class="quiz-result" id="quizResult"></div>
     </div>
-
     <div class="nav-articles">
-      <a href="article-1.html" class="nav-btn"><span>&larr; Previous</span>How to Write Simple Sentences</a>
+      <a href="article-1.html" class="nav-btn"><span>&larr; Previous</span>Simple Sentences</a>
       <a href="article-3.html" class="nav-btn" style="text-align:right;"><span>Next Article &rarr;</span>How to Write an Informal Email</a>
     </div>
   </article>
   <footer>&copy; 2026 PLU Blog &middot; Built with passion for English learners everywhere</footer>
+  <script>
+  const TOTAL = 8;
+  const KEY = 'writing_progress';
+  let read = JSON.parse(localStorage.getItem(KEY) || '[]');
+  if (!read.includes('w2')) { read.push('w2'); localStorage.setItem(KEY, JSON.stringify(read)); }
+  const pct = Math.round((read.length / TOTAL) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressCount').textContent = read.length + ' / ' + TOTAL + ' articles';
+  const ANSWERS = {"q1": "b", "q2": "c", "q3": "b", "q4": "b"};
+  function checkQuiz() {
+    let score = 0, allAnswered = true;
+    for (const [q, correct] of Object.entries(ANSWERS)) {
+      const sel = document.querySelector('input[name="' + q + '"]:checked');
+      if (!sel) { allAnswered = false; continue; }
+      document.querySelectorAll('input[name="' + q + '"]').forEach(opt => {
+        opt.parentElement.classList.remove('correct','wrong');
+        if (opt.value === correct) opt.parentElement.classList.add('correct');
+        else if (opt.checked) opt.parentElement.classList.add('wrong');
+        opt.disabled = true;
+      });
+      if (sel.value === correct) score++;
+    }
+    if (!allAnswered) { alert('Please answer all questions!'); return; }
+    const r = document.getElementById('quizResult');
+    const stars = score===4?'⭐⭐⭐⭐':score===3?'⭐⭐⭐':score===2?'⭐⭐':'⭐';
+    const msg = score===4?'Perfect score! You mastered this lesson!':score===3?'Great job! Almost perfect!':score===2?'Good effort! Review and try again.':'Keep practising! Read the article again.';
+    r.className = 'quiz-result show ' + (score>=3?'pass':'fail');
+    r.innerHTML = '<div class="score-stars">'+stars+'</div>You scored <strong>'+score+' out of 4</strong><br>'+msg;
+  }
+</script>
 </body>
 </html>
