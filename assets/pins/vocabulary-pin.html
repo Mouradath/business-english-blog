@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary — Pinterest Pin</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e6ede8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .pin {
+    width: 400px;
+    background: #fafaf8;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(30,50,35,.18), 0 4px 16px rgba(30,50,35,.10);
+    animation: fadeIn 1s cubic-bezier(.22,1,.36,1) both;
+    border: 1px solid #e0e8e2;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Top area ── */
+  .top {
+    width: 100%;
+    height: 260px;
+    background: #1a3a24;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Subtle texture */
+  .top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 70% at 30% 40%, #2d5a3d44 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 80% 70%, #4a7c5922 0%, transparent 60%);
+  }
+
+  /* Gold corner ornaments */
+  .ornament {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  .ornament-tl { top: 12px; left: 12px; }
+  .ornament-br { bottom: 12px; right: 12px; transform: rotate(180deg); }
+
+  /* Word showcase */
+  .word-card {
+    position: relative;
+    text-align: center;
+    padding: 28px 32px;
+    border: 1px solid rgba(200,180,120,.25);
+    background: rgba(255,255,255,.04);
+    border-radius: 2px;
+    width: 300px;
+  }
+
+  .word-card::before,
+  .word-card::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: #c8b478;
+    border-style: solid;
+    opacity: 0.6;
+  }
+  .word-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .word-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+  .word-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8b478;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .word-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .word-phonetic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,.45);
+    margin-top: 6px;
+  }
+
+  .word-type {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8b478;
+    border: 1px solid rgba(200,180,120,.3);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .word-def {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── Content ── */
+  .content {
+    padding: 32px 36px 36px;
+    background: #fafaf8;
+    position: relative;
+  }
+
+  /* Thin gold top line */
+  .gold-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8b478, transparent);
+    margin-bottom: 28px;
+  }
+
+  .category {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8aaa8a;
+    font-weight: 500;
+    margin-bottom: 12px;
+    animation: fadeIn 1s .2s both;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.0;
+    color: #1a3a24;
+    letter-spacing: -0.5px;
+    animation: fadeIn 1s .25s both;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #4a7c59;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    animation: fadeIn 1s .3s both;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: #d8e4d8;
+  }
+
+  .divider-diamond {
+    width: 6px; height: 6px;
+    background: #4a7c59;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .sub {
+    font-size: 13.5px;
+    color: #6a8a6a;
+    line-height: 1.75;
+    animation: fadeIn 1s .35s both;
+  }
+
+  /* Read More button */
+  .read-more {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 32px;
+    background: transparent;
+    color: #1a3a24;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1.5px solid #1a3a24;
+    border-radius: 2px;
+    transition: background 0.25s, color 0.25s;
+    animation: fadeIn 1s .45s both;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .read-more:hover {
+    background: #1a3a24;
+    color: #fff;
+  }
+
+  /* Bottom blog name */
+  .blog-name {
+    position: absolute;
+    bottom: 32px; right: 36px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aac4aa;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="pin">
+
+  <!-- Top dark area with word showcase -->
+  <div class="top">
+
+    <!-- Corner ornaments -->
+    <svg class="ornament ornament-tl" viewBox="0 0 60 60" fill="none">
+      <path d="M4 4 L24 4 M4 4 L4 24" stroke="#c8b478" stroke-width="1.5"/>
+      <circle cx="4" cy="4" r="2" fill="#c8b478"/>
+      <path d="M14 14 L34 14 M14 14 L14 34" stroke="#c8b478" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+    <svg class="ornament ornament-br" viewBox="0 0 60 60" fill="none">
+      <path d="M4 4 L24 4 M4 4 L4 24" stroke="#c8b478" stroke-width="1.5"/>
+      <circle cx="4" cy="4" r="2" fill="#c8b478"/>
+      <path d="M14 14 L34 14 M14 14 L14 34" stroke="#c8b478" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+
+    <div class="word-card">
+      <div class="word-label">Word of the Day</div>
+      <div class="word-main">Eloquent</div>
+      <div class="word-phonetic">/ˈel.ə.kwənt/</div>
+      <div class="word-type">adjective</div>
+      <div class="word-def">Fluent and persuasive in speaking or writing with grace and clarity.</div>
+    </div>
+
+  </div>
+
+  <!-- Text content -->
+  <div class="content">
+    <div class="gold-line"></div>
+
+    <div class="category">✦ Vocabulary</div>
+
+    <div class="headline">
+      Build Your<br><em>Word Power</em>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="sub">Expand your English vocabulary with curated word lists, usage examples, and elegant expressions.</p>
+
+    <a class="read-more" href="https://mouradath.github.io/business-english-blog/vocabulary/" target="_blank">
+      Read More →
+    </a>
+
+    <div class="blog-name">English Blog</div>
+  </div>
+
+</div>
+
+</body>
+</html>
