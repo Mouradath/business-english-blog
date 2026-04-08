@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Writing — Pinterest Pin</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@300;400;500&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh;
+    background: #1a2a1a;
+  }
+
+  .pin {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.8s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Top creative area ── */
+  .top {
+    flex: 0 0 48%;
+    background: #f5f0e8;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Lined paper effect */
+  .top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 27px,
+      #e0d8cc 27px,
+      #e0d8cc 28px
+    );
+    background-position: 0 36px;
+  }
+
+  /* Left margin line */
+  .top::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 48px;
+    width: 1.5px;
+    background: #e8b4b8;
+    opacity: 0.6;
+  }
+
+  /* Paper content */
+  .paper {
+    position: relative;
+    width: 85%;
+    max-width: 300px;
+    padding: 16px 16px 16px 32px;
+    z-index: 1;
+  }
+
+  .paper-title {
+    font-family: 'Caveat', cursive;
+    font-size: 13px;
+    color: #8a7a6a;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .paper-line {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a3a2a;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+  }
+
+  .paper-line .highlight {
+    color: #4a7c59;
+    border-bottom: 2px solid #4a7c59;
+  }
+
+  .paper-line .underline {
+    color: #c47820;
+    text-decoration: underline;
+    text-decoration-color: #c47820;
+  }
+
+  /* Pen illustration */
+  .pen-wrap {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    transform: rotate(-30deg);
+  }
+  .pen-body {
+    width: 8px;
+    height: 70px;
+    background: linear-gradient(180deg, #4a7c59 0%, #2d5a3d 70%, #1a3a24 100%);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+  }
+  .pen-tip {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 12px solid #1a3a24;
+    margin: 0 auto;
+  }
+  .pen-clip {
+    position: absolute;
+    top: 8px; right: -3px;
+    width: 3px; height: 40px;
+    background: #c8b478;
+    border-radius: 2px;
+  }
+
+  /* Stars decoration */
+  .star {
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.4;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  .star-1 { top: 14px; right: 24px; animation-delay: 0s; }
+  .star-2 { top: 40px; right: 48px; font-size: 10px; animation-delay: 0.5s; }
+  .star-3 { bottom: 24px; left: 60px; animation-delay: 1s; font-size: 12px; }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 0.8; transform: scale(1.2); }
+  }
+
+  /* ── Bottom content area ── */
+  .content {
+    flex: 1;
+    padding: 18px 26px;
+    background: #1a2a1a;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .category {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6dab80;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .headline {
+    font-family: 'Abril Fatface', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.0;
+    color: #f5f0e8;
+    letter-spacing: 0.5px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #6dab80;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+  .divider-icon { font-size: 14px; flex-shrink: 0; }
+
+  .sub {
+    font-size: 12.5px;
+    color: rgba(255,255,255,.55);
+    line-height: 1.65;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 11px 26px;
+    background: #4a7c59;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .read-more:hover {
+    background: #6dab80;
+    transform: translateY(-2px);
+  }
+
+  .blog-name {
+    position: absolute;
+    bottom: 14px; right: 26px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.25);
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="pin">
+
+  <!-- Top paper area -->
+  <div class="top">
+    <div class="star star-1">✦</div>
+    <div class="star star-2">✦</div>
+    <div class="star star-3">✦</div>
+
+    <div class="paper">
+      <div class="paper-title">My English Writing Journal ✏️</div>
+      <div class="paper-line">
+        Use <span class="highlight">vivid</span> words.<br>
+        Keep it <span class="underline">simple</span>.<br>
+        Write <span class="highlight">every day</span>.<br>
+        Tell your story.
+      </div>
+    </div>
+
+    <div class="pen-wrap">
+      <div class="pen-body">
+        <div class="pen-clip"></div>
+      </div>
+      <div class="pen-tip"></div>
+    </div>
+  </div>
+
+  <!-- Bottom dark content -->
+  <div class="content">
+    <div class="category">✍️ Writing</div>
+
+    <div class="headline">
+      Write in<br><em>English</em><br>Every Day
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">🌿</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="sub">Tips, prompts, and techniques to help you express yourself clearly and creatively in English.</p>
+
+    <a class="read-more" href="https://aitamer-english-blog.netlify.app/writing/" target="_blank">
+      Read More →
+    </a>
+
+    <div class="blog-name">English Blog</div>
+  </div>
+
+</div>
+
+</body>
+</html>
