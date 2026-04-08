@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak English — Pinterest Pin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8ede6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .pin {
+    width: 400px;
+    background: #f5f8f3;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(60, 90, 60, 0.18), 0 4px 16px rgba(60,90,60,0.10);
+    position: relative;
+    animation: fadeUp 0.8s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Photo area ── */
+  .photo {
+    width: 100%;
+    height: 260px;
+    background: #d6e0d2;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Desk scene built with CSS */
+  .photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, #e8ede4 0%, #c8d6c0 100%);
+  }
+
+  /* Notebook */
+  .notebook {
+    position: absolute;
+    bottom: 30px;
+    left: 24px;
+    width: 160px;
+    height: 130px;
+    background: #faf8f2;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.12);
+    border-left: 10px solid #c5b89a;
+  }
+  .notebook::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 14px;
+    width: 120px; height: 1px;
+    background: #ddd;
+    box-shadow: 0 14px 0 #ddd, 0 28px 0 #ddd, 0 42px 0 #ddd, 0 56px 0 #ddd, 0 70px 0 #ddd, 0 84px 0 #ddd;
+  }
+  .notebook-label {
+    position: absolute;
+    top: 10px; left: 18px;
+    font-size: 7px;
+    color: #b0a080;
+    letter-spacing: .5px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  /* Coffee cup */
+  .cup-wrap {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+  }
+  .saucer {
+    width: 68px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,.14);
+  }
+  .cup {
+    width: 48px;
+    height: 46px;
+    background: #fff;
+    border-radius: 4px 4px 12px 12px;
+    margin: -6px auto 0;
+    position: relative;
+    box-shadow: inset 0 8px 16px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.10);
+  }
+  .cup::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 50%; transform: translateX(-50%);
+    width: 32px; height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #3a2010 40%, #6b3c20 100%);
+  }
+  .handle {
+    position: absolute;
+    right: -14px; top: 10px;
+    width: 16px; height: 22px;
+    border: 4px solid #e8e0d6;
+    border-radius: 0 50% 50% 0;
+    border-left: none;
+  }
+
+  /* Pen */
+  .pen {
+    position: absolute;
+    bottom: 55px;
+    left: 50px;
+    width: 110px;
+    height: 7px;
+    background: linear-gradient(90deg, #c8b87a, #e8d898, #c8b87a);
+    border-radius: 4px;
+    transform: rotate(-12deg);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  }
+  .pen::after {
+    content: '';
+    position: absolute;
+    left: -4px; top: 0;
+    width: 8px; height: 7px;
+    background: #a89060;
+    border-radius: 4px 0 0 4px;
+  }
+
+  /* Candle */
+  .candle {
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+    background: radial-gradient(circle at 50% 60%, #ecdfc8 60%, #d8c8a8 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+  .candle::before {
+    content: '🕯';
+    font-size: 20px;
+    position: absolute;
+    top: 6px; left: 7px;
+    filter: grayscale(0.2);
+  }
+
+  /* Decorative leaf sprigs */
+  .leaf {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.55;
+  }
+  .leaf-1 { bottom: 20px; right: 20px; transform: rotate(30deg); }
+  .leaf-2 { bottom: 40px; right: 50px; transform: rotate(-20deg); font-size: 16px; opacity: .35; }
+
+  /* Subtle green top-strip */
+  .photo-badge {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a7c59, #6dab80, #4a7c59);
+  }
+
+  /* ── Content ── */
+  .content {
+    padding: 36px 36px 40px;
+    background: #f5f8f3;
+    position: relative;
+  }
+
+  /* Arrow decoration */
+  .arrow-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 4px;
+  }
+
+  .arrow-svg {
+    width: 42px;
+    height: 56px;
+    flex-shrink: 0;
+    margin-top: 6px;
+    opacity: .7;
+  }
+
+  .headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 58px;
+    line-height: 1.0;
+    color: #1a2e1a;
+    letter-spacing: -1px;
+    animation: fadeUp 0.9s .15s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .headline em {
+    font-style: normal;
+    color: #4a7c59;
+    display: block;
+  }
+
+  .tagline {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #7a9a7a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: fadeUp 1s .3s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a7c59, #6dab80);
+    border-radius: 2px;
+    margin: 16px 0;
+    animation: fadeUp 1s .4s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .sub {
+    font-size: 13.5px;
+    color: #5a7a5a;
+    line-height: 1.7;
+    max-width: 260px;
+    animation: fadeUp 1s .5s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  /* Blog badge */
+  .blog-badge {
+    position: absolute;
+    top: 28px; right: 28px;
+    background: #4a7c59;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Read More button */
+  .read-more {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 28px;
+    background: #4a7c59;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.2s, transform 0.2s;
+    animation: fadeUp 1s .6s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .read-more:hover {
+    background: #3a6147;
+    transform: translateY(-2px);
+  }
+
+  .read-more span {
+    margin-left: 6px;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="pin">
+
+  <!-- Photo / illustration area -->
+  <div class="photo">
+    <div class="photo-badge"></div>
+    <div class="notebook"><div class="notebook-label">weekly planner</div></div>
+    <div class="pen"></div>
+    <div class="candle"></div>
+    <div class="cup-wrap">
+      <div class="saucer"></div>
+      <div class="cup"><div class="handle"></div></div>
+    </div>
+    <div class="leaf leaf-1">🌿</div>
+    <div class="leaf leaf-2">🍃</div>
+  </div>
+
+  <!-- Text content -->
+  <div class="content">
+    <div class="blog-badge">English Blog</div>
+
+    <div class="arrow-wrap">
+      <!-- Curved arrow SVG -->
+      <svg class="arrow-svg" viewBox="0 0 42 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 4 C8 28, 30 30, 30 48" stroke="#1a2e1a" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <polyline points="23,44 30,50 37,44" stroke="#1a2e1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+
+      <div class="headline">
+        Speak<br><em>English</em>
+      </div>
+    </div>
+
+    <div class="tagline">Confidence · Clarity · Fluency</div>
+    <div class="divider"></div>
+    <p class="sub">Tips, lessons, and practice tools to help you speak naturally — from beginner to fluent.</p>
+
+    <a class="read-more" href="https://aitamer-english-blog.netlify.app/speaking/" target="_blank">
+      Read More <span>→</span>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
