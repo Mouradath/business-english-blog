@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Idioms & Culture — Pinterest Pin</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh;
+    background: #2c1810;
+  }
+
+  .pin {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.8s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Top warm illustration area ── */
+  .top {
+    flex: 0 0 46%;
+    background: linear-gradient(160deg, #3d1f0f 0%, #6b3520 50%, #8b4a2a 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Warm glow */
+  .top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 60%, #d4823044 0%, transparent 70%);
+  }
+
+  /* Decorative circles */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,130,48,.15);
+  }
+  .circle-1 { width: 200px; height: 200px; top: -40px; right: -40px; }
+  .circle-2 { width: 120px; height: 120px; bottom: -20px; left: -20px; }
+
+  /* Idiom showcase */
+  .idiom-card {
+    position: relative;
+    text-align: center;
+    padding: 22px 24px;
+    width: 88%;
+    max-width: 320px;
+  }
+
+  .quote-mark {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    color: #d48230;
+    opacity: 0.4;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .idiom-text {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+  }
+
+  .idiom-divider {
+    width: 40px;
+    height: 2px;
+    background: #d48230;
+    margin: 14px auto;
+    border-radius: 2px;
+  }
+
+  .idiom-meaning {
+    font-size: 12px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.5;
+    font-style: normal;
+  }
+
+  .idiom-meaning strong {
+    color: #d48230;
+    font-weight: 500;
+  }
+
+  /* ── Bottom warm content area ── */
+  .content {
+    flex: 1;
+    padding: 18px 26px;
+    background: #fdf6ee;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 3px solid #d48230;
+  }
+
+  .category {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c47820;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .headline {
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #2c1810;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #8b4a2a;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .divider-line { flex: 1; height: 1px; background: #e8d5c0; }
+  .divider-dot { width: 5px; height: 5px; background: #d48230; border-radius: 50%; flex-shrink: 0; }
+
+  .sub {
+    font-size: 12.5px;
+    color: #8a6a50;
+    line-height: 1.65;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 11px 26px;
+    background: #6b3520;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .read-more:hover {
+    background: #3d1f0f;
+    transform: translateY(-2px);
+  }
+
+  .blog-name {
+    position: absolute;
+    bottom: 14px; right: 26px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c4a882;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="pin">
+
+  <!-- Top warm area -->
+  <div class="top">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+
+    <div class="idiom-card">
+      <span class="quote-mark">"</span>
+      <div class="idiom-text">Hit the nail<br>on the head</div>
+      <div class="idiom-divider"></div>
+      <div class="idiom-meaning">
+        <strong>Meaning:</strong> To describe exactly what is causing a situation or problem.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom content area -->
+  <div class="content">
+    <div class="category">🌍 Idioms & Culture</div>
+
+    <div class="headline">
+      Speak Like<br>a <em>Native</em>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="sub">Discover English idioms, cultural expressions, and the stories behind everyday phrases.</p>
+
+    <a class="read-more" href="https://business-english-blog.vercel.app/idioms-culture/" target="_blank">
+      Read More →
+    </a>
+
+    <div class="blog-name">English Blog</div>
+  </div>
+
+</div>
+
+</body>
+</html>
