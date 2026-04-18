@@ -1,133 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PLU Blog – Learn English at Every Level</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
-    :root {
-      --green-dark: #1a3c2e;
-      --green-mid: #2d6a4f;
-      --green-bright: #40c074;
-      --green-light: #b7e4c7;
-      --green-pale: #f0faf4;
-      --white: #ffffff;
-      --ink: #1a1a1a;
-      --ink-soft: #4a4a4a;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body  <a href="assets/pins/speak-english-pin.html">Voir le pin Speak English</a>{ font-family: 'DM Sans', sans-serif; background: var(--green-pale); color: var(--ink); overflow-x: hidden; }
-    header { background: var(--green-dark); padding: 0 2rem; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; box-shadow: 0 2px 16px rgba(0,0,0,0.18); }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green-bright); letter-spacing: 0.02em; }
-    nav a { color: var(--green-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-left: 1.6rem; transition: color 0.2s; }
-    nav a:hover { color: var(--green-bright); }
-    .hero { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(64,192,116,0.18) 0%, transparent 70%); }
-    .hero-tag { display: inline-block; background: var(--green-bright); color: var(--green-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 100px; margin-bottom: 1.4rem; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.15; margin-bottom: 1.2rem; position: relative; }
-    .hero h1 span { color: var(--green-bright); }
-    .hero p { font-size: 1.05rem; color: var(--green-light); max-width: 560px; margin: 0 auto 2.2rem; line-height: 1.7; position: relative; }
-    .hero-btn { display: inline-block; background: var(--green-bright); color: var(--green-dark); font-weight: 700; font-size: 0.95rem; padding: 0.85rem 2.2rem; border-radius: 100px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
-    .hero-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(64,192,116,0.35); }
-    .levels { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; padding: 1.6rem 2rem; background: var(--white); border-bottom: 1px solid var(--green-light); }
-    .level-badge { background: var(--green-pale); border: 1.5px solid var(--green-light); color: var(--green-mid); font-size: 0.8rem; font-weight: 600; padding: 0.35rem 1rem; border-radius: 100px; letter-spacing: 0.05em; }
-    .section-title { text-align: center; padding: 3.5rem 1rem 0.5rem; }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--green-dark); }
-    .section-title p { color: var(--ink-soft); margin-top: 0.5rem; font-size: 0.95rem; }
-    .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; max-width: 1100px; margin: 2.5rem auto; padding: 0 1.5rem 3rem; }
-    .card { background: var(--white); border-radius: 16px; padding: 2rem 1.8rem; border: 1.5px solid var(--green-light); text-decoration: none; color: inherit; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; display: flex; flex-direction: column; gap: 0.7rem; position: relative; overflow: hidden; }
-    .card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--green-bright); transform: scaleX(0); transition: transform 0.25s; transform-origin: left; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(45,106,79,0.13); border-color: var(--green-bright); }
-    .card:hover::after { transform: scaleX(1); }
-    .card-icon { font-size: 2rem; margin-bottom: 0.3rem; }
-    .card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--green-dark); }
-    .card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; flex: 1; }
-    .card-meta { font-size: 0.78rem; color: var(--green-mid); font-weight: 600; display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; }
-    .about-strip { background: var(--green-dark); color: var(--white); text-align: center; padding: 3.5rem 2rem; }
-    .about-strip h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; color: var(--green-bright); }
-    .about-strip p { max-width: 580px; margin: 0 auto; color: var(--green-light); line-height: 1.7; font-size: 0.97rem; }
-    footer { background: var(--green-dark); border-top: 1px solid rgba(255,255,255,0.07); color: var(--green-light); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
-    @media (max-width: 600px) { nav { display: none; } .hero { padding: 3.5rem 1.2rem 3rem; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English for All — Learn English at Every Level</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
 <script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root {
+  --green-dark: #1a3a24;
+  --green-mid: #2d6a4f;
+  --green-bright: #40c074;
+  --green-light: #b7e4c7;
+  --green-pale: #f0faf4;
+  --orange: #ff6b35;
+  --yellow: #ffd166;
+  --blue: #4cc9f0;
+  --pink: #f72585;
+  --white: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(26,58,36,.97);
+  padding: 0 1.2rem;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 16px rgba(0,0,0,.18);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--white); font-weight: 700; text-decoration: none; }
+.nav-logo span { color: var(--green-bright); }
+.nav-links { display: flex; gap: 1.2rem; }
+.nav-links a { color: var(--green-light); font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--green-dark) 0%, #2d6a4f 60%, #1a3a24 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 1.5rem 3rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(64,192,116,.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+/* Floating emojis */
+.floater {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatAround 6s ease-in-out infinite;
+  opacity: 0.6;
+}
+.f1 { top: 12%; left: 8%; animation-delay: 0s; font-size: 2.4rem; }
+.f2 { top: 20%; right: 10%; animation-delay: 1s; font-size: 1.8rem; }
+.f3 { top: 60%; left: 5%; animation-delay: 2s; font-size: 2rem; }
+.f4 { top: 70%; right: 8%; animation-delay: 0.5s; font-size: 1.6rem; }
+.f5 { top: 40%; left: 3%; animation-delay: 1.5s; font-size: 1.4rem; }
+.f6 { top: 35%; right: 5%; animation-delay: 2.5s; font-size: 2.2rem; }
+@keyframes floatAround {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-18px) rotate(5deg); }
+}
+.hero-tag {
+  display: inline-block;
+  background: rgba(64,192,116,.2);
+  border: 1.5px solid var(--green-bright);
+  color: var(--green-bright);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 2.5px;
+  text-transform: uppercase; padding: 6px 18px; border-radius: 30px;
+  margin-bottom: 1.4rem;
+  animation: fadeUp .8s both;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  color: var(--white); line-height: 1.15;
+  margin-bottom: 1rem;
+  animation: fadeUp .8s .1s both;
+}
+.hero h1 span { color: var(--green-bright); font-style: italic; }
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  color: var(--green-light); line-height: 1.7;
+  max-width: 560px; margin: 0 auto 2rem;
+  animation: fadeUp .8s .2s both;
+}
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp .8s .3s both;
+}
+.btn-primary {
+  background: var(--green-bright); color: var(--green-dark);
+  padding: 14px 28px; border-radius: 50px;
+  font-weight: 800; font-size: 0.95rem; text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(64,192,116,.35);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(64,192,116,.45); }
+.btn-secondary {
+  background: transparent; color: var(--white);
+  padding: 14px 28px; border-radius: 50px;
+  font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  border: 2px solid rgba(255,255,255,.4);
+  transition: border-color .2s, background .2s;
+}
+.btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+/* Stats bar */
+.stats-bar {
+  display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+  animation: fadeUp .8s .4s both;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 1.8rem; font-weight: 900; color: var(--white); line-height: 1; }
+.stat-label { font-size: 0.75rem; color: var(--green-light); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LEVEL SELECTOR ── */
+.levels-section {
+  padding: 4rem 1.5rem;
+  background: var(--green-pale);
+  text-align: center;
+}
+.section-tag {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; padding: 5px 16px; border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--green-dark); margin-bottom: 0.6rem;
+}
+.section-sub { font-size: 1rem; color: var(--ink-soft); margin-bottom: 2.5rem; }
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem; max-width: 700px; margin: 0 auto;
+}
+.level-card {
+  background: var(--white); border-radius: 16px;
+  padding: 1.4rem 1rem; text-align: center;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  cursor: pointer; transition: all .25s;
+  text-decoration: none; color: inherit;
+  display: block;
+}
+.level-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.level-card.beginner:hover { border-color: #40c074; }
+.level-card.elementary:hover { border-color: #4cc9f0; }
+.level-card.pre-int:hover { border-color: #ffd166; }
+.level-card.intermediate:hover { border-color: #ff6b35; }
+.level-card.upper-int:hover { border-color: #f72585; }
+.level-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; display: block; }
+.level-name { font-weight: 800; font-size: 0.85rem; color: var(--green-dark); }
+.level-desc { font-size: 0.72rem; color: var(--ink-soft); margin-top: 3px; }
+.level-badge {
+  display: inline-block; margin-top: 8px;
+  font-size: 0.65rem; font-weight: 700; padding: 2px 10px; border-radius: 10px;
+}
+.beginner .level-badge { background: #e8f5ec; color: #2d6a4f; }
+.elementary .level-badge { background: #e8f7fd; color: #1a6985; }
+.pre-int .level-badge { background: #fffbeb; color: #8a6500; }
+.intermediate .level-badge { background: #fff3ee; color: #c04a1a; }
+.upper-int .level-badge { background: #fde8f3; color: #9c1a5a; }
+
+/* ── CATEGORIES ── */
+.categories-section { padding: 4rem 1.5rem; background: var(--white); text-align: center; }
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem; max-width: 800px; margin: 2rem auto 0;
+}
+.cat-card {
+  background: var(--green-pale); border-radius: 20px;
+  padding: 1.6rem 1rem; text-align: center;
+  transition: all .25s; text-decoration: none; color: inherit;
+  border: 2px solid transparent; display: block;
+  position: relative; overflow: hidden;
+}
+.cat-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--green-bright);
+  transform: scaleX(0); transition: transform .25s; transform-origin: left;
+< truncated lines 206-215 >
+.features-section .section-sub { color: var(--green-light); }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem; max-width: 800px; margin: 2.5rem auto 0;
+}
+.feature-card {
+  background: rgba(255,255,255,.06); border-radius: 16px;
+  padding: 1.6rem 1.2rem; text-align: center;
+  border: 1px solid rgba(255,255,255,.1);
+  transition: background .25s;
+}
+.feature-card:hover { background: rgba(255,255,255,.1); }
+.feature-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
+.feature-title { font-weight: 800; color: var(--white); font-size: 0.95rem; margin-bottom: 0.4rem; }
+.feature-desc { font-size: 0.8rem; color: var(--green-light); line-height: 1.6; }
+
+/* ── CTA ── */
+.cta-section {
+  padding: 4rem 1.5rem; text-align: center;
+  background: linear-gradient(135deg, var(--green-pale) 0%, #d4f1e3 100%);
+}
+.cta-section .section-title { color: var(--green-dark); margin-bottom: 1rem; }
+.cta-section p { color: var(--ink-soft); margin-bottom: 2rem; font-size: 1rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--green-dark); color: var(--green-light);
+  text-align: center; padding: 1.5rem;
+  font-size: 0.82rem;
+}
+footer a { color: var(--green-bright); text-decoration: none; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">PLU Blog</div>
-    <nav>
-      <a href="#categories">Categories</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <div class="hero-tag">English for Everyone</div>
-    <h1>Learn English<br><span>at Every Level</span></h1>
-    <p>From your first words to fluent conversation — practical lessons, real vocabulary, and confident communication skills.</p>
-    <a href="#categories" class="hero-btn">Explore Articles →</a>
-  </section>
-  <div class="levels">
-    <span class="level-badge">🟢 Beginner</span>
-    <span class="level-badge">🔵 Elementary</span>
-    <span class="level-badge">🟡 Pre-Intermediate</span>
-    <span class="level-badge">🟠 Intermediate</span>
-    <span class="level-badge">🔴 Upper-Intermediate</span>
-    <span class="level-badge">⭐ Advanced</span>
-    <span class="level-badge">💎 Fluent</span>
+
+<nav>
+  <a href="index.html" class="nav-logo">English <span>for All</span></a>
+  <div class="nav-links">
+    <a href="#levels">Levels</a>
+    <a href="#categories">Topics</a>
+    <a href="#features">Features</a>
   </div>
-  <div class="section-title" id="categories">
-    <h2>Browse by Category</h2>
-    <p>56 articles across 7 topics — pick what matters to you</p>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="floater f1">📚</div>
+  <div class="floater f2">✏️</div>
+  <div class="floater f3">🌍</div>
+  <div class="floater f4">💬</div>
+  <div class="floater f5">⭐</div>
+  <div class="floater f6">🎯</div>
+
+  <div class="hero-tag">🌱 Free English Lessons for Everyone</div>
+  <h1>Learn English<br><span>at Every Level</span></h1>
+  <p>From your first words to fluent conversation — practical lessons, real vocabulary, interactive quizzes, and confident communication skills.</p>
+  <div class="hero-btns">
+    <a href="#levels" class="btn-primary">Start Learning 🚀</a>
+    <a href="#categories" class="btn-secondary">Explore Topics</a>
   </div>
-  <div class="categories">
-    <a href="business-english/index.html" class="card">
-      <div class="card-icon">💼</div>
-      <h3>Business English</h3>
-      <p>Master emails, meetings, negotiations, and professional communication for the workplace.</p>
-      <div class="card-meta">📄 8 articles</div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">56+</div><div class="stat-label">Articles</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Levels</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free</div></div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="levels-section" id="levels">
+  <div class="section-tag">📊 Choose Your Level</div>
+  <h2 class="section-title">Where Are You Today?</h2>
+  <p class="section-sub">Pick your level and start learning right away!</p>
+  <div class="levels-grid">
+    <a href="grammar/article-1.html" class="level-card beginner">
+      <span class="level-emoji">🌱</span>
+      <div class="level-name">Beginner</div>
+      <div class="level-desc">Starting from scratch</div>
+      <span class="level-badge">A1</span>
     </a>
-    <a href="grammar/index.html" class="card">
-      <div class="card-icon">📐</div>
-      <h3>Grammar</h3>
-      <p>Clear explanations of English grammar rules — tenses, sentence structure, and more.</p>
-      <div class="card-meta">📄 8 articles</div>
+    <a href="grammar/article-2.html" class="level-card elementary">
+      <span class="level-emoji">📖</span>
+      <div class="level-name">Elementary</div>
+      <div class="level-desc">Basic communication</div>
+      <span class="level-badge">A2</span>
     </a>
-    <a href="vocabulary/index.html" class="card">
-      <div class="card-icon">📖</div>
-      <h3>Vocabulary</h3>
-      <p>Expand your word bank with themed word lists, collocations, and usage tips.</p>
-      <div class="card-meta">📄 8 articles</div>
+    <a href="grammar/article-3.html" class="level-card pre-int">
+      <span class="level-emoji">💡</span>
+      <div class="level-name">Pre-Intermediate</div>
+      <div class="level-desc">Growing confidence</div>
+      <span class="level-badge">B1</span>
     </a>
-    <a href="speaking/index.html" class="card">
-      <div class="card-icon">🎙️</div>
-      <h3>Speaking</h3>
-      <p>Build confidence in conversation — pronunciation, fluency, and spoken expression.</p>
-      <div class="card-meta">📄 8 articles</div>
+    <a href="grammar/article-4.html" class="level-card intermediate">
+      <span class="level-emoji">🔥</span>
+      <div class="level-name">Intermediate</div>
+      <div class="level-desc">Expressing ideas</div>
+      <span class="level-badge">B2</span>
     </a>
-    <a href="idioms-culture/index.html" class="card">
-      <div class="card-icon">🌍</div>
-      <h3>Idioms &amp; Culture</h3>
-      <p>Understand English expressions, cultural references, and native speaker habits.</p>
-      <div class="card-meta">📄 8 articles</div>
-    </a>
-    <a href="writing/index.html" class="card">
-      <div class="card-icon">✍️</div>
-      <h3>Writing</h3>
-      <p>Improve your written English — essays, emails, creative writing, and structure.</p>
-      <div class="card-meta">📄 8 articles</div>
-    </a>
-    <a href="miscellaneous/index.html" class="card">
-      <div class="card-icon">🎯</div>
-      <h3>Miscellaneous</h3>
-      <p>Tips, tools, study strategies, and everything else to support your English journey.</p>
-      <div class="card-meta">📄 8 articles</div>
+    <a href="grammar/article-5.html" class="level-card upper-int">
+      <span class="level-emoji">🏆</span>
+      <div class="level-name">Upper-Intermediate</div>
+      <div class="level-desc">Near fluency</div>
+      <span class="level-badge">C1</span>
     </a>
   </div>
-  <section class="about-strip" id="about">
-    <h2>About PLU Blog</h2>
-    <p>PLU Blog is a personal English learning blog designed for learners at every stage — from complete beginners to near-fluent speakers. Each article is written with clarity, purpose, and real-world application in mind.</p>
-  </section>
-  <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section" id="categories">
+  <div class="section-tag">📂 All Topics</div>
+  <h2 class="section-title">What Do You Want to Learn?</h2>
+  <p class="section-sub">7 categories covering everything you need</p>
+  <div class="categories-grid">
+    <a href="grammar/index.html" class="cat-card">
+      <span class="cat-emoji">📝</span>
+      <div class="cat-name">Grammar</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="vocabulary/index.html" class="cat-card">
+      <span class="cat-emoji">📖</span>
+      <div class="cat-name">Vocabulary</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="speaking/index.html" class="cat-card">
+      <span class="cat-emoji">🎤</span>
+      <div class="cat-name">Speaking</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="writing/index.html" class="cat-card">
+      <span class="cat-emoji">✍️</span>
+      <div class="cat-name">Writing</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="business-english/index.html" class="cat-card">
+      <span class="cat-emoji">💼</span>
+      <div class="cat-name">Business English</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="idioms-culture/index.html" class="cat-card">
+      <span class="cat-emoji">🌍</span>
+      <div class="cat-name">Idioms & Culture</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+    <a href="miscellaneous/index.html" class="cat-card">
+      <span class="cat-emoji">🎲</span>
+      <div class="cat-name">Miscellaneous</div>
+      <div class="cat-count">8 lessons</div>
+    </a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-tag" style="background:rgba(64,192,116,.2);color:var(--green-bright);">✨ What Makes Us Different</div>
+  <h2 class="section-title">Learning That Actually Works</h2>
+  <p class="section-sub">Every lesson is designed to be fun, interactive and effective</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">🎯</span>
+      <div class="feature-title">Interactive Quizzes</div>
+      <div class="feature-desc">Multiple choice, fill in the blanks, drag & drop — test yourself after every lesson</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📈</span>
+      <div class="feature-title">Progress Tracking</div>
+      <div class="feature-desc">See your score, earn badges, and track your improvement lesson by lesson</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎨</span>
+      <div class="feature-title">Visual Learning</div>
+      <div class="feature-desc">Illustrated examples, diagrams, and visual aids that make concepts click</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌍</span>
+      <div class="feature-title">Real English</div>
+      <div class="feature-desc">Practical language you can use immediately in real conversations</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🏆</span>
+      <div class="feature-title">Earn Badges</div>
+      <div class="feature-desc">Complete lessons and quizzes to unlock achievement badges</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">💯</span>
+      <div class="feature-title">100% Free</div>
+      <div class="feature-desc">Every lesson, quiz and resource — completely free, forever</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="section-title">Ready to Start Your Journey? 🚀</h2>
+  <p>Join thousands of learners improving their English every day</p>
+  <a href="#levels" class="btn-primary">Start Learning Now — It's Free!</a>
+</section>
+
+<footer>
+  <p>English for All · <a href="#">PLU Blog</a> · Made with ❤️ for English learners everywhere</p>
+</footer>
+
 </body>
 </html>
-
