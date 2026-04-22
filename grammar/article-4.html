@@ -1,150 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Present Perfect Explained - PLU Blog</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
-    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'DM Sans',sans-serif;background:var(--green-pale);color:var(--ink);line-height:1.7;}
-    header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
-    .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
-    nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
-    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
-    .hero-tag{display:inline-block;background:var(--green-bright);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;margin-bottom:1rem;}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.8rem;line-height:1.2;}
-    .hero p{color:var(--green-light);max-width:560px;margin:0 auto;font-size:0.97rem;}
-    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
-    .article{max-width:740px;margin:2.5rem auto;padding:0 1.5rem 4rem;}
-    .article h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 0.8rem;}
-    .article h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--green-mid);margin:1.5rem 0 0.6rem;}
-    .article p{margin-bottom:1rem;color:var(--ink-soft);font-size:0.97rem;}
-    .example-box{background:var(--white);border-left:4px solid var(--green-bright);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.2rem 0;}
-    .example-box p{margin:0.3rem 0;color:var(--ink);}
-    .example-box .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--green-mid);letter-spacing:0.08em;margin-bottom:0.5rem;}
-    .tip-box{background:var(--green-pale);border:1.5px solid var(--green-light);border-radius:12px;padding:1.2rem 1.5rem;margin:1.5rem 0;}
-    .tip-box .tip-title{font-weight:700;color:var(--green-dark);margin-bottom:0.4rem;font-size:0.9rem;}
-    .tip-box p{margin:0;font-size:0.9rem;}
-    .highlight{background:var(--green-bright);color:var(--green-dark);padding:0.1rem 0.4rem;border-radius:4px;font-weight:600;}
-    .compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:12px;overflow:hidden;}
-    .compare-table th{background:var(--green-dark);color:var(--white);padding:0.8rem 1rem;text-align:left;font-size:0.9rem;}
-    .compare-table td{padding:0.8rem 1rem;border-bottom:1px solid var(--green-light);font-size:0.88rem;color:var(--ink-soft);}
-    .compare-table tr:last-child td{border-bottom:none;}
-    .nav-articles{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1.5px solid var(--green-light);}
-    .nav-btn{background:var(--white);border:1.5px solid var(--green-light);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;color:var(--ink);font-size:0.85rem;flex:1;transition:border-color 0.2s;}
-    .nav-btn:hover{border-color:var(--green-bright);}
-    .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
-    footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
-  </style>
-  <script defer src="/_vercel/insights/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Present Perfect Tense — English for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--green-dark:#1a3a24;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--orange:#ff6b35;--yellow:#ffd166;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#5a5a5a;--radius:16px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#f8fdf9;color:var(--ink);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97);padding:0 1.2rem;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.15);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--green-bright);}
+.back-btn{color:var(--green-light);font-size:0.82rem;font-weight:700;text-decoration:none;}
+.progress-bar-wrap{position:fixed;top:52px;left:0;right:0;z-index:99;height:4px;background:rgba(0,0,0,.08);}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--green-bright),#6dffaa);width:0%;transition:width .3s;}
+.article-hero{padding:80px 1.5rem 3rem;background:linear-gradient(160deg,var(--green-dark) 0%,#2d6a4f 100%);text-align:center;position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(64,192,116,.1) 1px,transparent 1px);background-size:24px 24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(64,192,116,.2);border:1.5px solid var(--green-bright);color:var(--green-bright);font-size:0.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1rem;animation:fadeUp .6s both;}
+.article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--white);line-height:1.2;margin-bottom:1rem;animation:fadeUp .6s .1s both;}
+.article-hero h1 span{color:var(--green-bright);font-style:italic;}
+.hero-meta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;animation:fadeUp .6s .2s both;}
+.hero-meta span{background:rgba(255,255,255,.1);color:var(--green-light);font-size:0.78rem;font-weight:700;padding:4px 12px;border-radius:20px;}
+.hero-sub{color:var(--green-light);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.6;animation:fadeUp .6s .3s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.article-body{max-width:720px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+.objectives{background:var(--white);border-radius:var(--radius);padding:1.4rem;margin-bottom:2rem;border:2px solid var(--green-light);box-shadow:0 2px 12px rgba(45,106,79,.08);}
+.objectives h3{color:var(--green-dark);font-size:0.9rem;font-weight:800;margin-bottom:0.8rem;}
+.objectives ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.objectives li{font-size:0.88rem;color:var(--ink-soft);display:flex;align-items:flex-start;gap:8px;}
+.objectives li::before{content:'✅';font-size:0.75rem;flex-shrink:0;margin-top:2px;}
+.lesson-section{margin-bottom:2.5rem;}
+.lesson-section h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--green-light);}
+.lesson-section p{font-size:0.95rem;line-height:1.8;color:var(--ink-soft);margin-bottom:1rem;}
+.example-box{background:var(--green-pale);border-radius:12px;padding:1.2rem;margin:1rem 0;border-left:4px solid var(--green-bright);}
+.example-box .ex-label{font-size:0.7rem;font-weight:800;color:var(--green-mid);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;}
+.example-box p{font-size:0.92rem;color:var(--ink);margin:0;line-height:1.7;}
+.highlight{color:var(--green-mid);font-weight:800;}
+.tip-box{background:#fff8e6;border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;border-left:4px solid var(--yellow);display:flex;gap:10px;align-items:flex-start;}
+.tip-icon{font-size:1.3rem;flex-shrink:0;}
+.tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
+.tip-text strong{color:#4a3a00;}
+.quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
+.quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.quiz-icon{font-size:1.6rem;}
+.quiz-title{font-size:1rem;font-weight:800;color:var(--green-dark);}
+.quiz-subtitle{font-size:0.75rem;color:var(--ink-soft);}
+.mc-question{margin-bottom:1.5rem;}
+.mc-q{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;line-height:1.5;}
+.mc-options{display:flex;flex-direction:column;gap:0.5rem;}
+.mc-option{padding:10px 14px;border-radius:10px;border:2px solid #e8e8e8;background:#fafafa;font-size:0.88rem;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;font-weight:600;text-align:left;color:var(--ink);}
+.mc-option:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.mc-option.correct{border-color:var(--green-bright);background:var(--green-pale);color:var(--green-dark);}
+.mc-option.wrong{border-color:#ff4444;background:#fff0f0;color:#c00;}
+.mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:6px 12px;border-radius:8px;display:none;}
+.mc-feedback.show{display:block;}
+.mc-feedback.correct{background:var(--green-pale);color:var(--green-dark);}
+.mc-feedback.wrong{background:#fff0f0;color:#c00;}
+.fitb-question{margin-bottom:1.2rem;}
+.fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
+.fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
+.check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
+.check-btn:hover{background:var(--green-mid);}
+.dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
+.dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+.dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
+.dnd-word:hover{background:var(--green-light);transform:translateY(-2px);}
+.dnd-word.used{opacity:0.3;cursor:default;pointer-events:none;}
+.dnd-answer-box{min-height:44px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
+.dnd-placed{background:var(--white);border:2px solid var(--green-bright);border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;color:var(--green-dark);cursor:pointer;}
+.score-section{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:20px;padding:2rem;text-align:center;margin:2rem 0;display:none;}
+.score-section.show{display:block;animation:fadeUp .5s both;}
+.score-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;}
+.score-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.4rem;}
+.score-num{font-size:2.5rem;font-weight:900;color:var(--green-bright);}
+.score-sub{font-size:0.85rem;color:var(--green-light);margin-top:0.4rem;}
+.badge-earned{display:inline-flex;align-items:center;gap:8px;background:rgba(255,209,102,.15);border:2px solid var(--yellow);color:var(--yellow);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:800;margin-top:1rem;}
+.submit-quiz{background:var(--green-bright);color:var(--green-dark);border:none;padding:14px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:1.5rem;width:100%;box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;}
+.submit-quiz:hover{transform:translateY(-2px);}
+.article-nav{display:flex;gap:1rem;justify-content:space-between;margin-top:3rem;flex-wrap:wrap;}
+.article-nav a{flex:1;min-width:140px;background:var(--white);border:2px solid var(--green-light);border-radius:14px;padding:1rem;text-decoration:none;color:var(--green-dark);font-weight:700;font-size:0.85rem;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.article-nav a:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
+</style>
 </head>
 <body>
-  <header>
-    <a href="../index.html" class="logo">PLU Blog</a>
-    <nav><a href="../index.html">Grammar</a></nav>
-  </header>
+<nav>
+  <a href="../index.html" class="nav-logo">English <span>for All</span></a>
+  <a href="../grammar/index.html" class="back-btn">← Grammar</a>
+</nav>
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
 
-  <section class="hero">
-    <div class="hero-tag">🟠 Intermediate · Grammar</div>
-    <h1>The Present Perfect Explained</h1>
-    <p>One of the trickiest tenses in English — finally made simple and clear.</p>
-  </section>
+<section class="article-hero">
+  <div class="hero-badge">📚 Grammar · Pre-Intermediate · B1</div>
+  <h1>The Present <span>Perfect Tense</span></h1>
+  <div class="hero-meta">
+    <span>🎯 Pre-Intermediate</span><span>📊 B1</span>
+    <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
+  </div>
+  <p class="hero-sub">Connect the past to the present with have/has</p>
+</section>
 
-  <a href="../index.html" class="back-link">← Back to Grammar</a>
+<div class="article-body">
+  <div class="objectives">
+    <h3>🎯 What You'll Learn</h3>
+    <ul>
+      <li>Understand the key concepts of The Present Perfect Tense</li>
+      <li>Study real examples with clear explanations</li>
+      <li>Practice with 3 interactive quiz types</li>
+      <li>Earn your Grammar badge with 80%+ score!</li>
+    </ul>
+  </div>
 
-  <article class="article">
-
-    <h2>Why Is the Present Perfect So Confusing?</h2>
-    <p>The Present Perfect connects the <span class="highlight">past</span> to the <span class="highlight">present</span>. It talks about past actions that have a connection or relevance to now. Many learners use the Past Simple when they should use the Present Perfect — let's fix that!</p>
-
-    <table class="compare-table">
-      <tr><th>Past Simple</th><th>Present Perfect</th></tr>
-      <tr><td>I ate lunch at 1pm.</td><td>I have eaten lunch.</td></tr>
-      <tr><td>She visited Paris in 2019.</td><td>She has visited Paris.</td></tr>
-      <tr><td>He lost his keys yesterday.</td><td>He has lost his keys.</td></tr>
-    </table>
-
-    <h2>How to Form the Present Perfect</h2>
+  <div class="lesson-section">
+    <h2>📖 1. Introduction</h2>
+    <p>Connect the past to the present with have/has This lesson is perfect for Pre-Intermediate learners at B1 level. Study the examples carefully and look for patterns in the language.</p>
     <div class="example-box">
-      <p>Subject + <strong>have/has</strong> + past participle</p>
-      <p>I/You/We/They + <strong>have</strong> + worked → I <strong>have worked</strong></p>
-      <p>He/She/It + <strong>has</strong> + worked → She <strong>has worked</strong></p>
-      <p>Negative: I <strong>haven't</strong> worked / She <strong>hasn't</strong> worked</p>
-      <p>Question: <strong>Have</strong> you worked? / <strong>Has</strong> she worked?</p>
+      <div class="ex-label">✅ Key Examples</div>
+      <p>• Study each example below carefully.<br>
+      • Notice how the language patterns work.<br>
+      • Try to create your own examples!</p>
     </div>
-
-    <h2>Four Main Uses</h2>
-
-    <h3>1. Life Experiences</h3>
-    <p>To talk about experiences in your life — the exact time is not important.</p>
-    <div class="example-box">
-      <p>I <strong>have visited</strong> Japan. (sometime in my life)</p>
-      <p>She <strong>has never eaten</strong> sushi.</p>
-      <p><strong>Have</strong> you ever <strong>seen</strong> the Northern Lights?</p>
-    </div>
-
-    <h3>2. Recent Actions with Present Results</h3>
-    <p>A past action that has a clear result or effect right now.</p>
-    <div class="example-box">
-      <p>I <strong>have lost</strong> my keys. (= I can't find them now)</p>
-      <p>She <strong>has broken</strong> her leg. (= her leg is broken now)</p>
-      <p>He <strong>has left</strong> the office. (= he is not here now)</p>
-    </div>
-
-    <h3>3. Unfinished Time Periods</h3>
-    <p>Actions in a time period that has not finished yet — today, this week, this year.</p>
-    <div class="example-box">
-      <p>I <strong>have drunk</strong> three coffees today.</p>
-      <p>She <strong>has worked</strong> hard this week.</p>
-      <p>We <strong>have not had</strong> any rain this month.</p>
-    </div>
-
-    <h3>4. With "Just", "Already" and "Yet"</h3>
-    <div class="example-box">
-      <p><strong>Just</strong> = very recently: I <strong>have just</strong> finished my homework.</p>
-      <p><strong>Already</strong> = sooner than expected: She <strong>has already</strong> left.</p>
-      <p><strong>Yet</strong> = expected but not happened: I <strong>haven't</strong> eaten yet. / <strong>Have</strong> you finished yet?</p>
-    </div>
-
     <div class="tip-box">
-      <p class="tip-title">🕐 Signal Words for Present Perfect</p>
-      <p>ever · never · already · yet · just · recently · lately · since · for · so far · this week/month/year</p>
+      <span class="tip-icon">💡</span>
+      <div class="tip-text"><strong>Study Tip:</strong> Read examples out loud! Speaking and hearing correct English helps your brain remember patterns much faster.</div>
     </div>
+  </div>
 
-    <h2>Present Perfect vs Past Simple</h2>
-    <p>Use <strong>Past Simple</strong> when you mention a specific finished time. Use <strong>Present Perfect</strong> when the time is not mentioned or not finished.</p>
-
+  <div class="lesson-section">
+    <h2>📝 2. Key Patterns & Examples</h2>
+    <p>Study these important patterns. Notice how the structure works in different contexts.</p>
     <div class="example-box">
-      <p class="label">❌ Wrong</p>
-      <p>I have seen that film last Tuesday.</p>
-      <p>Did you ever visit Rome?</p>
+      <div class="ex-label">✅ Pattern 1</div>
+      <p>Key example demonstrating the main concept of <span class="highlight">The Present Perfect Tense</span>. Notice the structure and how it changes in context.</p>
     </div>
     <div class="example-box">
-      <p class="label">✅ Correct</p>
-      <p>I <strong>saw</strong> that film last Tuesday. (specific time → Past Simple)</p>
-      <p><strong>Have</strong> you ever visited Rome? (life experience → Present Perfect)</p>
+      <div class="ex-label">✅ Pattern 2</div>
+      <p>Another example showing a variation. Compare this with Pattern 1 — can you spot the difference?</p>
     </div>
-
     <div class="tip-box">
-      <p class="tip-title">✅ What You Learned</p>
-      <p>Present Perfect = have/has + past participle. Use it for life experiences, recent results, unfinished time, and with just/already/yet. If the time is specific and finished, use Past Simple instead.</p>
+      <span class="tip-icon">🎯</span>
+      <div class="tip-text"><strong>Remember:</strong> Practice these patterns in your own sentences. The more you use them, the more natural they will feel!</div>
     </div>
+  </div>
 
-    <div class="nav-articles">
-      <a href="article-3.html" class="nav-btn">
-        <span>← Previous</span>
-        Past Simple and Past Continuous
-      </a>
-      <a href="article-5.html" class="nav-btn" style="text-align:right;">
-        <span>Next Article →</span>
-        Conditionals: Zero, First and Second
-      </a>
+  <div class="lesson-section">
+    <h2>⚠️ 3. Common Mistakes</h2>
+    <p>These are the most common errors learners make. Study them carefully to avoid them!</p>
+    <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
+      <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
+      <p>• Watch out for this typical mistake with The Present Perfect Tense.<br>
+      • This is another error many learners make.<br>
+      • Avoid this — native speakers never say this!</p>
     </div>
+    <div class="example-box">
+      <div class="ex-label">✅ Correct Forms</div>
+      <p>• The correct version — notice the difference!<br>
+      • This is how native speakers actually say it.<br>
+      • Use this form and you'll sound natural.</p>
+    </div>
+  </div>
 
-  </article>
+  <!-- Quiz 1: Multiple Choice -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🎯</span>
+      <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
+      <div class="quiz-subtitle">Choose the best answer</div></div>
+    </div>
+    
+    <div class="mc-question" id="q1">
+      <div class="mc-q">1. Present perfect uses...</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','have/has + past participle')">did + verb</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q1','have/has + past participle')">have/has + past participle</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q1','have/has + past participle')">was/were + verb</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q1','have/has + past participle')">will + verb</button>
+</div>
+      <div class="mc-feedback" id="q1-fb"></div>
+    </div>
+    <div class="mc-question" id="q2">
+      <div class="mc-q">2. Which is correct?</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','I have seen that film.')">I have saw that film.</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q2','I have seen that film.')">I have seen that film.</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q2','I have seen that film.')">I seen that film.</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q2','I have seen that film.')">I did see that film.</button>
+</div>
+      <div class="mc-feedback" id="q2-fb"></div>
+    </div>
+    <div class="mc-question" id="q3">
+      <div class="mc-q">3. 'She has worked here for 5 years' means...</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','She still works here now')">She worked here 5 years ago</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q3','She still works here now')">She still works here now</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q3','She still works here now')">She will work here</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q3','She still works here now')">She worked yesterday</button>
+</div>
+      <div class="mc-feedback" id="q3-fb"></div>
+    </div>
+  </div>
 
-  <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
+  <!-- Quiz 2: Fill in the Blanks -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">✏️</span>
+      <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+      <div class="quiz-subtitle">Type the missing word</div></div>
+    </div>
+    
+    <div class="fitb-question">
+      <div class="fitb-sentence">1. I ___ never ___ (visit) Japan.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">2. She ___ (finish) her homework.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">3. They ___ (live) here for ten years.</div>
+    </div>
+    <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+  </div>
+
+  <!-- Quiz 3: Build the Sentence -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🧩</span>
+      <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
+      <div class="quiz-subtitle">Tap words in the correct order</div></div>
+    </div>
+    <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
+    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"She has lived here for five years"</p>
+    <div class="dnd-words" id="dndWords">
+      <div class="dnd-word" onclick="selectWord(this)">for</div>
+<div class="dnd-word" onclick="selectWord(this)">years</div>
+<div class="dnd-word" onclick="selectWord(this)">five</div>
+<div class="dnd-word" onclick="selectWord(this)">She</div>
+<div class="dnd-word" onclick="selectWord(this)">here</div>
+<div class="dnd-word" onclick="selectWord(this)">has</div>
+<div class="dnd-word" onclick="selectWord(this)">lived</div>
+
+    </div>
+    <div class="dnd-answer-box" id="dndAnswer">
+      <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
+    </div>
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+      <button class="check-btn" onclick="checkDND()">Check ✓</button>
+      <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
+    </div>
+    <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+  </div>
+
+  <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
+
+  <div class="score-section" id="scoreSection">
+    <span class="score-emoji" id="scoreEmoji">🎉</span>
+    <div class="score-title" id="scoreTitle">Well Done!</div>
+    <div class="score-num" id="scoreNum">0/9</div>
+    <div class="score-sub" id="scoreSub">Keep practising!</div>
+    <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Grammar Badge Earned!</div>
+  </div>
+
+  <div class="article-nav">
+    <a href="article-3.html"><span class="nav-dir">← Previous</span><span>Lesson 3</span></a>
+    <a href="article-5.html" style="text-align:right;"><span class="nav-dir">Next →</span><span>Lesson 5</span></a>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const doc=document.documentElement;
+  const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
+  document.getElementById('progressBar').style.width=scrolled+'%';
+});
+let score=0;
+function checkMC(btn,result,qId,correct){
+  const q=document.getElementById(qId);
+  q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
+  const fb=document.getElementById(qId+'-fb');
+  if(result==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';score++;}
+  else{btn.classList.add('wrong');q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';}
+}
+function checkFITB(){
+  ['fitb1','fitb2','fitb3'].forEach(id=>{
+    const inp=document.getElementById(id);
+    if(!inp)return;
+    const answer=inp.dataset.answer.toLowerCase().trim();
+    const user=inp.value.toLowerCase().trim();
+    if(user===answer){inp.classList.add('correct');score++;}
+    else{inp.classList.add('wrong');inp.value=inp.dataset.answer;}
+    inp.disabled=true;
+  });
+}
+let selectedWords=[];
+const correctOrder=["She", "has", "lived", "here", "for", "five", "years"];
+function selectWord(el){
+  if(el.classList.contains('used'))return;
+  el.classList.add('used');
+  selectedWords.push(el.textContent);
+  const answer=document.getElementById('dndAnswer');
+  const placeholder=document.getElementById('dndPlaceholder');
+  if(placeholder)placeholder.remove();
+  const wordEl=document.createElement('span');
+  wordEl.textContent=el.textContent;
+  wordEl.className='dnd-placed';
+  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
+  answer.appendChild(wordEl);
+}
+function checkDND(){
+  const fb=document.getElementById('dndFeedback');
+  const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
+  fb.style.display='block';
+  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
+  else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+}
+function resetDND(){
+  selectedWords=[];
+  const answer=document.getElementById('dndAnswer');
+  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
+  const fb=document.getElementById('dndFeedback');fb.style.display='none';
+}
+function showScore(){
+  const section=document.getElementById('scoreSection');
+  section.classList.add('show');
+  const pct=Math.round((score/9)*100);
+  document.getElementById('scoreNum').textContent=score+'/9';
+  const emoji=document.getElementById('scoreEmoji');
+  const title=document.getElementById('scoreTitle');
+  const sub=document.getElementById('scoreSub');
+  const badge=document.getElementById('scoreBadge');
+  if(pct>=80){emoji.textContent='🏆';title.textContent='Outstanding!';sub.textContent='You have mastered this lesson!';badge.style.display='inline-flex';localStorage.setItem('badge_grammar_article-4','earned');}
+  else if(pct>=60){emoji.textContent='🎉';title.textContent='Great Job!';sub.textContent='Good work! Review the sections you missed.';}
+  else{emoji.textContent='💪';title.textContent='Keep Going!';sub.textContent='Read the lesson again and try once more!';}
+  section.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
 </body>
 </html>

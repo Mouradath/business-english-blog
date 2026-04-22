@@ -1,161 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Past Simple and Past Continuous - PLU Blog</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
-    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'DM Sans',sans-serif;background:var(--green-pale);color:var(--ink);line-height:1.7;}
-    header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
-    .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
-    nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
-    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
-    .hero-tag{display:inline-block;background:var(--green-bright);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:100px;margin-bottom:1rem;}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:0.8rem;line-height:1.2;}
-    .hero p{color:var(--green-light);max-width:560px;margin:0 auto;font-size:0.97rem;}
-    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
-    .article{max-width:740px;margin:2.5rem auto;padding:0 1.5rem 4rem;}
-    .article h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin:2rem 0 0.8rem;}
-    .article h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--green-mid);margin:1.5rem 0 0.6rem;}
-    .article p{margin-bottom:1rem;color:var(--ink-soft);font-size:0.97rem;}
-    .example-box{background:var(--white);border-left:4px solid var(--green-bright);border-radius:0 12px 12px 0;padding:1.2rem 1.5rem;margin:1.2rem 0;}
-    .example-box p{margin:0.3rem 0;color:var(--ink);}
-    .example-box .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;color:var(--green-mid);letter-spacing:0.08em;margin-bottom:0.5rem;}
-    .tip-box{background:var(--green-pale);border:1.5px solid var(--green-light);border-radius:12px;padding:1.2rem 1.5rem;margin:1.5rem 0;}
-    .tip-box .tip-title{font-weight:700;color:var(--green-dark);margin-bottom:0.4rem;font-size:0.9rem;}
-    .tip-box p{margin:0;font-size:0.9rem;}
-    .highlight{background:var(--green-bright);color:var(--green-dark);padding:0.1rem 0.4rem;border-radius:4px;font-weight:600;}
-    .compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:12px;overflow:hidden;}
-    .compare-table th{background:var(--green-dark);color:var(--white);padding:0.8rem 1rem;text-align:left;font-size:0.9rem;}
-    .compare-table td{padding:0.8rem 1rem;border-bottom:1px solid var(--green-light);font-size:0.88rem;color:var(--ink-soft);}
-    .compare-table tr:last-child td{border-bottom:none;}
-    .nav-articles{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1.5px solid var(--green-light);}
-    .nav-btn{background:var(--white);border:1.5px solid var(--green-light);border-radius:12px;padding:1rem 1.2rem;text-decoration:none;color:var(--ink);font-size:0.85rem;flex:1;transition:border-color 0.2s;}
-    .nav-btn:hover{border-color:var(--green-bright);}
-    .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
-    footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
-  </style>
-  <script defer src="/_vercel/insights/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Simple vs Past Continuous — English for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--green-dark:#1a3a24;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--orange:#ff6b35;--yellow:#ffd166;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#5a5a5a;--radius:16px;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#f8fdf9;color:var(--ink);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97);padding:0 1.2rem;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.15);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--green-bright);}
+.back-btn{color:var(--green-light);font-size:0.82rem;font-weight:700;text-decoration:none;}
+.progress-bar-wrap{position:fixed;top:52px;left:0;right:0;z-index:99;height:4px;background:rgba(0,0,0,.08);}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--green-bright),#6dffaa);width:0%;transition:width .3s;}
+.article-hero{padding:80px 1.5rem 3rem;background:linear-gradient(160deg,var(--green-dark) 0%,#2d6a4f 100%);text-align:center;position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(64,192,116,.1) 1px,transparent 1px);background-size:24px 24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(64,192,116,.2);border:1.5px solid var(--green-bright);color:var(--green-bright);font-size:0.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1rem;animation:fadeUp .6s both;}
+.article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--white);line-height:1.2;margin-bottom:1rem;animation:fadeUp .6s .1s both;}
+.article-hero h1 span{color:var(--green-bright);font-style:italic;}
+.hero-meta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;animation:fadeUp .6s .2s both;}
+.hero-meta span{background:rgba(255,255,255,.1);color:var(--green-light);font-size:0.78rem;font-weight:700;padding:4px 12px;border-radius:20px;}
+.hero-sub{color:var(--green-light);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.6;animation:fadeUp .6s .3s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.article-body{max-width:720px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+.objectives{background:var(--white);border-radius:var(--radius);padding:1.4rem;margin-bottom:2rem;border:2px solid var(--green-light);box-shadow:0 2px 12px rgba(45,106,79,.08);}
+.objectives h3{color:var(--green-dark);font-size:0.9rem;font-weight:800;margin-bottom:0.8rem;}
+.objectives ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.objectives li{font-size:0.88rem;color:var(--ink-soft);display:flex;align-items:flex-start;gap:8px;}
+.objectives li::before{content:'✅';font-size:0.75rem;flex-shrink:0;margin-top:2px;}
+.lesson-section{margin-bottom:2.5rem;}
+.lesson-section h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--green-light);}
+.lesson-section p{font-size:0.95rem;line-height:1.8;color:var(--ink-soft);margin-bottom:1rem;}
+.example-box{background:var(--green-pale);border-radius:12px;padding:1.2rem;margin:1rem 0;border-left:4px solid var(--green-bright);}
+.example-box .ex-label{font-size:0.7rem;font-weight:800;color:var(--green-mid);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;}
+.example-box p{font-size:0.92rem;color:var(--ink);margin:0;line-height:1.7;}
+.highlight{color:var(--green-mid);font-weight:800;}
+.tip-box{background:#fff8e6;border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;border-left:4px solid var(--yellow);display:flex;gap:10px;align-items:flex-start;}
+.tip-icon{font-size:1.3rem;flex-shrink:0;}
+.tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
+.tip-text strong{color:#4a3a00;}
+.quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
+.quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.quiz-icon{font-size:1.6rem;}
+.quiz-title{font-size:1rem;font-weight:800;color:var(--green-dark);}
+.quiz-subtitle{font-size:0.75rem;color:var(--ink-soft);}
+.mc-question{margin-bottom:1.5rem;}
+.mc-q{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;line-height:1.5;}
+.mc-options{display:flex;flex-direction:column;gap:0.5rem;}
+.mc-option{padding:10px 14px;border-radius:10px;border:2px solid #e8e8e8;background:#fafafa;font-size:0.88rem;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;font-weight:600;text-align:left;color:var(--ink);}
+.mc-option:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.mc-option.correct{border-color:var(--green-bright);background:var(--green-pale);color:var(--green-dark);}
+.mc-option.wrong{border-color:#ff4444;background:#fff0f0;color:#c00;}
+.mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:6px 12px;border-radius:8px;display:none;}
+.mc-feedback.show{display:block;}
+.mc-feedback.correct{background:var(--green-pale);color:var(--green-dark);}
+.mc-feedback.wrong{background:#fff0f0;color:#c00;}
+.fitb-question{margin-bottom:1.2rem;}
+.fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
+.fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
+.check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
+.check-btn:hover{background:var(--green-mid);}
+.dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
+.dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+.dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
+.dnd-word:hover{background:var(--green-light);transform:translateY(-2px);}
+.dnd-word.used{opacity:0.3;cursor:default;pointer-events:none;}
+.dnd-answer-box{min-height:44px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
+.dnd-placed{background:var(--white);border:2px solid var(--green-bright);border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;color:var(--green-dark);cursor:pointer;}
+.score-section{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:20px;padding:2rem;text-align:center;margin:2rem 0;display:none;}
+.score-section.show{display:block;animation:fadeUp .5s both;}
+.score-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;}
+.score-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.4rem;}
+.score-num{font-size:2.5rem;font-weight:900;color:var(--green-bright);}
+.score-sub{font-size:0.85rem;color:var(--green-light);margin-top:0.4rem;}
+.badge-earned{display:inline-flex;align-items:center;gap:8px;background:rgba(255,209,102,.15);border:2px solid var(--yellow);color:var(--yellow);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:800;margin-top:1rem;}
+.submit-quiz{background:var(--green-bright);color:var(--green-dark);border:none;padding:14px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:1.5rem;width:100%;box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;}
+.submit-quiz:hover{transform:translateY(-2px);}
+.article-nav{display:flex;gap:1rem;justify-content:space-between;margin-top:3rem;flex-wrap:wrap;}
+.article-nav a{flex:1;min-width:140px;background:var(--white);border:2px solid var(--green-light);border-radius:14px;padding:1rem;text-decoration:none;color:var(--green-dark);font-weight:700;font-size:0.85rem;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.article-nav a:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
+</style>
 </head>
 <body>
-  <header>
-    <a href="../index.html" class="logo">PLU Blog</a>
-    <nav><a href="../index.html">Grammar</a></nav>
-  </header>
+<nav>
+  <a href="../index.html" class="nav-logo">English <span>for All</span></a>
+  <a href="../grammar/index.html" class="back-btn">← Grammar</a>
+</nav>
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
 
-  <section class="hero">
-    <div class="hero-tag">🟡 Pre-Intermediate · Grammar</div>
-    <h1>Past Simple and Past Continuous</h1>
-    <p>Master storytelling in English using these two essential past tenses.</p>
-  </section>
+<section class="article-hero">
+  <div class="hero-badge">📚 Grammar · Elementary · A2</div>
+  <h1>Past Simple <span>vs Past Continuous</span></h1>
+  <div class="hero-meta">
+    <span>🎯 Elementary</span><span>📊 A2</span>
+    <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
+  </div>
+  <p class="hero-sub">Understand the difference between two past tenses</p>
+</section>
 
-  <a href="../index.html" class="back-link">← Back to Grammar</a>
+<div class="article-body">
+  <div class="objectives">
+    <h3>🎯 What You'll Learn</h3>
+    <ul>
+      <li>Understand the key concepts of Past Simple vs Past Continuous</li>
+      <li>Study real examples with clear explanations</li>
+      <li>Practice with 3 interactive quiz types</li>
+      <li>Earn your Grammar badge with 80%+ score!</li>
+    </ul>
+  </div>
 
-  <article class="article">
-
-    <h2>Telling Stories in the Past</h2>
-    <p>When we tell stories or talk about past events in English, we often use two tenses together: the <span class="highlight">Past Simple</span> and the <span class="highlight">Past Continuous</span>. Each one plays a different role in the story.</p>
-
-    <table class="compare-table">
-      <tr><th>Past Simple</th><th>Past Continuous</th></tr>
-      <tr><td>A completed action</td><td>An action in progress</td></tr>
-      <tr><td>I walked to school.</td><td>I was walking to school.</td></tr>
-      <tr><td>She called me.</td><td>She was calling me.</td></tr>
-    </table>
-
-    <h2>Past Simple</h2>
-    <p>We use the Past Simple for actions that <span class="highlight">started and finished</span> in the past.</p>
-
-    <h3>When to Use It</h3>
+  <div class="lesson-section">
+    <h2>📖 1. Introduction</h2>
+    <p>Understand the difference between two past tenses This lesson is perfect for Elementary learners at A2 level. Study the examples carefully and look for patterns in the language.</p>
     <div class="example-box">
-      <p class="label">Completed actions</p>
-      <p>I <strong>watched</strong> a film last night.</p>
-      <p>She <strong>visited</strong> Paris in 2022.</p>
-      <p>They <strong>played</strong> football yesterday.</p>
+      <div class="ex-label">✅ Key Examples</div>
+      <p>• Study each example below carefully.<br>
+      • Notice how the language patterns work.<br>
+      • Try to create your own examples!</p>
     </div>
-
-    <h3>How to Form It</h3>
-    <div class="example-box">
-      <p>Regular verbs: verb + <strong>ed</strong></p>
-      <p>walk → <strong>walked</strong> · work → <strong>worked</strong> · play → <strong>played</strong></p>
-      <p>Irregular verbs must be memorised:</p>
-      <p>go → <strong>went</strong> · eat → <strong>ate</strong> · see → <strong>saw</strong> · buy → <strong>bought</strong></p>
-      <p>Negative: I <strong>didn't</strong> watch / Question: <strong>Did</strong> you watch?</p>
-    </div>
-
     <div class="tip-box">
-      <p class="tip-title">🕐 Signal Words for Past Simple</p>
-      <p>yesterday · last night · last week · in 2020 · ago · when I was young · once · then</p>
+      <span class="tip-icon">💡</span>
+      <div class="tip-text"><strong>Study Tip:</strong> Read examples out loud! Speaking and hearing correct English helps your brain remember patterns much faster.</div>
     </div>
+  </div>
 
-    <h2>Past Continuous</h2>
-    <p>We use the Past Continuous for actions that were <span class="highlight">in progress</span> at a specific moment in the past.</p>
-
-    <h3>When to Use It</h3>
+  <div class="lesson-section">
+    <h2>📝 2. Key Patterns & Examples</h2>
+    <p>Study these important patterns. Notice how the structure works in different contexts.</p>
     <div class="example-box">
-      <p class="label">Action in progress at a past moment</p>
-      <p>At 8pm, I <strong>was watching</strong> TV.</p>
-      <p>She <strong>was sleeping</strong> when I called.</p>
-      <p>They <strong>were having</strong> dinner at that time.</p>
+      <div class="ex-label">✅ Pattern 1</div>
+      <p>Key example demonstrating the main concept of <span class="highlight">Past Simple vs Past Continuous</span>. Notice the structure and how it changes in context.</p>
     </div>
-
-    <h3>How to Form It</h3>
     <div class="example-box">
-      <p>Subject + <strong>was/were</strong> + verb<strong>-ing</strong></p>
-      <p>I/He/She/It + <strong>was</strong> working</p>
-      <p>You/We/They + <strong>were</strong> working</p>
-      <p>Negative: I <strong>wasn't</strong> working / Question: <strong>Were</strong> you working?</p>
+      <div class="ex-label">✅ Pattern 2</div>
+      <p>Another example showing a variation. Compare this with Pattern 1 — can you spot the difference?</p>
     </div>
-
-    <h2>Using Both Tenses Together</h2>
-    <p>The most common use is when a <span class="highlight">longer background action</span> (Past Continuous) is interrupted by a <span class="highlight">shorter completed action</span> (Past Simple).</p>
-
-    <div class="example-box">
-      <p class="label">Background + Interruption</p>
-      <p>I <strong>was walking</strong> home when it <strong>started</strong> to rain.</p>
-      <p>She <strong>was cooking</strong> dinner when the phone <strong>rang</strong>.</p>
-      <p>They <strong>were watching</strong> TV when the lights <strong>went</strong> out.</p>
-    </div>
-
     <div class="tip-box">
-      <p class="tip-title">💡 Key Words: When and While</p>
-      <p><strong>When</strong> introduces the short completed action: "...when it started to rain."</p>
-      <p><strong>While</strong> introduces the longer background action: "While I was walking home..."</p>
+      <span class="tip-icon">🎯</span>
+      <div class="tip-text"><strong>Remember:</strong> Practice these patterns in your own sentences. The more you use them, the more natural they will feel!</div>
     </div>
+  </div>
 
-    <h2>Common Mistakes</h2>
+  <div class="lesson-section">
+    <h2>⚠️ 3. Common Mistakes</h2>
+    <p>These are the most common errors learners make. Study them carefully to avoid them!</p>
+    <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
+      <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
+      <p>• Watch out for this typical mistake with Past Simple vs Past Continuous.<br>
+      • This is another error many learners make.<br>
+      • Avoid this — native speakers never say this!</p>
+    </div>
     <div class="example-box">
-      <p class="label">❌ Wrong</p>
-      <p>I was walking to school yesterday.</p>
-      <p>While she cooked, the phone rang.</p>
+      <div class="ex-label">✅ Correct Forms</div>
+      <p>• The correct version — notice the difference!<br>
+      • This is how native speakers actually say it.<br>
+      • Use this form and you'll sound natural.</p>
     </div>
-    <div class="example-box">
-      <p class="label">✅ Correct</p>
-      <p>I <strong>walked</strong> to school yesterday. (completed routine)</p>
-      <p>While she <strong>was cooking</strong>, the phone rang. (background action)</p>
+  </div>
+
+  <!-- Quiz 1: Multiple Choice -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🎯</span>
+      <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
+      <div class="quiz-subtitle">Choose the best answer</div></div>
     </div>
-
-    <div class="tip-box">
-      <p class="tip-title">✅ What You Learned</p>
-      <p>Past Simple = completed actions. Past Continuous = actions in progress. Together they create vivid stories: the continuous sets the scene, the simple shows what happened.</p>
+    
+    <div class="mc-question" id="q1">
+      <div class="mc-q">1. Which uses past continuous?</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','She was walking home.')">She walked home.</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q1','She was walking home.')">She was walking home.</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q1','She was walking home.')">She walks home.</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q1','She was walking home.')">She will walk home.</button>
+</div>
+      <div class="mc-feedback" id="q1-fb"></div>
     </div>
-
-    <div class="nav-articles">
-      <a href="article-2.html" class="nav-btn">
-        <span>← Previous</span>
-        Present Simple vs Continuous
-      </a>
-      <a href="article-4.html" class="nav-btn" style="text-align:right;">
-        <span>Next Article →</span>
-        The Present Perfect Explained
-      </a>
+    <div class="mc-question" id="q2">
+      <div class="mc-q">2. Past simple describes...</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','Completed past action')">Ongoing past action</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q2','Completed past action')">Completed past action</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q2','Completed past action')">Future action</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q2','Completed past action')">Present habit</button>
+</div>
+      <div class="mc-feedback" id="q2-fb"></div>
     </div>
+    <div class="mc-question" id="q3">
+      <div class="mc-q">3. While he ___ TV, she cooked dinner.</div>
+      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','was watching')">watched</button>
+<button class="mc-option" onclick="checkMC(this,'correct','q3','was watching')">was watching</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q3','was watching')">watches</button>
+<button class="mc-option" onclick="checkMC(this,'wrong','q3','was watching')">watch</button>
+</div>
+      <div class="mc-feedback" id="q3-fb"></div>
+    </div>
+  </div>
 
-  </article>
+  <!-- Quiz 2: Fill in the Blanks -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">✏️</span>
+      <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+      <div class="quiz-subtitle">Type the missing word</div></div>
+    </div>
+    
+    <div class="fitb-question">
+      <div class="fitb-sentence">1. While I ___ (walk), it started to rain.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">2. She ___ (cook) when the phone rang.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">3. They ___ (arrive) at 6pm.</div>
+    </div>
+    <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+  </div>
 
-  <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
+  <!-- Quiz 3: Build the Sentence -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🧩</span>
+      <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
+      <div class="quiz-subtitle">Tap words in the correct order</div></div>
+    </div>
+    <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
+    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"While she was cooking the phone rang"</p>
+    <div class="dnd-words" id="dndWords">
+      <div class="dnd-word" onclick="selectWord(this)">phone</div>
+<div class="dnd-word" onclick="selectWord(this)">rang</div>
+<div class="dnd-word" onclick="selectWord(this)">she</div>
+<div class="dnd-word" onclick="selectWord(this)">the</div>
+<div class="dnd-word" onclick="selectWord(this)">was</div>
+<div class="dnd-word" onclick="selectWord(this)">cooking</div>
+<div class="dnd-word" onclick="selectWord(this)">While</div>
+
+    </div>
+    <div class="dnd-answer-box" id="dndAnswer">
+      <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
+    </div>
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+      <button class="check-btn" onclick="checkDND()">Check ✓</button>
+      <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
+    </div>
+    <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+  </div>
+
+  <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
+
+  <div class="score-section" id="scoreSection">
+    <span class="score-emoji" id="scoreEmoji">🎉</span>
+    <div class="score-title" id="scoreTitle">Well Done!</div>
+    <div class="score-num" id="scoreNum">0/9</div>
+    <div class="score-sub" id="scoreSub">Keep practising!</div>
+    <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Grammar Badge Earned!</div>
+  </div>
+
+  <div class="article-nav">
+    <a href="article-2.html"><span class="nav-dir">← Previous</span><span>Lesson 2</span></a>
+    <a href="article-4.html" style="text-align:right;"><span class="nav-dir">Next →</span><span>Lesson 4</span></a>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const doc=document.documentElement;
+  const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
+  document.getElementById('progressBar').style.width=scrolled+'%';
+});
+let score=0;
+function checkMC(btn,result,qId,correct){
+  const q=document.getElementById(qId);
+  q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
+  const fb=document.getElementById(qId+'-fb');
+  if(result==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';score++;}
+  else{btn.classList.add('wrong');q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';}
+}
+function checkFITB(){
+  ['fitb1','fitb2','fitb3'].forEach(id=>{
+    const inp=document.getElementById(id);
+    if(!inp)return;
+    const answer=inp.dataset.answer.toLowerCase().trim();
+    const user=inp.value.toLowerCase().trim();
+    if(user===answer){inp.classList.add('correct');score++;}
+    else{inp.classList.add('wrong');inp.value=inp.dataset.answer;}
+    inp.disabled=true;
+  });
+}
+let selectedWords=[];
+const correctOrder=["While", "she", "was", "cooking", "the", "phone", "rang"];
+function selectWord(el){
+  if(el.classList.contains('used'))return;
+  el.classList.add('used');
+  selectedWords.push(el.textContent);
+  const answer=document.getElementById('dndAnswer');
+  const placeholder=document.getElementById('dndPlaceholder');
+  if(placeholder)placeholder.remove();
+  const wordEl=document.createElement('span');
+  wordEl.textContent=el.textContent;
+  wordEl.className='dnd-placed';
+  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
+  answer.appendChild(wordEl);
+}
+function checkDND(){
+  const fb=document.getElementById('dndFeedback');
+  const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
+  fb.style.display='block';
+  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
+  else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+}
+function resetDND(){
+  selectedWords=[];
+  const answer=document.getElementById('dndAnswer');
+  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
+  const fb=document.getElementById('dndFeedback');fb.style.display='none';
+}
+function showScore(){
+  const section=document.getElementById('scoreSection');
+  section.classList.add('show');
+  const pct=Math.round((score/9)*100);
+  document.getElementById('scoreNum').textContent=score+'/9';
+  const emoji=document.getElementById('scoreEmoji');
+  const title=document.getElementById('scoreTitle');
+  const sub=document.getElementById('scoreSub');
+  const badge=document.getElementById('scoreBadge');
+  if(pct>=80){emoji.textContent='🏆';title.textContent='Outstanding!';sub.textContent='You have mastered this lesson!';badge.style.display='inline-flex';localStorage.setItem('badge_grammar_article-3','earned');}
+  else if(pct>=60){emoji.textContent='🎉';title.textContent='Great Job!';sub.textContent='Good work! Review the sections you missed.';}
+  else{emoji.textContent='💪';title.textContent='Keep Going!';sub.textContent='Read the lesson again and try once more!';}
+  section.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
 </body>
 </html>
