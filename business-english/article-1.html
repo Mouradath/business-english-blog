@@ -51,28 +51,74 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .mc-question{margin-bottom:1.5rem;}
 .mc-q{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;line-height:1.5;}
 .mc-options{display:flex;flex-direction:column;gap:0.5rem;}
-.mc-option{padding:10px 14px;border-radius:10px;border:2px solid #e8e8e8;background:#fafafa;font-size:0.88rem;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;font-weight:600;text-align:left;color:var(--ink);}
+.mc-option{
+  display:block;width:100%;min-height:48px;
+  padding:12px 14px;border-radius:10px;
+  border:2px solid #e8e8e8;background:#fafafa;
+  font-size:0.88rem;cursor:pointer;
+  transition:all .2s;font-family:'Nunito',sans-serif;
+  font-weight:600;text-align:left;color:var(--ink);
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(64,192,116,0.2);
+  user-select:none;-webkit-user-select:none;
+  -webkit-appearance:none;appearance:none;
+  white-space:normal;word-break:break-word;
+}
 .mc-option:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.mc-option:active{transform:scale(0.98);}
 .mc-option.correct{border-color:var(--green-bright);background:var(--green-pale);color:var(--green-dark);}
 .mc-option.wrong{border-color:#ff4444;background:#fff0f0;color:#c00;}
-.mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:6px 12px;border-radius:8px;display:none;}
+.mc-option:disabled{cursor:default;pointer-events:none;opacity:0.85;}
+.mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:8px 12px;border-radius:8px;display:none;}
 .mc-feedback.show{display:block;}
 .mc-feedback.correct{background:var(--green-pale);color:var(--green-dark);}
 .mc-feedback.wrong{background:#fff0f0;color:#c00;}
 .fitb-question{margin-bottom:1.2rem;}
-.fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
-.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
-.fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
-.fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
-.check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
-.check-btn:hover{background:var(--green-mid);}
+.fitb-sentence{font-size:0.95rem;line-height:2.4;color:var(--ink);font-weight:600;}
+.fitb-input{
+  display:inline-block;min-width:110px;width:110px;
+  border:none;border-bottom:2.5px solid var(--green-mid);
+  background:transparent;font-family:'Nunito',sans-serif;
+  font-size:0.92rem;font-weight:700;color:var(--green-dark);
+  text-align:center;outline:none;padding:4px 6px;
+  touch-action:manipulation;-webkit-appearance:none;appearance:none;
+}
+.fitb-input:focus{border-bottom-color:var(--green-bright);}
+.fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;border-width:2px;}
+.fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;border-width:2px;}
+.check-btn{
+  background:var(--green-dark);color:var(--white);border:none;
+  padding:12px 24px;border-radius:30px;font-family:'Nunito',sans-serif;
+  font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;
+  min-height:44px;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-appearance:none;appearance:none;
+  transition:background .2s,transform .1s;
+}
+.check-btn:active{background:var(--green-mid);transform:scale(0.97);}
 .dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
 .dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
-.dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
-.dnd-word:hover{background:var(--green-light);transform:translateY(-2px);}
-.dnd-word.used{opacity:0.3;cursor:default;pointer-events:none;}
-.dnd-answer-box{min-height:44px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
-.dnd-placed{background:var(--white);border:2px solid var(--green-bright);border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;color:var(--green-dark);cursor:pointer;}
+.dnd-word{
+  padding:8px 16px;min-height:40px;
+  background:var(--green-pale);border:2px solid var(--green-light);
+  border-radius:20px;font-size:0.85rem;font-weight:700;
+  cursor:pointer;color:var(--green-dark);
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(64,192,116,0.2);
+  user-select:none;-webkit-user-select:none;
+  -webkit-appearance:none;appearance:none;
+  transition:all .15s;
+}
+.dnd-word:active{transform:scale(0.95);}
+.dnd-word.used{opacity:0.3;pointer-events:none;}
+.dnd-answer-box{min-height:48px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
+.dnd-placed{
+  background:var(--white);border:2px solid var(--green-bright);
+  border-radius:8px;padding:6px 12px;font-size:0.85rem;
+  font-weight:700;color:var(--green-dark);cursor:pointer;
+  touch-action:manipulation;transition:background .15s;
+}
+.dnd-placed:active{background:var(--green-pale);}
 .score-section{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:20px;padding:2rem;text-align:center;margin:2rem 0;display:none;}
 .score-section.show{display:block;animation:fadeUp .5s both;}
 .score-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;}
@@ -80,12 +126,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .score-num{font-size:2.5rem;font-weight:900;color:var(--green-bright);}
 .score-sub{font-size:0.85rem;color:var(--green-light);margin-top:0.4rem;}
 .badge-earned{display:inline-flex;align-items:center;gap:8px;background:rgba(255,209,102,.15);border:2px solid var(--yellow);color:var(--yellow);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:800;margin-top:1rem;}
-.submit-quiz{background:var(--green-bright);color:var(--green-dark);border:none;padding:14px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:1.5rem;width:100%;box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;}
-.submit-quiz:hover{transform:translateY(-2px);}
+.submit-quiz{
+  background:var(--green-bright);color:var(--green-dark);border:none;
+  padding:14px 32px;border-radius:50px;font-family:'Nunito',sans-serif;
+  font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:1.5rem;
+  width:100%;min-height:52px;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-appearance:none;appearance:none;
+  box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;
+}
+.submit-quiz:active{transform:scale(0.98);}
 .article-nav{display:flex;gap:1rem;justify-content:space-between;margin-top:3rem;flex-wrap:wrap;}
 .article-nav a{flex:1;min-width:140px;background:var(--white);border:2px solid var(--green-light);border-radius:14px;padding:1rem;text-decoration:none;color:var(--green-dark);font-weight:700;font-size:0.85rem;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
 .article-nav a:hover{border-color:var(--green-bright);background:var(--green-pale);}
 .nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
+@media(max-width:480px){
+  .mc-option{font-size:0.85rem;padding:12px 12px;}
+  .fitb-input{min-width:90px;width:90px;}
+  .dnd-word{font-size:0.82rem;padding:7px 12px;}
+  .check-btn,.submit-quiz{width:100%;}
+}
 </style>
 </head>
 <body>
@@ -118,7 +178,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 
   <div class="lesson-section">
     <h2>📖 1. Introduction</h2>
-    <p>Master every part of a professional email This lesson is perfect for Elementary learners at A2/B1 level. Study the examples carefully and look for patterns in the language.</p>
+    <p>Master every part of a professional email. This lesson is perfect for Elementary learners at A2/B1 level. Study the examples carefully and look for patterns in the language.</p>
     <div class="example-box">
       <div class="ex-label">✅ Key Examples</div>
       <p>• Study each example below carefully.<br>
@@ -132,7 +192,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   </div>
 
   <div class="lesson-section">
-    <h2>📝 2. Key Patterns & Examples</h2>
+    <h2>📝 2. Key Patterns &amp; Examples</h2>
     <p>Study these important patterns. Notice how the structure works in different contexts.</p>
     <div class="example-box">
       <div class="ex-label">✅ Pattern 1</div>
@@ -172,32 +232,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
       <div class="quiz-subtitle">Choose the best answer</div></div>
     </div>
-    
     <div class="mc-question" id="q1">
       <div class="mc-q">1. Best email opening:</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Yo!</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q1','Dear Ms Johnson,')">Dear Ms Johnson,</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Hey there,</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Sup,</button>
-</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Yo!</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q1','Dear Ms Johnson,')">Dear Ms Johnson,</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Hey there,</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Dear Ms Johnson,')">Sup,</button>
+      </div>
       <div class="mc-feedback" id="q1-fb"></div>
     </div>
     <div class="mc-question" id="q2">
       <div class="mc-q">2. 'Please find attached' means...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">I lost the file</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q2','a file is included with the email')">a file is included with the email</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">please reply quickly</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">the email is urgent</button>
-</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">I lost the file</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q2','a file is included with the email')">a file is included with the email</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">please reply quickly</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','a file is included with the email')">the email is urgent</button>
+      </div>
       <div class="mc-feedback" id="q2-fb"></div>
     </div>
     <div class="mc-question" id="q3">
       <div class="mc-q">3. Professional sign-off:</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">Later!</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q3','Kind regards,')">Kind regards,</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">See ya!</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">Bye!</button>
-</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">Later!</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q3','Kind regards,')">Kind regards,</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">See ya!</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','Kind regards,')">Bye!</button>
+      </div>
       <div class="mc-feedback" id="q3-fb"></div>
     </div>
   </div>
@@ -209,20 +271,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
       <div class="quiz-subtitle">Type the missing word</div></div>
     </div>
-    
     <div class="fitb-question">
-      <div class="fitb-sentence">1. I am ___ to enquire about the position. <input class="fitb-input" id="fitb1" placeholder="?" data-answer="writing"></div>
+      <div class="fitb-sentence">1. I am <input class="fitb-input" id="fitb1" placeholder="?" data-answer="writing"> to enquire about the position.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">2. Please do not ___ to contact me. <input class="fitb-input" id="fitb2" placeholder="?" data-answer="hesitate"></div>
+      <div class="fitb-sentence">2. Please do not <input class="fitb-input" id="fitb2" placeholder="?" data-answer="hesitate"> to contact me.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">3. I ___ forward to your reply. <input class="fitb-input" id="fitb3" placeholder="?" data-answer="look"></div>
+      <div class="fitb-sentence">3. I <input class="fitb-input" id="fitb3" placeholder="?" data-answer="look"> forward to your reply.</div>
     </div>
     <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
   </div>
 
-  <!-- Quiz 3: Build the Sentence -->
+  <!-- Quiz 3: Build the Sentence — FIXED: div→button -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🧩</span>
@@ -232,15 +293,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
     <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
     <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"I look forward to hearing from you soon"</p>
     <div class="dnd-words" id="dndWords">
-      <div class="dnd-word" onclick="selectWord(this)">soon</div>
-<div class="dnd-word" onclick="selectWord(this)">to</div>
-<div class="dnd-word" onclick="selectWord(this)">you</div>
-<div class="dnd-word" onclick="selectWord(this)">forward</div>
-<div class="dnd-word" onclick="selectWord(this)">from</div>
-<div class="dnd-word" onclick="selectWord(this)">I</div>
-<div class="dnd-word" onclick="selectWord(this)">hearing</div>
-<div class="dnd-word" onclick="selectWord(this)">look</div>
-
+      <button class="dnd-word" onclick="selectWord(this)">soon</button>
+      <button class="dnd-word" onclick="selectWord(this)">to</button>
+      <button class="dnd-word" onclick="selectWord(this)">you</button>
+      <button class="dnd-word" onclick="selectWord(this)">forward</button>
+      <button class="dnd-word" onclick="selectWord(this)">from</button>
+      <button class="dnd-word" onclick="selectWord(this)">I</button>
+      <button class="dnd-word" onclick="selectWord(this)">hearing</button>
+      <button class="dnd-word" onclick="selectWord(this)">look</button>
     </div>
     <div class="dnd-answer-box" id="dndAnswer">
       <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
@@ -273,6 +333,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
     <a href="https://amzn.to/4eI470z" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:7px;background:#2d6a4f;color:#fff;font-size:0.85rem;font-weight:600;text-decoration:none;padding:9px 18px;border-radius:50px;white-space:nowrap;">View on Amazon ↗</a>
   </div>
 </div>
+
   <div class="article-nav">
     <a href="../index.html"><span class="nav-dir">← Previous</span><span>Category Home</span></a>
     <a href="article-2.html" style="text-align:right;"><span class="nav-dir">Next →</span><span>Lesson 2</span></a>
@@ -305,7 +366,7 @@ function checkFITB(){
   });
 }
 let selectedWords=[];
-const correctOrder=["I", "look", "forward", "to", "hearing", "from", "you", "soon"];
+const correctOrder=["I","look","forward","to","hearing","from","you","soon"];
 function selectWord(el){
   if(el.classList.contains('used'))return;
   el.classList.add('used');
@@ -316,14 +377,25 @@ function selectWord(el){
   const wordEl=document.createElement('span');
   wordEl.textContent=el.textContent;
   wordEl.className='dnd-placed';
-  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
+  wordEl.onclick=()=>{
+    wordEl.remove();
+    el.classList.remove('used');
+    selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});
+    if(document.getElementById('dndAnswer').children.length===0){
+      const ph=document.createElement('span');
+      ph.id='dndPlaceholder';
+      ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';
+      ph.textContent='Tap words above...';
+      document.getElementById('dndAnswer').appendChild(ph);
+    }
+  };
   answer.appendChild(wordEl);
 }
 function checkDND(){
   const fb=document.getElementById('dndFeedback');
   const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
   fb.style.display='block';
-  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
+  if(isCorrect){fb.textContent='✅ Perfect! That\'s exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
   else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
 }
 function resetDND(){
