@@ -1,36 +1,121 @@
-import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Continuous Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h1 { text-align: center; }
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
 
-export default function LessonQuiz() {
-  // scores
-  const [score, setScore] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+<div class="container">
+  <h1>Present Continuous Quiz</h1>
 
-  // Quiz 1 (MCQ)
-  const quiz1Answer = "is working";
-  const [q1, setQ1] = useState("");
+  <div class="card">
+    <p><b>Quiz 1:</b> She ___ in the office now.</p>
+    <input id="q1" placeholder="Your answer" />
+  </div>
 
-  // Quiz 2 (fill blanks)
-  const [q2, setQ2] = useState({ q1: "", q2: "", q3: "" });
+  <div class="card">
+    <p><b>Quiz 2: Fill in the blanks</b></p>
+    <input id="q2a" placeholder="She ___ a book" />
+    <input id="q2b" placeholder="They ___ football" />
+    <input id="q2c" placeholder="He ___ TV" />
+  </div>
 
-  // Quiz 3 (sentence order)
-  const [q3, setQ3] = useState("");
+  <div class="card">
+    <p><b>Quiz 3:</b> Write correct sentence</p>
+    <input id="q3" placeholder="Type full sentence" />
+  </div>
 
-  const correctQ2 = {
-    q1: "is reading",
-    q2: "are playing",
-    q3: "isn't watching"
-  };
+  <button onclick="submitQuiz()">Submit Quiz</button>
 
-  const calculateScore = () => {
-    let total = 0;
+  <div class="result" id="result"></div>
+</div>
 
-    // Quiz 1 (3 points)
-    if (q1 === quiz1Answer) total += 3;
+<script>
+function normalize(str) {
+  return str.trim().toLowerCase();
+}
 
-    // Quiz 2 (3 points)
-    if (q2.q1.trim().toLowerCase() === correctQ2.q1) total += 1;
-    if (q2.q2.trim().toLowerCase() === correctQ2.q2) total += 1;
-    if (q2.q3.trim().toLowerCase() === correctQ2.q3) total += 1;
+function submitQuiz() {
+  let score = 0;
 
+  const q1 = normalize(document.getElementById('q1').value);
+  const q2a = normalize(document.getElementById('q2a').value);
+  const q2b = normalize(document.getElementById('q2b').value);
+  const q2c = normalize(document.getElementById('q2c').value);
+  const q3 = normalize(document.getElementById('q3').value);
+
+  // Quiz 1
+  if (q1 === "is working") score += 3;
+
+  // Quiz 2
+  if (q2a === "is reading") score += 1;
+  if (q2b === "are playing") score += 1;
+  if (q2c === "isn't watching" || q2c === "is not watching") score += 1;
+
+  // Quiz 3
+  if (q3 === "she is reading a book right now") score += 3;
+
+  let badge = "";
+  if (score === 9) badge = "🏆 Perfect Score";
+  else if (score >= 6) badge = "🥈 Good Job";
+  else if (score >= 3) badge = "🥉 Keep Practicing";
+  else badge = "📘 Try Again";
+
+  document.getElementById('result').innerHTML =
+    `Your Score: ${score} / 9<br>${badge}`;
+}
+</script>
+
+</body>
+</html>
