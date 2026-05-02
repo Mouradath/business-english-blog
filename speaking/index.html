@@ -97,6 +97,62 @@
 import { ProgressEngine } from '../js/progressEngine.js';
 
 const progress = new ProgressEngine();
+
+const lessons = [
+  { id: "article-1.html", key: "speaking-1", title: "How to Introduce Yourself" },
+  { id: "article-2.html", key: "speaking-2", title: "Basic Pronunciation Rules" },
+  { id: "article-3.html", key: "speaking-3", title: "Conversation Starters" },
+  { id: "article-4.html", key: "speaking-4", title: "Express Opinions" },
+  { id: "article-5.html", key: "speaking-5", title: "Linking Words" },
+  { id: "article-6.html", key: "speaking-6", title: "Stress & Intonation" },
+  { id: "article-7.html", key: "speaking-7", title: "Speak Persuasively" },
+  { id: "article-8.html", key: "speaking-8", title: "Small Talk" }
+];
+
+const grid = document.querySelector(".articles");
+
+grid.innerHTML = "";
+
+lessons.forEach((lesson, index) => {
+
+  const prev = lessons[index - 1];
+
+  const unlocked =
+    index === 0 || progress.isCompleted(prev.key);
+
+  const data = progress.getLesson(lesson.key);
+
+  const card = document.createElement("a");
+  card.className = "article-card";
+
+  card.href = unlocked ? lesson.id : "#";
+
+  if (!unlocked) {
+    card.style.opacity = "0.4";
+    card.style.pointerEvents = "none";
+  }
+
+  const status =
+    data?.completed
+      ? "✔ Completed"
+      : unlocked
+        ? "▶ Start"
+        : "🔒 Locked";
+
+  card.innerHTML = `
+    <span class="article-level">${status}</span>
+    <h3>${lesson.title}</h3>
+    <p>
+      ${data
+        ? `Score: ${data.score}/${data.total}`
+        : "Not started yet"}
+    </p>
+    <span class="read-more">Read article →</span>
+  `;
+
+  grid.appendChild(card);
+});
+</script>
 </body>
 </html>
      
