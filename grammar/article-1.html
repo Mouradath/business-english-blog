@@ -7,7 +7,7 @@
   <title>Introduction to English Sentences - PLU Blog</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
-    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;}
+    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;--yellow:#ffd166;--orange:#ff6b35;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'DM Sans',sans-serif;background:var(--green-pale);color:var(--ink);line-height:1.7;}
     header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
@@ -34,12 +34,54 @@
     .nav-btn:hover{border-color:var(--green-bright);}
     .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
     footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
-  </style><script defer src="/_vercel/insights/script.js"></script>
+
+    /* QUIZ STYLES */
+    .quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
+    .quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+    .quiz-icon{font-size:1.6rem;}
+    .quiz-title{font-size:1rem;font-weight:700;color:var(--green-dark);}
+    .quiz-subtitle{font-size:0.75rem;color:var(--ink-soft);}
+    .mc-question{margin-bottom:1.5rem;}
+    .mc-q{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;line-height:1.5;}
+    .mc-options{display:flex;flex-direction:column;gap:0.5rem;}
+    .mc-option{padding:10px 14px;border-radius:10px;border:2px solid #e8e8e8;background:#fafafa;font-size:0.88rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;font-weight:500;text-align:left;color:var(--ink);}
+    .mc-option:hover{border-color:var(--green-bright);background:var(--green-pale);}
+    .mc-option.correct{border-color:var(--green-bright);background:var(--green-pale);color:var(--green-dark);}
+    .mc-option.wrong{border-color:#ff4444;background:#fff0f0;color:#c00;}
+    .mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:6px 12px;border-radius:8px;display:none;}
+    .mc-feedback.show{display:block;}
+    .mc-feedback.correct{background:var(--green-pale);color:var(--green-dark);}
+    .mc-feedback.wrong{background:#fff0f0;color:#c00;}
+    .fitb-question{margin-bottom:1.2rem;}
+    .fitb-sentence{font-size:0.95rem;line-height:2.4;color:var(--ink);font-weight:600;}
+    .fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:130px;text-align:center;outline:none;padding:2px 4px;}
+    .fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
+    .fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
+    .check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
+    .check-btn:hover{background:var(--green-mid);}
+    .dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
+    .dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+    .dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
+    .dnd-word:hover{background:var(--green-light);transform:translateY(-2px);}
+    .dnd-word.used{opacity:0.3;cursor:default;pointer-events:none;}
+    .dnd-answer-box{min-height:44px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
+    .dnd-placed{background:var(--white);border:2px solid var(--green-bright);border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;color:var(--green-dark);cursor:pointer;}
+    .score-section{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:20px;padding:2rem;text-align:center;margin:2rem 0;display:none;}
+    .score-section.show{display:block;}
+    .score-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;}
+    .score-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.4rem;}
+    .score-num{font-size:2.5rem;font-weight:900;color:var(--green-bright);}
+    .score-sub{font-size:0.85rem;color:var(--green-light);margin-top:0.4rem;}
+    .badge-earned{display:inline-flex;align-items:center;gap:8px;background:rgba(255,209,102,.15);border:2px solid var(--yellow);color:var(--yellow);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:800;margin-top:1rem;}
+    .submit-quiz{background:var(--green-bright);color:var(--green-dark);border:none;padding:14px 32px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;margin-top:1.5rem;width:100%;box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;}
+    .submit-quiz:hover{transform:translateY(-2px);}
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <header>
     <a href="../index.html" class="logo">PLU Blog</a>
-    <nav><a href="../index.html">Grammar</a></nav>
+    <nav><a href="../grammar/index.html">Grammar</a></nav>
   </header>
 
   <section class="hero">
@@ -48,7 +90,7 @@
     <p>Learn the basic structure of English sentences: subject, verb, and object.</p>
   </section>
 
-  <a href="../index.html" class="back-link">← Back to Grammar</a>
+  <a href="../grammar/index.html" class="back-link">← Back to Grammar</a>
 
   <article class="article">
 
@@ -128,18 +170,109 @@
       <p><strong>Does</strong> she work in a hospital?</p>
     </div>
 
-    <h2>Practice</h2>
-    <p>Try to build your own sentences using this formula:</p>
-    <div class="example-box">
-      <p class="label">Your turn!</p>
-      <p>I + _____ + _____ (e.g. I eat pizza.)</p>
-      <p>She + _____ + _____ (e.g. She reads books.)</p>
-      <p>They + _____ + _____ (e.g. They play music.)</p>
-    </div>
-
     <div class="tip-box">
       <p class="tip-title">✅ What You Learned</p>
       <p>Every English sentence needs a subject and a verb. The basic order is Subject + Verb + Object. Positive, negative, and question sentences all follow clear patterns.</p>
+    </div>
+
+    <!-- Quiz 1: Multiple Choice -->
+    <div class="quiz-section">
+      <div class="quiz-header">
+        <span class="quiz-icon">🎯</span>
+        <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
+        <div class="quiz-subtitle">Choose the best answer</div></div>
+      </div>
+
+      <div class="mc-question" id="q1">
+        <div class="mc-q">1. Which part of the sentence is "Tom" in: "Tom eats breakfast"?</div>
+        <div class="mc-options">
+          <button class="mc-option" onclick="checkMC(this,'correct','q1','Subject')">Subject</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q1','Subject')">Verb</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q1','Subject')">Object</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q1','Subject')">Adjective</button>
+        </div>
+        <div class="mc-feedback" id="q1-fb"></div>
+      </div>
+
+      <div class="mc-question" id="q2">
+        <div class="mc-q">2. What is the correct word order in English?</div>
+        <div class="mc-options">
+          <button class="mc-option" onclick="checkMC(this,'wrong','q2','Subject + Verb + Object')">Verb + Subject + Object</button>
+          <button class="mc-option" onclick="checkMC(this,'correct','q2','Subject + Verb + Object')">Subject + Verb + Object</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q2','Subject + Verb + Object')">Object + Subject + Verb</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q2','Subject + Verb + Object')">Object + Verb + Subject</button>
+        </div>
+        <div class="mc-feedback" id="q2-fb"></div>
+      </div>
+
+      <div class="mc-question" id="q3">
+        <div class="mc-q">3. Which sentence is a negative sentence?</div>
+        <div class="mc-options">
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">I like chocolate.</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">Do you like chocolate?</button>
+          <button class="mc-option" onclick="checkMC(this,'correct','q3','I don\\'t like chocolate.')">I don't like chocolate.</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">She likes chocolate.</button>
+        </div>
+        <div class="mc-feedback" id="q3-fb"></div>
+      </div>
+    </div>
+
+    <!-- Quiz 2: Fill in the Blanks -->
+    <div class="quiz-section">
+      <div class="quiz-header">
+        <span class="quiz-icon">✏️</span>
+        <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+        <div class="quiz-subtitle">Type the missing word</div></div>
+      </div>
+
+      <div class="fitb-question">
+        <div class="fitb-sentence">1. Every sentence needs a subject and a <input class="fitb-input" id="fitb1" data-answer="verb" placeholder="???">.</div>
+      </div>
+      <div class="fitb-question">
+        <div class="fitb-sentence">2. The basic English word order is S + V + <input class="fitb-input" id="fitb2" data-answer="O" placeholder="???">.</div>
+      </div>
+      <div class="fitb-question">
+        <div class="fitb-sentence">3. She <input class="fitb-input" id="fitb3" data-answer="doesn't" placeholder="???"> work in a hospital.</div>
+      </div>
+      <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+      <div id="fitbFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+    </div>
+
+    <!-- Quiz 3: Build the Sentence -->
+    <div class="quiz-section">
+      <div class="quiz-header">
+        <span class="quiz-icon">🧩</span>
+        <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
+        <div class="quiz-subtitle">Tap words in the correct order</div></div>
+      </div>
+      <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
+      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"She reads a book every day"</p>
+      <div class="dnd-words" id="dndWords">
+        <div class="dnd-word" onclick="selectWord(this)">a</div>
+        <div class="dnd-word" onclick="selectWord(this)">every</div>
+        <div class="dnd-word" onclick="selectWord(this)">She</div>
+        <div class="dnd-word" onclick="selectWord(this)">day</div>
+        <div class="dnd-word" onclick="selectWord(this)">book</div>
+        <div class="dnd-word" onclick="selectWord(this)">reads</div>
+      </div>
+      <div class="dnd-answer-box" id="dndAnswer">
+        <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <button class="check-btn" onclick="checkDND()">Check ✓</button>
+        <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
+      </div>
+      <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+    </div>
+
+    <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
+
+    <div class="score-section" id="scoreSection">
+      <span class="score-emoji" id="scoreEmoji">🎉</span>
+      <div class="score-title" id="scoreTitle">Well Done!</div>
+      <div class="score-num" id="scoreNum">0/7</div>
+      <div class="score-sub" id="scoreSub">Keep practising!</div>
+      <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Grammar Badge Earned!</div>
     </div>
 
     <div class="nav-articles">
@@ -152,19 +285,161 @@
         Present Simple vs Continuous
       </a>
     </div>
-<div class="affiliate-box" style="margin:32px 0;background:#fff;border:2px solid #2d6a4f;border-radius:16px;padding:22px 26px 22px 32px;position:relative;overflow:hidden;box-shadow:0 4px 18px rgba(45,106,79,0.09);">
-  <div style="position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,#2d6a4f,#52b788);border-radius:16px 0 0 16px;"></div>
-  <span style="display:inline-block;background:#d8f3dc;color:#1b4332;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;">📚 We Recommend</span>
-  <p style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#1a3a2a;margin:0 0 4px;">English Grammar in Use</p>
-  <p style="font-size:0.78rem;color:#5a7a6a;margin:0 0 10px;">by Raymond Murphy · Cambridge University Press</p>
-  <p style="font-size:0.9rem;color:#2d3e35;line-height:1.65;margin:0 0 18px;">Now that you know the basics of English sentences, this book is your next step. It covers every essential grammar structure — from simple sentences to complex clauses — with clear explanations and practice exercises on every page.</p>
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-    <p style="font-size:0.7rem;color:#8aab98;font-style:italic;max-width:220px;line-height:1.4;margin:0;">ⓘ Affiliate link — I may earn a small commission at no extra cost to you.</p>
-    <a href="https://amzn.to/4mQUW00" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:7px;background:#2d6a4f;color:#fff;font-size:0.85rem;font-weight:600;text-decoration:none;padding:9px 18px;border-radius:50px;white-space:nowrap;">View on Amazon ↗</a>
-  </div>
-</div>
+
+    <div class="affiliate-box" style="margin:32px 0;background:#fff;border:2px solid #2d6a4f;border-radius:16px;padding:22px 26px 22px 32px;position:relative;overflow:hidden;box-shadow:0 4px 18px rgba(45,106,79,0.09);">
+      <div style="position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,#2d6a4f,#52b788);border-radius:16px 0 0 16px;"></div>
+      <span style="display:inline-block;background:#d8f3dc;color:#1b4332;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;">📚 We Recommend</span>
+      <p style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#1a3a2a;margin:0 0 4px;">English Grammar in Use</p>
+      <p style="font-size:0.78rem;color:#5a7a6a;margin:0 0 10px;">by Raymond Murphy · Cambridge University Press</p>
+      <p style="font-size:0.9rem;color:#2d3e35;line-height:1.65;margin:0 0 18px;">Now that you know the basics of English sentences, this book is your next step. It covers every essential grammar structure — from simple sentences to complex clauses — with clear explanations and practice exercises on every page.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+        <p style="font-size:0.7rem;color:#8aab98;font-style:italic;max-width:220px;line-height:1.4;margin:0;">ⓘ Affiliate link — I may earn a small commission at no extra cost to you.</p>
+        <a href="https://amzn.to/4mQUW00" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:7px;background:#2d6a4f;color:#fff;font-size:0.85rem;font-weight:600;text-decoration:none;padding:9px 18px;border-radius:50px;white-space:nowrap;">View on Amazon ↗</a>
+      </div>
+    </div>
   </article>
 
   <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
+
+<script>
+let score=0;
+let fitbChecked=false;
+let dndChecked=false;
+
+function checkMC(btn,result,qId,correct){
+  const q=document.getElementById(qId);
+  q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
+  const fb=document.getElementById(qId+'-fb');
+  if(result==='correct'){
+    btn.classList.add('correct');
+    fb.textContent='✅ Correct! Great job!';
+    fb.className='mc-feedback show correct';
+    score++;
+  } else {
+    btn.classList.add('wrong');
+    q.querySelectorAll('.mc-option').forEach(o=>{
+      if(o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct');
+    });
+    fb.textContent='❌ The correct answer is "'+correct+'"';
+    fb.className='mc-feedback show wrong';
+  }
+}
+
+function checkFITB(){
+  if(fitbChecked) return;
+  fitbChecked=true;
+  let correct=0;
+  ['fitb1','fitb2','fitb3'].forEach(id=>{
+    const inp=document.getElementById(id);
+    if(!inp) return;
+    const answer=inp.dataset.answer.toLowerCase().trim();
+    const user=inp.value.toLowerCase().trim();
+    if(user===answer){
+      inp.classList.add('correct');
+      correct++;
+      score++;
+    } else {
+      inp.classList.add('wrong');
+      inp.value=inp.dataset.answer;
+    }
+    inp.disabled=true;
+  });
+  const fb=document.getElementById('fitbFeedback');
+  fb.style.display='block';
+  if(correct===3){
+    fb.textContent='✅ Perfect! All 3 correct!';
+    fb.style.background='var(--green-pale)';
+    fb.style.color='var(--green-dark)';
+  } else {
+    fb.textContent='You got '+correct+'/3. Correct answers are shown above.';
+    fb.style.background='#fff8e6';
+    fb.style.color='#6b5a00';
+  }
+}
+
+let selectedWords=[];
+const correctOrder=["She","reads","a","book","every","day"];
+
+function selectWord(el){
+  if(el.classList.contains('used')) return;
+  el.classList.add('used');
+  selectedWords.push(el.textContent);
+  const answer=document.getElementById('dndAnswer');
+  const placeholder=document.getElementById('dndPlaceholder');
+  if(placeholder) placeholder.remove();
+  const wordEl=document.createElement('span');
+  wordEl.textContent=el.textContent;
+  wordEl.className='dnd-placed';
+  wordEl.onclick=()=>{
+    wordEl.remove();
+    el.classList.remove('used');
+    const idx=selectedWords.lastIndexOf(el.textContent);
+    if(idx>-1) selectedWords.splice(idx,1);
+    if(document.getElementById('dndAnswer').children.length===0){
+      const ph=document.createElement('span');
+      ph.id='dndPlaceholder';
+      ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';
+      ph.textContent='Tap words above...';
+      document.getElementById('dndAnswer').appendChild(ph);
+    }
+  };
+  answer.appendChild(wordEl);
+}
+
+function checkDND(){
+  if(dndChecked) return;
+  const fb=document.getElementById('dndFeedback');
+  const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
+  fb.style.display='block';
+  if(isCorrect){
+    fb.textContent='✅ Perfect! That\'s exactly right!';
+    fb.style.background='var(--green-pale)';
+    fb.style.color='var(--green-dark)';
+    score++;
+    dndChecked=true;
+  } else {
+    fb.textContent='❌ Not quite. Try again or reset!';
+    fb.style.background='#fff0f0';
+    fb.style.color='#c00';
+  }
+}
+
+function resetDND(){
+  selectedWords=[];
+  dndChecked=false;
+  const answer=document.getElementById('dndAnswer');
+  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
+  document.getElementById('dndFeedback').style.display='none';
+}
+
+function showScore(){
+  const total=7;
+  const section=document.getElementById('scoreSection');
+  section.classList.add('show');
+  const pct=Math.round((score/total)*100);
+  document.getElementById('scoreNum').textContent=score+'/'+total;
+  const emoji=document.getElementById('scoreEmoji');
+  const title=document.getElementById('scoreTitle');
+  const sub=document.getElementById('scoreSub');
+  const badge=document.getElementById('scoreBadge');
+  if(pct>=80){
+    emoji.textContent='🏆';
+    title.textContent='Outstanding!';
+    sub.textContent='You have mastered this lesson!';
+    badge.style.display='inline-flex';
+    localStorage.setItem('badge_grammar_article-1','earned');
+  } else if(pct>=60){
+    emoji.textContent='🎉';
+    title.textContent='Great Job!';
+    sub.textContent='Good work! Review the sections you missed.';
+  } else {
+    emoji.textContent='💪';
+    title.textContent='Keep Going!';
+    sub.textContent='Read the lesson again and try once more!';
+  }
+  section.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
 </body>
 </html>
