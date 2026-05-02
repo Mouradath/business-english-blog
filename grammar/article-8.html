@@ -7,9 +7,7 @@
 <title>Reported Speech — English for All</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
 <script defer src="/_vercel/insights/script.js"></script>
-
 <style>
-/* (unchanged styles — keeping exactly your system) */
 :root{--green-dark:#1a3a24;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--orange:#ff6b35;--yellow:#ffd166;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#5a5a5a;--radius:16px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Nunito',sans-serif;background:#f8fdf9;color:var(--ink);}
@@ -19,90 +17,414 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .back-btn{color:var(--green-light);font-size:0.82rem;font-weight:700;text-decoration:none;}
 .progress-bar-wrap{position:fixed;top:52px;left:0;right:0;z-index:99;height:4px;background:rgba(0,0,0,.08);}
 .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--green-bright),#6dffaa);width:0%;transition:width .3s;}
-.article-hero{padding:80px 1.5rem 3rem;background:linear-gradient(160deg,var(--green-dark) 0%,#2d6a4f 100%);text-align:center;position:relative;}
+.article-hero{padding:80px 1.5rem 3rem;background:linear-gradient(160deg,var(--green-dark) 0%,#2d6a4f 100%);text-align:center;position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(64,192,116,.1) 1px,transparent 1px);background-size:24px 24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(64,192,116,.2);border:1.5px solid var(--green-bright);color:var(--green-bright);font-size:0.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1rem;animation:fadeUp .6s both;}
+.article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--white);line-height:1.2;margin-bottom:1rem;animation:fadeUp .6s .1s both;}
+.article-hero h1 span{color:var(--green-bright);font-style:italic;}
+.hero-meta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;animation:fadeUp .6s .2s both;}
+.hero-meta span{background:rgba(255,255,255,.1);color:var(--green-light);font-size:0.78rem;font-weight:700;padding:4px 12px;border-radius:20px;}
+.hero-sub{color:var(--green-light);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.6;animation:fadeUp .6s .3s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .article-body{max-width:720px;margin:0 auto;padding:2rem 1.2rem 4rem;}
-.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-weight:700;width:120px;text-align:center;}
-.fitb-input.correct{border-color:var(--green-bright);background:var(--green-pale);}
-.fitb-input.wrong{border-color:#ff4444;background:#fff0f0;}
-.check-btn{background:var(--green-dark);color:white;border:none;padding:10px 22px;border-radius:30px;cursor:pointer;}
+.objectives{background:var(--white);border-radius:var(--radius);padding:1.4rem;margin-bottom:2rem;border:2px solid var(--green-light);box-shadow:0 2px 12px rgba(45,106,79,.08);}
+.objectives h3{color:var(--green-dark);font-size:0.9rem;font-weight:800;margin-bottom:0.8rem;}
+.objectives ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.objectives li{font-size:0.88rem;color:var(--ink-soft);display:flex;align-items:flex-start;gap:8px;}
+.objectives li::before{content:'✅';font-size:0.75rem;flex-shrink:0;margin-top:2px;}
+.lesson-section{margin-bottom:2.5rem;}
+.lesson-section h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--green-dark);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--green-light);}
+.lesson-section p{font-size:0.95rem;line-height:1.8;color:var(--ink-soft);margin-bottom:1rem;}
+.example-box{background:var(--green-pale);border-radius:12px;padding:1.2rem;margin:1rem 0;border-left:4px solid var(--green-bright);}
+.example-box .ex-label{font-size:0.7rem;font-weight:800;color:var(--green-mid);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;}
+.example-box p{font-size:0.92rem;color:var(--ink);margin:0;line-height:1.7;}
+.highlight{color:var(--green-mid);font-weight:800;}
+.tip-box{background:#fff8e6;border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;border-left:4px solid var(--yellow);display:flex;gap:10px;align-items:flex-start;}
+.tip-icon{font-size:1.3rem;flex-shrink:0;}
+.tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
+.tip-text strong{color:#4a3a00;}
+.quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
+.quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.quiz-icon{font-size:1.6rem;}
+.quiz-title{font-size:1rem;font-weight:800;color:var(--green-dark);}
+.quiz-subtitle{font-size:0.75rem;color:var(--ink-soft);}
+.mc-question{margin-bottom:1.5rem;}
+.mc-q{font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;line-height:1.5;}
+.mc-options{display:flex;flex-direction:column;gap:0.5rem;}
+.mc-option{padding:10px 14px;border-radius:10px;border:2px solid #e8e8e8;background:#fafafa;font-size:0.88rem;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;font-weight:600;text-align:left;color:var(--ink);}
+.mc-option:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.mc-option.correct{border-color:var(--green-bright);background:var(--green-pale);color:var(--green-dark);}
+.mc-option.wrong{border-color:#ff4444;background:#fff0f0;color:#c00;}
+.mc-feedback{font-size:0.82rem;margin-top:0.5rem;font-weight:700;padding:6px 12px;border-radius:8px;display:none;}
+.mc-feedback.show{display:block;}
+.mc-feedback.correct{background:var(--green-pale);color:var(--green-dark);}
+.mc-feedback.wrong{background:#fff0f0;color:#c00;}
+.fitb-question{margin-bottom:1.2rem;}
+.fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:130px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
+.fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
+.check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
+.check-btn:hover{background:var(--green-mid);}
+.dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
+.dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+.dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
+.dnd-word:hover{background:var(--green-light);transform:translateY(-2px);}
+.dnd-word.used{opacity:0.3;cursor:default;pointer-events:none;}
+.dnd-answer-box{min-height:44px;background:var(--green-pale);border-radius:12px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:1rem;border:2px dashed var(--green-light);}
+.dnd-placed{background:var(--white);border:2px solid var(--green-bright);border-radius:8px;padding:4px 10px;font-size:0.85rem;font-weight:700;color:var(--green-dark);cursor:pointer;}
+.score-section{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:20px;padding:2rem;text-align:center;margin:2rem 0;display:none;}
+.score-section.show{display:block;animation:fadeUp .5s both;}
+.score-emoji{font-size:3rem;margin-bottom:0.5rem;display:block;}
+.score-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:0.4rem;}
+.score-num{font-size:2.5rem;font-weight:900;color:var(--green-bright);}
+.score-sub{font-size:0.85rem;color:var(--green-light);margin-top:0.4rem;}
+.badge-earned{display:inline-flex;align-items:center;gap:8px;background:rgba(255,209,102,.15);border:2px solid var(--yellow);color:var(--yellow);padding:8px 18px;border-radius:30px;font-size:0.85rem;font-weight:800;margin-top:1rem;}
+.submit-quiz{background:var(--green-bright);color:var(--green-dark);border:none;padding:14px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.95rem;font-weight:900;cursor:pointer;margin-top:1.5rem;width:100%;box-shadow:0 4px 16px rgba(64,192,116,.3);transition:transform .2s;}
+.submit-quiz:hover{transform:translateY(-2px);}
+.article-nav{display:flex;gap:1rem;justify-content:space-between;margin-top:3rem;flex-wrap:wrap;}
+.article-nav a{flex:1;min-width:140px;background:var(--white);border:2px solid var(--green-light);border-radius:14px;padding:1rem;text-decoration:none;color:var(--green-dark);font-weight:700;font-size:0.85rem;transition:all .2s;display:flex;flex-direction:column;gap:3px;}
+.article-nav a:hover{border-color:var(--green-bright);background:var(--green-pale);}
+.nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
 </style>
 </head>
-
 <body>
-
 <nav>
   <a href="../index.html" class="nav-logo">English <span>for All</span></a>
   <a href="../grammar/index.html" class="back-btn">← Grammar</a>
 </nav>
-
-<div class="progress-bar-wrap">
-  <div class="progress-bar-fill" id="progressBar"></div>
-</div>
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
 
 <section class="article-hero">
-  <h1>Reported Speech</h1>
-  <p>Learn how to report what someone else said</p>
+  <div class="hero-badge">📚 Grammar · Upper-Intermediate · B2</div>
+  <h1>Reported <span>Speech</span></h1>
+  <div class="hero-meta">
+    <span>🎯 Upper-Intermediate</span><span>📊 B2</span>
+    <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
+  </div>
+  <p class="hero-sub">Learn how to report what someone else said</p>
 </section>
 
 <div class="article-body">
+  <div class="objectives">
+    <h3>🎯 What You'll Learn</h3>
+    <ul>
+      <li>Understand what reported speech is and how it works</li>
+      <li>Apply tense backshifting correctly when reporting</li>
+      <li>Avoid the most common mistakes learners make</li>
+      <li>Earn your Grammar badge with 80%+ score!</li>
+    </ul>
+  </div>
 
-<!-- Quiz 2 FIXED -->
-<div class="quiz-section">
-  <h3>Quiz 2 — Fill in the Blanks</h3>
-
-  <div class="fitb-question">
-    <div class="fitb-sentence">
-      1. She said she 
-      <input id="fitb1" class="fitb-input" data-answer="was"> (be) tired.
+  <div class="lesson-section">
+    <h2>📖 1. Introduction</h2>
+    <p><span class="highlight">Reported speech</span> (also called indirect speech) is used when we tell someone what another person said — without quoting their exact words. When we report speech, we usually shift the tense back one step into the past and change pronouns and time expressions.</p>
+    <div class="example-box">
+      <div class="ex-label">✅ Direct vs Reported</div>
+      <p>
+        • Direct: She said, <strong>"I am tired."</strong><br>
+        • Reported: She said she <span class="highlight">was</span> tired.<br><br>
+        • Direct: He said, <strong>"I am going to Paris."</strong><br>
+        • Reported: He said he <span class="highlight">was going</span> to Paris.
+      </p>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon">💡</span>
+      <div class="tip-text"><strong>Study Tip:</strong> Think of reported speech as "going back in time" — present becomes past, past becomes past perfect. The tense always shifts one step back!</div>
     </div>
   </div>
 
-  <div class="fitb-question">
-    <div class="fitb-sentence">
-      2. He told me he 
-      <input id="fitb2" class="fitb-input" data-answer="was going"> (go) to Paris.
+  <div class="lesson-section">
+    <h2>📝 2. Key Patterns & Examples</h2>
+    <p>The most important change in reported speech is <span class="highlight">tense backshift</span>. The verb in the reported clause moves one tense into the past.</p>
+    <div class="example-box">
+      <div class="ex-label">✅ Tense Backshift Table</div>
+      <p>
+        • "I <strong>am</strong> happy." → She said she <span class="highlight">was</span> happy.<br>
+        • "I <strong>work</strong> here." → He said he <span class="highlight">worked</span> there.<br>
+        • "I <strong>will finish</strong> soon." → They said they <span class="highlight">would finish</span> soon.<br>
+        • "I <strong>have seen</strong> it." → She said she <span class="highlight">had seen</span> it.
+      </p>
+    </div>
+    <div class="example-box">
+      <div class="ex-label">✅ Pronoun &amp; Time Changes</div>
+      <p>
+        • "I" → he/she &nbsp;|&nbsp; "my" → his/her<br>
+        • "today" → that day &nbsp;|&nbsp; "now" → then<br>
+        • "tomorrow" → the next day &nbsp;|&nbsp; "here" → there
+      </p>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon">🎯</span>
+      <div class="tip-text"><strong>Remember:</strong> Use <strong>said</strong> when there's no listener named. Use <strong>told</strong> when you name the person: "She told <strong>me</strong> she was tired." NOT "She told she was tired."</div>
     </div>
   </div>
 
-  <div class="fitb-question">
-    <div class="fitb-sentence">
-      3. They said they 
-      <input id="fitb3" class="fitb-input" data-answer="would finish"> (finish) soon.
+  <div class="lesson-section">
+    <h2>⚠️ 3. Common Mistakes</h2>
+    <p>These are the most common errors learners make with reported speech. Study them carefully!</p>
+    <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
+      <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
+      <p>
+        • ❌ She said she <strong>is</strong> tired. → tense not shifted back!<br>
+        • ❌ He told <strong>she</strong> was going to Paris. → "told" needs an object!<br>
+        • ❌ They said they <strong>will</strong> finish soon. → "will" should become "would"!
+      </p>
+    </div>
+    <div class="example-box">
+      <div class="ex-label">✅ Correct Forms</div>
+      <p>
+        • ✅ She said she <span class="highlight">was</span> tired.<br>
+        • ✅ He told <span class="highlight">me</span> he was going to Paris.<br>
+        • ✅ They said they <span class="highlight">would</span> finish soon.
+      </p>
     </div>
   </div>
 
-  <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
-</div>
+  <!-- Quiz 1: Multiple Choice -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🎯</span>
+      <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
+      <div class="quiz-subtitle">Choose the best answer</div></div>
+    </div>
+    <div class="mc-question" id="q1">
+      <div class="mc-q">1. "I am tired." → She said she ___ tired.</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','was')">is</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q1','was')">was</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','was')">will be</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','was')">has been</button>
+      </div>
+      <div class="mc-feedback" id="q1-fb"></div>
+    </div>
+    <div class="mc-question" id="q2">
+      <div class="mc-q">2. Which sentence uses reported speech correctly?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','He said he would come.')">He said he will come.</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q2','He said he would come.')">He said he would come.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','He said he would come.')">He said he comes.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','He said he would come.')">He told he would come.</button>
+      </div>
+      <div class="mc-feedback" id="q2-fb"></div>
+    </div>
+    <div class="mc-question" id="q3">
+      <div class="mc-q">3. "I will finish soon." → They said they ___ finish soon.</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','would')">will</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','would')">can</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q3','would')">would</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','would')">should</button>
+      </div>
+      <div class="mc-feedback" id="q3-fb"></div>
+    </div>
+  </div>
 
+  <!-- Quiz 2: Fill in the Blanks -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">✏️</span>
+      <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+      <div class="quiz-subtitle">Type the correct reported form</div></div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">1. She said she <input class="fitb-input" id="fitb1" data-answer="was" placeholder="???"> tired.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">2. He told me he <input class="fitb-input" id="fitb2" data-answer="was going" placeholder="???"> to Paris.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">3. They said they <input class="fitb-input" id="fitb3" data-answer="would finish" placeholder="???"> soon.</div>
+    </div>
+    <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+    <div id="fitbFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+  </div>
+
+  <!-- Quiz 3: Build the Sentence -->
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <span class="quiz-icon">🧩</span>
+      <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
+      <div class="quiz-subtitle">Tap words in the correct order</div></div>
+    </div>
+    <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
+    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"She said she was going to Paris"</p>
+    <div class="dnd-words" id="dndWords">
+      <div class="dnd-word" onclick="selectWord(this)">Paris</div>
+      <div class="dnd-word" onclick="selectWord(this)">said</div>
+      <div class="dnd-word" onclick="selectWord(this)">was</div>
+      <div class="dnd-word" onclick="selectWord(this)">She</div>
+      <div class="dnd-word" onclick="selectWord(this)">to</div>
+      <div class="dnd-word" onclick="selectWord(this)">going</div>
+      <div class="dnd-word" onclick="selectWord(this)">she</div>
+    </div>
+    <div class="dnd-answer-box" id="dndAnswer">
+      <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
+    </div>
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+      <button class="check-btn" onclick="checkDND()">Check ✓</button>
+      <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
+    </div>
+    <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+  </div>
+
+  <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
+
+  <div class="score-section" id="scoreSection">
+    <span class="score-emoji" id="scoreEmoji">🎉</span>
+    <div class="score-title" id="scoreTitle">Well Done!</div>
+    <div class="score-num" id="scoreNum">0/7</div>
+    <div class="score-sub" id="scoreSub">Keep practising!</div>
+    <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Grammar Badge Earned!</div>
+  </div>
+
+  <div class="article-nav">
+    <a href="article-7.html"><span class="nav-dir">← Previous</span><span>Lesson 7</span></a>
+    <a href="../grammar/index.html" style="text-align:right;"><span class="nav-dir">Back to</span><span>Grammar Index</span></a>
+  </div>
 </div>
 
 <script>
-let score=0;
-
-function checkFITB(){
-  ['fitb1','fitb2','fitb3'].forEach(id=>{
-    const inp=document.getElementById(id);
-    const answer=inp.dataset.answer.toLowerCase().trim();
-    const user=inp.value.toLowerCase().trim();
-
-    if(user===answer){
-      inp.classList.add('correct');
-      score++;
-    } else {
-      inp.classList.add('wrong');
-      inp.value=inp.dataset.answer;
-    }
-
-    inp.disabled=true;
-  });
-}
-
 window.addEventListener('scroll',()=>{
   const doc=document.documentElement;
   const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
   document.getElementById('progressBar').style.width=scrolled+'%';
 });
-</script>
 
+let score=0;
+let fitbChecked=false;
+let dndChecked=false;
+
+function checkMC(btn,result,qId,correct){
+  const q=document.getElementById(qId);
+  q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
+  const fb=document.getElementById(qId+'-fb');
+  if(result==='correct'){
+    btn.classList.add('correct');
+    fb.textContent='✅ Correct! Great job!';
+    fb.className='mc-feedback show correct';
+    score++;
+  } else {
+    btn.classList.add('wrong');
+    q.querySelectorAll('.mc-option').forEach(o=>{
+      if(o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct');
+    });
+    fb.textContent='❌ The correct answer is "'+correct+'"';
+    fb.className='mc-feedback show wrong';
+  }
+}
+
+function checkFITB(){
+  if(fitbChecked) return;
+  fitbChecked=true;
+  let correct=0;
+  ['fitb1','fitb2','fitb3'].forEach(id=>{
+    const inp=document.getElementById(id);
+    if(!inp) return;
+    const answer=inp.dataset.answer.toLowerCase().trim();
+    const user=inp.value.toLowerCase().trim();
+    if(user===answer){
+      inp.classList.add('correct');
+      correct++;
+      score++;
+    } else {
+      inp.classList.add('wrong');
+      inp.value=inp.dataset.answer;
+    }
+    inp.disabled=true;
+  });
+  const fb=document.getElementById('fitbFeedback');
+  fb.style.display='block';
+  if(correct===3){
+    fb.textContent='✅ Perfect! All 3 correct!';
+    fb.style.background='var(--green-pale)';
+    fb.style.color='var(--green-dark)';
+  } else {
+    fb.textContent='You got '+correct+'/3. Correct answers are shown above.';
+    fb.style.background='#fff8e6';
+    fb.style.color='#6b5a00';
+  }
+}
+
+let selectedWords=[];
+const correctOrder=["She","said","she","was","going","to","Paris"];
+
+function selectWord(el){
+  if(el.classList.contains('used')) return;
+  el.classList.add('used');
+  selectedWords.push(el.textContent);
+  const answer=document.getElementById('dndAnswer');
+  const placeholder=document.getElementById('dndPlaceholder');
+  if(placeholder) placeholder.remove();
+  const wordEl=document.createElement('span');
+  wordEl.textContent=el.textContent;
+  wordEl.className='dnd-placed';
+  wordEl.onclick=()=>{
+    wordEl.remove();
+    el.classList.remove('used');
+    const idx=selectedWords.lastIndexOf(el.textContent);
+    if(idx>-1) selectedWords.splice(idx,1);
+    if(document.getElementById('dndAnswer').children.length===0){
+      const ph=document.createElement('span');
+      ph.id='dndPlaceholder';
+      ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';
+      ph.textContent='Tap words above...';
+      document.getElementById('dndAnswer').appendChild(ph);
+    }
+  };
+  answer.appendChild(wordEl);
+}
+
+function checkDND(){
+  if(dndChecked) return;
+  const fb=document.getElementById('dndFeedback');
+  const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
+  fb.style.display='block';
+  if(isCorrect){
+    fb.textContent='✅ Perfect! That\'s exactly right!';
+    fb.style.background='var(--green-pale)';
+    fb.style.color='var(--green-dark)';
+    score++;
+    dndChecked=true;
+  } else {
+    fb.textContent='❌ Not quite. Try again or reset!';
+    fb.style.background='#fff0f0';
+    fb.style.color='#c00';
+  }
+}
+
+function resetDND(){
+  selectedWords=[];
+  dndChecked=false;
+  const answer=document.getElementById('dndAnswer');
+  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
+  document.getElementById('dndFeedback').style.display='none';
+}
+
+function showScore(){
+  const total=7;
+  const section=document.getElementById('scoreSection');
+  section.classList.add('show');
+  const pct=Math.round((score/total)*100);
+  document.getElementById('scoreNum').textContent=score+'/'+total;
+  if(pct>=80){
+    document.getElementById('scoreEmoji').textContent='🏆';
+    document.getElementById('scoreTitle').textContent='Outstanding!';
+    document.getElementById('scoreSub').textContent='You have mastered this lesson!';
+    document.getElementById('scoreBadge').style.display='inline-flex';
+    localStorage.setItem('badge_grammar_article-8','earned');
+  } else if(pct>=60){
+    document.getElementById('scoreEmoji').textContent='🎉';
+    document.getElementById('scoreTitle').textContent='Great Job!';
+    document.getElementById('scoreSub').textContent='Good work! Review the sections you missed.';
+  } else {
+    document.getElementById('scoreEmoji').textContent='💪';
+    document.getElementById('scoreTitle').textContent='Keep Going!';
+    document.getElementById('scoreSub').textContent='Read the lesson again and try once more!';
+  }
+  section.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
 </body>
 </html>
