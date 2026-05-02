@@ -2,53 +2,78 @@
 
   <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
 
-  <script type="module">
-    import { ProgressEngine } from '../js/progressEngine.js';
+   
+<script type="module">
+  import { ProgressEngine } from '../js/progressEngine.js';
 
-    const progress = new ProgressEngine();
+  const progress = new ProgressEngine();
 
-    const lessons = [
-      "speaking-1",
-      "speaking-2",
-      "speaking-3",
-      "speaking-4",
-      "speaking-5",
-      "speaking-6",
-      "speaking-7",
-      "speaking-8"
-    ];
+  const lessons = [
+    "speaking-1",
+    "speaking-2",
+    "speaking-3",
+    "speaking-4",
+    "speaking-5",
+    "speaking-6",
+    "speaking-7",
+    "speaking-8"
+  ];
 
+  function initProgressUI() {
     const cards = document.querySelectorAll(".article-card");
 
+    if (!cards.length) {
+      console.warn("[Progress] No article cards found");
+      return;
+    }
+
     cards.forEach((card, index) => {
-      const key = lessons[index];
-      const prevKey = lessons[index - 1];
+      try {
+        const key = lessons[index];
+        const prevKey = lessons[index - 1];
 
-      const unlocked = index === 0 || progress.isCompleted(prevKey);
-      const data = progress.getLesson(key);
+        const unlocked = index === 0 || progress.isCompleted(prevKey);
+        const data = progress.getLesson(key);
 
-      if (!unlocked) {
-        card.style.opacity = "0.4";
-        card.style.pointerEvents = "none";
-      }
+        // LOCK STATE
+        if (!unlocked) {
+          card.style.opacity = "0.4";
+          card.style.pointerEvents = "none";
+        }
 
-      const badge = card.querySelector(".article-level");
+        // BADGE (safe check)
+        const badge = card.querySelector(".article-level");
+        if (badge) {
+          if (data?.completed) {
+            badge.textContent = "✔ Completed";
+          } else if (!unlocked) {
+            badge.textContent = "🔒 Locked";
+          } else {
+            badge.textContent = "▶ Start";
+          }
+        }
 
-      if (data?.completed) {
-        badge.textContent = "✔ Completed";
-      } else if (!unlocked) {
-        badge.textContent = "🔒 Locked";
-      } else {
-        badge.textContent = "▶ Start";
-      }
+        // DESCRIPTION / SCORE (safe check)
+        const p = card.querySelector("p");
 
-      const p = card.querySelector("p");
+        if (p) {
+          if (data) {
+            p.textContent = `Score: ${data.score}/${data.total}`;
+          }
+        }
 
-      if (data) {
-        p.textContent = `Score: ${data.score}/${data.total}`;
+      } catch (err) {
+        console.error(`[ProgressEngine Error] Lesson ${index + 1}`, err);
       }
     });
-  </script>
+  }
 
+  // SAFE INIT (prevents timing issues)
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProgressUI);
+  } else {
+    initProgressUI();
+  }
+</script>
 </body>
 </html>
