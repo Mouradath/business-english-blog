@@ -1,56 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grammar - PLU Blog</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
-    :root{--green-dark:#1a3c2e;--green-mid:#2d6a4f;--green-bright:#40c074;--green-light:#b7e4c7;--green-pale:#f0faf4;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#4a4a4a;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'DM Sans',sans-serif;background:var(--green-pale);color:var(--ink);}
-    header{background:var(--green-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
-    .logo{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-bright);text-decoration:none;}
-    nav a{color:var(--green-light);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.6rem;}
-    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);padding:3.5rem 2rem;text-align:center;}
-    .hero-icon{font-size:3rem;margin-bottom:1rem;}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);margin-bottom:0.8rem;}
-    .hero p{color:var(--green-light);max-width:500px;margin:0 auto;line-height:1.7;}
-    .back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--green-bright);text-decoration:none;font-size:0.85rem;font-weight:600;margin:2rem 2rem 0;padding:0.4rem 1rem;border:1.5px solid var(--green-bright);border-radius:100px;}
-    .section-title{text-align:center;padding:2.5rem 1rem 0.5rem;}
-    .section-title h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-dark);}
-    .articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;max-width:1000px;margin:2rem auto;padding:0 1.5rem 3rem;}
-    .article-card{background:var(--white);border-radius:14px;padding:1.6rem;border:1.5px solid var(--green-light);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.5rem;transition:transform 0.2s,box-shadow 0.2s;}
-    .article-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(45,106,79,0.12);}
-    .article-level{font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--green-mid);background:var(--green-pale);padding:0.2rem 0.7rem;border-radius:100px;display:inline-block;width:fit-content;}
-    .article-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green-dark);line-height:1.3;}
-    .article-card p{font-size:0.83rem;color:var(--ink-soft);line-height:1.55;flex:1;}
-    .read-more{font-size:0.78rem;color:var(--green-bright);font-weight:600;margin-top:0.3rem;}
-    footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
-  </style>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7733387489871456" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar — English for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{
+  --green-dark:#1a3a24;--green-mid:#2d6a4f;--green-bright:#40c074;
+  --green-light:#b7e4c7;--green-pale:#f0faf4;--orange:#ff6b35;
+  --yellow:#ffd166;--white:#ffffff;--ink:#1a1a1a;--ink-soft:#5a5a5a;
+  --radius:16px;--locked:#94a3b8;--locked-bg:#f1f5f9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#f8fdf9;color:var(--ink);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97);padding:0 1.2rem;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.15);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--green-bright);}
+.back-btn{color:var(--green-light);font-size:0.82rem;font-weight:700;text-decoration:none;}
+
+/* HERO */
+.hero{padding:80px 1.5rem 2.5rem;background:linear-gradient(160deg,var(--green-dark) 0%,#2d6a4f 100%);text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(64,192,116,.1) 1px,transparent 1px);background-size:24px 24px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(64,192,116,.2);border:1.5px solid var(--green-bright);color:var(--green-bright);font-size:0.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,7vw,3rem);color:var(--white);margin-bottom:0.8rem;}
+.hero h1 span{color:var(--green-bright);font-style:italic;}
+.hero p{color:var(--green-light);font-size:0.95rem;max-width:480px;margin:0 auto 1.5rem;}
+
+/* OVERALL PROGRESS */
+.overall-progress{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1rem 1.4rem;max-width:400px;margin:0 auto;display:flex;align-items:center;gap:1rem;}
+.overall-circle{width:52px;height:52px;border-radius:50%;background:conic-gradient(var(--green-bright) 0deg, rgba(255,255,255,.2) 0deg);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.overall-circle-inner{width:38px;height:38px;border-radius:50%;background:rgba(26,58,36,.9);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;color:var(--green-bright);}
+.overall-text{text-align:left;}
+.overall-label{font-size:0.72rem;color:rgba(255,255,255,.6);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.overall-value{font-size:1rem;font-weight:800;color:var(--white);}
+
+/* MAIN BODY */
+.page-body{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+/* LEVEL SECTION */
+.level-section{margin-bottom:2.5rem;}
+.level-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding:0.8rem 1rem;border-radius:12px;position:relative;}
+.level-header.free{background:linear-gradient(135deg,rgba(64,192,116,.15),rgba(45,106,79,.1));border:2px solid var(--green-light);}
+.level-header.locked{background:var(--locked-bg);border:2px solid #e2e8f0;}
+.level-title-wrap{display:flex;align-items:center;gap:10px;}
+.level-icon{font-size:1.4rem;}
+.level-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green-dark);}
+.level-header.locked .level-title{color:var(--locked);}
+.level-badge{font-size:0.68rem;font-weight:800;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:1px;}
+.badge-free{background:#d8f3dc;color:#1b4332;}
+.badge-locked{background:#e2e8f0;color:#94a3b8;}
+.level-progress-wrap{display:flex;align-items:center;gap:8px;}
+.level-progress-text{font-size:0.78rem;font-weight:700;color:var(--green-mid);}
+.level-header.locked .level-progress-text{color:var(--locked);}
+.level-bar{width:80px;height:6px;background:rgba(0,0,0,.08);border-radius:10px;overflow:hidden;}
+.level-bar-fill{height:100%;background:linear-gradient(90deg,var(--green-bright),#6dffaa);border-radius:10px;transition:width 0.6s ease;}
+.level-header.locked .level-bar-fill{background:var(--locked);}
+
+/* LESSON CARDS */
+.lessons-grid{display:flex;flex-direction:column;gap:0.7rem;}
+.lesson-card{background:var(--white);border-radius:14px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;text-decoration:none;border:2px solid var(--green-pale);transition:all .2s;position:relative;overflow:hidden;}
+.lesson-card:hover:not(.locked-card){border-color:var(--green-bright);background:var(--green-pale);transform:translateX(4px);}
+.lesson-card.completed{border-color:var(--green-light);}
+.lesson-card.locked-card{background:var(--locked-bg);border-color:#e2e8f0;cursor:not-allowed;}
+.lesson-num{width:36px;height:36px;border-radius:10px;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:900;color:var(--green-mid);flex-shrink:0;}
+.lesson-card.completed .lesson-num{background:var(--green-bright);color:var(--white);}
+.lesson-card.locked-card .lesson-num{background:#e2e8f0;color:var(--locked);}
+.lesson-info{flex:1;min-width:0;}
+.lesson-title{font-size:0.92rem;font-weight:800;color:var(--ink);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.lesson-card.locked-card .lesson-title{color:var(--locked);}
+.lesson-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.lesson-level{font-size:0.68rem;font-weight:800;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px;}
+.tag-a1{background:#dbeafe;color:#1e40af;}
+.tag-a2{background:#ede9fe;color:#5b21b6;}
+.tag-b1{background:#fef3c7;color:#92400e;}
+.tag-b2{background:#fee2e2;color:#991b1b;}
+.lesson-time{font-size:0.72rem;color:var(--ink-soft);}
+.lesson-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.lesson-score{font-size:0.75rem;font-weight:800;color:var(--green-mid);background:var(--green-pale);padding:3px 10px;border-radius:20px;}
+.lesson-check{font-size:1.1rem;}
+.lock-icon{font-size:1.1rem;color:var(--locked);}
+
+/* UNLOCK BANNER */
+.unlock-banner{background:linear-gradient(135deg,#1e293b,#334155);border-radius:14px;padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;}
+.unlock-icon{font-size:2rem;flex-shrink:0;}
+.unlock-text h4{font-size:0.92rem;font-weight:800;color:var(--white);margin-bottom:2px;}
+.unlock-text p{font-size:0.78rem;color:#94a3b8;line-height:1.5;}
+.unlock-progress{margin-top:0.5rem;height:6px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden;}
+.unlock-progress-fill{height:100%;background:linear-gradient(90deg,var(--yellow),#ff6b35);border-radius:10px;transition:width 0.6s ease;}
+
+/* STREAK */
+.streak-bar{background:linear-gradient(135deg,var(--green-dark),var(--green-mid));border-radius:14px;padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:0.8rem;}
+.streak-item{text-align:center;}
+.streak-num{font-size:1.4rem;font-weight:900;color:var(--green-bright);}
+.streak-label{font-size:0.68rem;color:var(--green-light);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.lesson-card{animation:fadeUp .4s both;}
+</style>
 </head>
 <body>
-  <header>
-    <a href="../index.html" class="logo">PLU Blog</a>
-    <nav><a href="../index.html">Home</a></nav>
-  </header>
-  <section class="hero">
-    <div class="hero-icon">📐</div>
-    <h1>Grammar</h1>
-    <p>Clear, practical grammar lessons for every level.</p>
-  </section>
-  <a href="../index.html" class="back-link">&larr; Back to Home</a>
-  <div class="section-title"><h2>8 Articles</h2></div>
-  <div class="articles">
-    <a href="article-1.html" class="article-card"><span class="article-level">Beginner</span><h3>Introduction to English Sentences</h3><p>Learn the basic structure of English sentences: subject, verb, and object.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-2.html" class="article-card"><span class="article-level">Elementary</span><h3>Present Simple vs Present Continuous</h3><p>Understand when to use each tense with clear examples.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-3.html" class="article-card"><span class="article-level">Pre-Intermediate</span><h3>Past Simple and Past Continuous</h3><p>Master storytelling in English using these two essential past tenses.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-4.html" class="article-card"><span class="article-level">Intermediate</span><h3>The Present Perfect Explained</h3><p>One of the trickiest tenses in English - finally made simple.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-5.html" class="article-card"><span class="article-level">Intermediate</span><h3>Conditionals: Zero, First and Second</h3><p>Express possibilities and hypothetical situations with confidence.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-6.html" class="article-card"><span class="article-level">Upper-Intermediate</span><h3>Passive Voice: When and How to Use It</h3><p>Discover how and why English speakers use the passive voice.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-7.html" class="article-card"><span class="article-level">Advanced</span><h3>Reported Speech in Depth</h3><p>Go beyond the basics and master complex reported speech structures.</p><span class="read-more">Read article &rarr;</span></a>
-    <a href="article-8.html" class="article-card"><span class="article-level">Fluent</span><h3>Nuances of English Modal Verbs</h3><p>Explore subtle differences between modal verbs that even advanced learners miss.</p><span class="read-more">Read article &rarr;</span></a>
+<nav>
+  <a href="../index.html" class="nav-logo">English <span>for All</span></a>
+  <a href="../index.html" class="back-btn">← Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">📚 Grammar Track</div>
+  <h1>Master <span>Grammar</span></h1>
+  <p>From basic sentences to advanced structures — progress at your own pace.</p>
+  <div class="overall-progress">
+    <div class="overall-circle" id="overallCircle">
+      <div class="overall-circle-inner" id="overallPct">0%</div>
+    </div>
+    <div class="overall-text">
+      <div class="overall-label">Overall Progress</div>
+      <div class="overall-value" id="overallValue">0 of 8 lessons done</div>
+    </div>
   </div>
-  <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
+</section>
+
+<div class="page-body">
+
+  <!-- STREAK BAR -->
+  <div class="streak-bar">
+    <div class="streak-item"><div class="streak-num" id="statDone">0</div><div class="streak-label">Completed</div></div>
+    <div class="streak-item"><div class="streak-num" id="statBest">—</div><div class="streak-label">Best Score</div></div>
+    <div class="streak-item"><div class="streak-num" id="statBadges">0</div><div class="streak-label">Badges</div></div>
+    <div class="streak-item"><div class="streak-num">8</div><div class="streak-label">Total Lessons</div></div>
+  </div>
+
+  <!-- A1 LEVEL -->
+  <div class="level-section">
+    <div class="level-header free">
+      <div class="level-title-wrap">
+        <span class="level-icon">🟢</span>
+        <span class="level-title">Beginner</span>
+        <span class="level-badge badge-free">Free · A1</span>
+      </div>
+      <div class="level-progress-wrap">
+        <span class="level-progress-text" id="a1-prog">0/2</span>
+        <div class="level-bar"><div class="level-bar-fill" id="a1-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="lessons-grid">
+      <a href="article-1.html" class="lesson-card" id="card-1" style="animation-delay:.05s">
+        <div class="lesson-num" id="num-1">1</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Introduction to English Sentences</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-a1">A1</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-1" style="display:none"></span>
+          <span class="lesson-check" id="check-1"></span>
+        </div>
+      </a>
+      <a href="article-2.html" class="lesson-card" id="card-2" style="animation-delay:.1s">
+        <div class="lesson-num" id="num-2">2</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Present Continuous Tense</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-a1">A1</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-2" style="display:none"></span>
+          <span class="lesson-check" id="check-2"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- A2 LEVEL -->
+  <div class="level-section">
+    <div class="level-header free">
+      <div class="level-title-wrap">
+        <span class="level-icon">🔵</span>
+        <span class="level-title">Elementary</span>
+        <span class="level-badge badge-free">Free · A2</span>
+      </div>
+      <div class="level-progress-wrap">
+        <span class="level-progress-text" id="a2-prog">0/2</span>
+        <div class="level-bar"><div class="level-bar-fill" id="a2-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="lessons-grid">
+      <a href="article-3.html" class="lesson-card" id="card-3" style="animation-delay:.15s">
+        <div class="lesson-num" id="num-3">3</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Past Simple vs Past Continuous</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-a2">A2</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-3" style="display:none"></span>
+          <span class="lesson-check" id="check-3"></span>
+        </div>
+      </a>
+      <a href="article-4.html" class="lesson-card" id="card-4" style="animation-delay:.2s">
+        <div class="lesson-num" id="num-4">4</div>
+        <div class="lesson-info">
+          <div class="lesson-title">The Present Perfect Tense</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-a2">A2</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-4" style="display:none"></span>
+          <span class="lesson-check" id="check-4"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- B1 LEVEL -->
+  <div class="level-section">
+    <div class="level-header free">
+      <div class="level-title-wrap">
+        <span class="level-icon">🟡</span>
+        <span class="level-title">Pre-Intermediate</span>
+        <span class="level-badge badge-free">Free · B1</span>
+      </div>
+      <div class="level-progress-wrap">
+        <span class="level-progress-text" id="b1-prog">0/2</span>
+        <div class="level-bar"><div class="level-bar-fill" id="b1-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="lessons-grid">
+      <a href="article-5.html" class="lesson-card" id="card-5" style="animation-delay:.25s">
+        <div class="lesson-num" id="num-5">5</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Modal Verbs: Can, Could, Should</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-b1">B1</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-5" style="display:none"></span>
+          <span class="lesson-check" id="check-5"></span>
+        </div>
+      </a>
+      <a href="article-6.html" class="lesson-card" id="card-6" style="animation-delay:.3s">
+        <div class="lesson-num" id="num-6">6</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Conditionals: If Sentences</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-b1">B1</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right">
+          <span class="lesson-score" id="score-6" style="display:none"></span>
+          <span class="lesson-check" id="check-6"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- B2 UNLOCK BANNER -->
+  <div class="unlock-banner" id="unlockBanner">
+    <span class="unlock-icon">🔒</span>
+    <div class="unlock-text">
+      <h4>B2 Intermediate — Locked</h4>
+      <p>Complete all B1 lessons with 80%+ to unlock this level.</p>
+      <div class="unlock-progress"><div class="unlock-progress-fill" id="unlockFill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- B2 LEVEL -->
+  <div class="level-section">
+    <div class="level-header locked" id="b2-header">
+      <div class="level-title-wrap">
+        <span class="level-icon">🔴</span>
+        <span class="level-title">Intermediate</span>
+        <span class="level-badge badge-locked" id="b2-badge">🔒 Locked · B2</span>
+      </div>
+      <div class="level-progress-wrap">
+        <span class="level-progress-text" id="b2-prog">0/2</span>
+        <div class="level-bar"><div class="level-bar-fill" id="b2-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="lessons-grid">
+      <div class="lesson-card locked-card" id="card-7" style="animation-delay:.35s">
+        <div class="lesson-num" id="num-7">7</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Passive Voice Made Simple</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-b2">B2</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right"><span class="lock-icon">🔒</span></div>
+      </div>
+      <div class="lesson-card locked-card" id="card-8" style="animation-delay:.4s">
+        <div class="lesson-num" id="num-8">8</div>
+        <div class="lesson-info">
+          <div class="lesson-title">Reported Speech</div>
+          <div class="lesson-meta">
+            <span class="lesson-level tag-b2">B2</span>
+            <span class="lesson-time">⏱ 10 min</span>
+          </div>
+        </div>
+        <div class="lesson-right"><span class="lock-icon">🔒</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Lesson config
+const lessons = [
+  {id:1, key:'badge_grammar_article-1', level:'a1', href:'article-1.html'},
+  {id:2, key:'badge_grammar_article-2', level:'a1', href:'article-2.html'},
+  {id:3, key:'badge_grammar_article-3', level:'a2', href:'article-3.html'},
+  {id:4, key:'badge_grammar_article-4', level:'a2', href:'article-4.html'},
+  {id:5, key:'badge_grammar_article-5', level:'b1', href:'article-5.html'},
+  {id:6, key:'badge_grammar_article-6', level:'b1', href:'article-6.html'},
+  {id:7, key:'badge_grammar_article-7', level:'b2', href:'article-7.html'},
+  {id:8, key:'badge_grammar_article-8', level:'b2', href:'article-8.html'},
+];
+
+const scoreKeys = {
+  1:'score_grammar_article-1', 2:'score_grammar_article-2',
+  3:'score_grammar_article-3', 4:'score_grammar_article-4',
+  5:'score_grammar_article-5', 6:'score_grammar_article-6',
+  7:'score_grammar_article-7', 8:'score_grammar_article-8',
+};
+
+function getCompleted(key){ return localStorage.getItem(key) === 'earned'; }
+function getScore(key){ return localStorage.getItem(key); }
+
+function updateUI(){
+  let totalDone=0, bestScore=0, badges=0;
+  let a1Done=0, a2Done=0, b1Done=0, b2Done=0;
+  let b1PassCount=0;
+
+  lessons.forEach(l=>{
+    const done = getCompleted(l.key);
+    const scoreRaw = getScore(scoreKeys[l.id]);
+    const card = document.getElementById('card-'+l.id);
+    const numEl = document.getElementById('num-'+l.id);
+    const checkEl = document.getElementById('check-'+l.id);
+    const scoreEl = document.getElementById('score-'+l.id);
+
+    if(done){
+      totalDone++;
+      badges++;
+      card.classList.add('completed');
+      numEl.textContent='✓';
+      checkEl.textContent='🏆';
+      if(scoreEl){ scoreEl.style.display='inline'; scoreEl.textContent='Badge ✓'; }
+      if(l.level==='a1') a1Done++;
+      if(l.level==='a2') a2Done++;
+      if(l.level==='b1'){ b1Done++; b1PassCount++; }
+      if(l.level==='b2') b2Done++;
+    }
+
+    if(scoreRaw){
+      const parts = scoreRaw.split('/');
+      if(parts.length===2){
+        const pct = Math.round((parseInt(parts[0])/parseInt(parts[1]))*100);
+        if(pct>bestScore) bestScore=pct;
+        if(scoreEl && !done){
+          scoreEl.style.display='inline';
+          scoreEl.textContent=pct+'%';
+        }
+      }
+    }
+  });
+
+  // Level bars
+  document.getElementById('a1-prog').textContent=a1Done+'/2';
+  document.getElementById('a1-bar').style.width=(a1Done/2*100)+'%';
+  document.getElementById('a2-prog').textContent=a2Done+'/2';
+  document.getElementById('a2-bar').style.width=(a2Done/2*100)+'%';
+  document.getElementById('b1-prog').textContent=b1Done+'/2';
+  document.getElementById('b1-bar').style.width=(b1Done/2*100)+'%';
+  document.getElementById('b2-prog').textContent=b2Done+'/2';
+  document.getElementById('b2-bar').style.width=(b2Done/2*100)+'%';
+
+  // Stats
+  document.getElementById('statDone').textContent=totalDone;
+  document.getElementById('statBest').textContent=bestScore>0?bestScore+'%':'—';
+  document.getElementById('statBadges').textContent=badges;
+
+  // Overall
+  const overallPct=Math.round((totalDone/8)*100);
+  document.getElementById('overallPct').textContent=overallPct+'%';
+  document.getElementById('overallValue').textContent=totalDone+' of 8 lessons done';
+  const deg=Math.round(overallPct/100*360);
+  document.getElementById('overallCircle').style.background=
+    `conic-gradient(var(--green-bright) ${deg}deg, rgba(255,255,255,.2) ${deg}deg)`;
+
+  // B2 unlock
+  const b1PassPct = Math.round((b1PassCount/2)*100);
+  document.getElementById('unlockFill').style.width=b1PassPct+'%';
+
+  if(b1PassCount>=2){
+    // Unlock B2!
+    document.getElementById('unlockBanner').style.display='none';
+    const b2header = document.getElementById('b2-header');
+    b2header.classList.remove('locked');
+    b2header.classList.add('free');
+    document.getElementById('b2-badge').textContent='🔓 Unlocked · B2';
+    document.getElementById('b2-badge').className='level-badge badge-free';
+
+    // Make cards clickable
+    [7,8].forEach(id=>{
+      const lesson = lessons.find(l=>l.id===id);
+      const card = document.getElementById('card-'+id);
+      card.classList.remove('locked-card');
+      const lockIcon = card.querySelector('.lock-icon');
+      if(lockIcon) lockIcon.remove();
+      card.style.cursor='pointer';
+      card.onclick=()=>{ window.location.href=lesson.href; };
+    });
+  } else {
+    document.getElementById('unlockBanner').querySelector('p').textContent=
+      'Complete all B1 lessons with 80%+ to unlock. ('+b1PassCount+'/2 passed)';
+  }
+}
+
+updateUI();
+</script>
 </body>
 </html>
