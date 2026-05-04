@@ -43,6 +43,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .tip-icon{font-size:1.3rem;flex-shrink:0;}
 .tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
 .tip-text strong{color:#4a3a00;}
+.phrase-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem;}
+.phrase-table th{background:var(--green-dark);color:var(--white);padding:10px 14px;text-align:left;font-weight:800;}
+.phrase-table td{padding:9px 14px;border-bottom:1px solid var(--green-light);color:var(--ink-soft);}
+.phrase-table tr:nth-child(even) td{background:var(--green-pale);}
 .quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
 .quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
 .quiz-icon{font-size:1.6rem;}
@@ -61,11 +65,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .mc-feedback.wrong{background:#fff0f0;color:#c00;}
 .fitb-question{margin-bottom:1.2rem;}
 .fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
-.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:120px;text-align:center;outline:none;padding:2px 4px;}
 .fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
 .fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
 .check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
 .check-btn:hover{background:var(--green-mid);}
+.save-status{font-size:0.82rem;margin-top:8px;font-weight:600;display:none;}
 .dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
 .dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
 .dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
@@ -88,7 +93,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
 </style>
 </head>
-<body>
+<body data-article-id="speaking-3">
 <nav>
   <a href="../index.html" class="nav-logo">English <span>for All</span></a>
   <a href="../speaking/index.html" class="back-btn">← Speaking</a>
@@ -97,7 +102,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 
 <section class="article-hero">
   <div class="hero-badge">📚 Speaking · Elementary · A2/B1</div>
-  <h1>Expressing Opinions <span></span></h1>
+  <h1>Expressing <span>Opinions</span></h1>
   <div class="hero-meta">
     <span>🎯 Elementary</span><span>📊 A2/B1</span>
     <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
@@ -109,138 +114,206 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="objectives">
     <h3>🎯 What You'll Learn</h3>
     <ul>
-      <li>Understand the key concepts of Expressing Opinions</li>
-      <li>Study real examples with clear explanations</li>
-      <li>Practice with 3 interactive quiz types</li>
+      <li>How to give your opinion politely in English</li>
+      <li>Key phrases to agree and disagree</li>
+      <li>How to soften opinions so you sound natural and friendly</li>
       <li>Earn your Speaking badge with 80%+ score!</li>
     </ul>
   </div>
 
+  <!-- Section 1 -->
   <div class="lesson-section">
-    <h2>📖 1. Introduction</h2>
-    <p>Share your views clearly and confidently This lesson is perfect for Elementary learners at A2/B1 level. Study the examples carefully and look for patterns in the language.</p>
+    <h2>📖 1. Giving Your Opinion</h2>
+    <p>In English conversations, people share their opinions all the time — at work, at school, with friends. Using the right phrases makes you sound natural and confident.</p>
+    <p>The most common way to introduce an opinion is with <span class="highlight">"I think..."</span> or <span class="highlight">"In my opinion..."</span></p>
+
+    <table class="phrase-table">
+      <tr><th>Phrase</th><th>Level</th></tr>
+      <tr><td>I think that...</td><td>Basic / very common</td></tr>
+      <tr><td>I believe that...</td><td>Slightly more formal</td></tr>
+      <tr><td>In my opinion, ...</td><td>Clear and direct</td></tr>
+      <tr><td>From my point of view, ...</td><td>More formal / B1+</td></tr>
+      <tr><td>As far as I'm concerned, ...</td><td>Strong, personal stance</td></tr>
+      <tr><td>It seems to me that...</td><td>Softer, less direct</td></tr>
+    </table>
+
     <div class="example-box">
-      <div class="ex-label">✅ Key Examples</div>
-      <p>• Study each example below carefully.<br>
-      • Notice how the language patterns work.<br>
-      • Try to create your own examples!</p>
+      <div class="ex-label">✅ Example Sentences</div>
+      <p>
+        • <strong>I think</strong> English is an important language to learn.<br>
+        • <strong>In my opinion,</strong> working from home is more productive.<br>
+        • <strong>From my point of view,</strong> the film was quite boring.<br>
+        • <strong>It seems to me that</strong> people work better in small teams.
+      </p>
     </div>
+
     <div class="tip-box">
       <span class="tip-icon">💡</span>
-      <div class="tip-text"><strong>Study Tip:</strong> Read examples out loud! Speaking and hearing correct English helps your brain remember patterns much faster.</div>
+      <div class="tip-text"><strong>Key tip:</strong> After "I think" and "I believe", use <em>that</em> — but it is optional. Both "I think that it's good" and "I think it's good" are correct.</div>
     </div>
   </div>
 
+  <!-- Section 2 -->
   <div class="lesson-section">
-    <h2>📝 2. Key Patterns & Examples</h2>
-    <p>Study these important patterns. Notice how the structure works in different contexts.</p>
+    <h2>📝 2. Agreeing and Disagreeing</h2>
+    <p>Conversations are not just about giving opinions — you also need to <span class="highlight">agree</span> or <span class="highlight">disagree</span> politely. In English, how you say something is just as important as what you say.</p>
+
     <div class="example-box">
-      <div class="ex-label">✅ Pattern 1</div>
-      <p>Key example demonstrating the main concept of <span class="highlight">Expressing Opinions</span>. Notice the structure and how it changes in context.</p>
+      <div class="ex-label">✅ Agreeing</div>
+      <p>
+        • <strong>I agree with you.</strong><br>
+        • <strong>That's a good point.</strong><br>
+        • <strong>Exactly! / Absolutely!</strong><br>
+        • <strong>I think so too.</strong><br>
+        • <strong>You're right about that.</strong>
+      </p>
     </div>
-    <div class="example-box">
-      <div class="ex-label">✅ Pattern 2</div>
-      <p>Another example showing a variation. Compare this with Pattern 1 — can you spot the difference?</p>
+
+    <div class="example-box" style="border-left-color:#f4a261;background:#fff8f0;">
+      <div class="ex-label" style="color:#e07b39;">⚠️ Disagreeing Politely</div>
+      <p>
+        • <strong>I'm not sure I agree...</strong><br>
+        • <strong>I see your point, but...</strong><br>
+        • <strong>I think differently — in my opinion...</strong><br>
+        • <strong>That's interesting, but I feel that...</strong><br>
+        • <strong>I understand what you mean, however...</strong>
+      </p>
     </div>
+
     <div class="tip-box">
       <span class="tip-icon">🎯</span>
-      <div class="tip-text"><strong>Remember:</strong> Practice these patterns in your own sentences. The more you use them, the more natural they will feel!</div>
+      <div class="tip-text"><strong>Speaking tip:</strong> Never say <em>"You are wrong"</em> directly — it sounds rude! Instead, use softeners like <em>"I see your point, but..."</em> or <em>"I'm not sure I agree because..."</em> to keep the conversation friendly.</div>
     </div>
   </div>
 
+  <!-- Section 3 -->
   <div class="lesson-section">
     <h2>⚠️ 3. Common Mistakes</h2>
-    <p>These are the most common errors learners make. Study them carefully to avoid them!</p>
+    <p>These are errors that A2/B1 learners often make when expressing opinions. Study them carefully!</p>
+
     <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
       <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
-      <p>• Watch out for this typical mistake with Expressing Opinions.<br>
-      • This is another error many learners make.<br>
-      • Avoid this — native speakers never say this!</p>
+      <p>
+        • ❌ <em>"According to me, this is wrong."</em> — "According to me" is not natural in English<br>
+        • ❌ <em>"I am agree with you."</em> — Never use "am" with "agree"<br>
+        • ❌ <em>"In my opinion, I think that..."</em> — Don't use both phrases together<br>
+        • ❌ <em>"I disagree you."</em> — Missing preposition "with"
+      </p>
     </div>
+
     <div class="example-box">
       <div class="ex-label">✅ Correct Forms</div>
-      <p>• The correct version — notice the difference!<br>
-      • This is how native speakers actually say it.<br>
-      • Use this form and you'll sound natural.</p>
+      <p>
+        • ✅ <em>"In my opinion, this is wrong."</em> or <em>"I think this is wrong."</em><br>
+        • ✅ <em>"I agree with you."</em><br>
+        • ✅ <em>"In my opinion, this is a good idea."</em> (one phrase only)<br>
+        • ✅ <em>"I disagree with you."</em>
+      </p>
     </div>
+  </div>
+
+  <!-- Amazon Affiliate -->
+  <div style="background:var(--white);border:2px solid var(--green-light);border-radius:var(--radius);padding:1.2rem;margin:2rem 0;text-align:center;">
+    <p style="font-size:0.78rem;font-weight:800;color:var(--green-mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem;">📚 Recommended Resource</p>
+    <p style="font-size:0.88rem;color:var(--ink-soft);margin-bottom:0.8rem;">Build your English conversation skills with a top-rated speaking guide</p>
+    <a href="https://www.amazon.com/s?k=english+conversation+skills+book&tag=YOUR_AFFILIATE_TAG" target="_blank" rel="noopener" style="display:inline-block;background:var(--green-bright);color:var(--green-dark);padding:10px 22px;border-radius:30px;font-weight:800;font-size:0.85rem;text-decoration:none;">View on Amazon →</a>
   </div>
 
   <!-- Quiz 1: Multiple Choice -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🎯</span>
-      <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
-      <div class="quiz-subtitle">Choose the best answer</div></div>
+      <div>
+        <div class="quiz-title">Quiz 1 — Multiple Choice</div>
+        <div class="quiz-subtitle">Choose the best answer</div>
+      </div>
     </div>
-    
+
     <div class="mc-question" id="q1">
-      <div class="mc-q">1. Which expresses an opinion?</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','I think we should leave early.')">The sky is blue.</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q1','I think we should leave early.')">I think we should leave early.</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','I think we should leave early.')">She went to the shop.</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','I think we should leave early.')">He is tall.</button>
-</div>
+      <div class="mc-q">1. Which phrase correctly gives an opinion?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','In my opinion, remote work is better.')">According to me, remote work is better.</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q1','In my opinion, remote work is better.')">In my opinion, remote work is better.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','In my opinion, remote work is better.')">I am thinking remote work is better.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','In my opinion, remote work is better.')">My opinion is remote work is better.</button>
+      </div>
       <div class="mc-feedback" id="q1-fb"></div>
     </div>
+
     <div class="mc-question" id="q2">
-      <div class="mc-q">2. A polite disagreement starts with...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but...')">You're wrong!</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but...')">That's ridiculous.</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q2','I see your point, but...')">I see your point, but...</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but...')">No!</button>
-</div>
+      <div class="mc-q">2. How do you politely disagree in English?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but I think differently.')">You are completely wrong.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but I think differently.')">I disagree you.</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q2','I see your point, but I think differently.')">I see your point, but I think differently.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','I see your point, but I think differently.')">No, that is false.</button>
+      </div>
       <div class="mc-feedback" id="q2-fb"></div>
     </div>
+
     <div class="mc-question" id="q3">
-      <div class="mc-q">3. 'In my view' is used to...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','share your opinion')">ask a question</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','share your opinion')">give a fact</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q3','share your opinion')">share your opinion</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','share your opinion')">make a request</button>
-</div>
+      <div class="mc-q">3. Which sentence is grammatically correct?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','I agree with you.')">I am agree with you.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','I agree with you.')">I am agreeing to you.</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q3','I agree with you.')">I agree with you.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','I agree with you.')">I agreeing with you.</button>
+      </div>
       <div class="mc-feedback" id="q3-fb"></div>
     </div>
+
+    <div id="save-status-quiz1" class="save-status"></div>
   </div>
 
   <!-- Quiz 2: Fill in the Blanks -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">✏️</span>
-      <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
-      <div class="quiz-subtitle">Type the missing word</div></div>
+      <div>
+        <div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+        <div class="quiz-subtitle">Type the missing word</div>
+      </div>
     </div>
-    
+
     <div class="fitb-question">
-      <div class="fitb-sentence">1. ___ my opinion, exercise is essential. <input class="fitb-input" id="fitb1" placeholder="?" data-answer="In"></div>
+      <div class="fitb-sentence">1. In my <input class="fitb-input" id="fitb1" placeholder="?" data-answer="opinion">, studying every day is important.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">2. I ___ that we should act now. <input class="fitb-input" id="fitb2" placeholder="?" data-answer="believe"></div>
+      <div class="fitb-sentence">2. I <input class="fitb-input" id="fitb2" placeholder="?" data-answer="agree"> with you completely.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">3. As ___ as I'm concerned, this is wrong. <input class="fitb-input" id="fitb3" placeholder="?" data-answer="far"></div>
+      <div class="fitb-sentence">3. I see your <input class="fitb-input" id="fitb3" placeholder="?" data-answer="point">, but I think differently.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">4. From my point of <input class="fitb-input" id="fitb4" placeholder="?" data-answer="view">, this plan is risky.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">5. It <input class="fitb-input" id="fitb5" placeholder="?" data-answer="seems"> to me that we need more time.</div>
     </div>
     <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+    <div id="save-status-quiz2" class="save-status"></div>
   </div>
 
   <!-- Quiz 3: Build the Sentence -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🧩</span>
-      <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
-      <div class="quiz-subtitle">Tap words in the correct order</div></div>
+      <div>
+        <div class="quiz-title">Quiz 3 — Build the Sentence</div>
+        <div class="quiz-subtitle">Tap words in the correct order</div>
+      </div>
     </div>
     <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
-    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"In my opinion this is the best option"</p>
+    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"In my opinion, this is the best option"</p>
     <div class="dnd-words" id="dndWords">
       <div class="dnd-word" onclick="selectWord(this)">the</div>
-<div class="dnd-word" onclick="selectWord(this)">is</div>
-<div class="dnd-word" onclick="selectWord(this)">opinion</div>
-<div class="dnd-word" onclick="selectWord(this)">In</div>
-<div class="dnd-word" onclick="selectWord(this)">my</div>
-<div class="dnd-word" onclick="selectWord(this)">this</div>
-<div class="dnd-word" onclick="selectWord(this)">option</div>
-<div class="dnd-word" onclick="selectWord(this)">best</div>
-
+      <div class="dnd-word" onclick="selectWord(this)">is</div>
+      <div class="dnd-word" onclick="selectWord(this)">opinion,</div>
+      <div class="dnd-word" onclick="selectWord(this)">In</div>
+      <div class="dnd-word" onclick="selectWord(this)">my</div>
+      <div class="dnd-word" onclick="selectWord(this)">this</div>
+      <div class="dnd-word" onclick="selectWord(this)">option</div>
+      <div class="dnd-word" onclick="selectWord(this)">best</div>
     </div>
     <div class="dnd-answer-box" id="dndAnswer">
       <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
@@ -250,6 +323,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
     </div>
     <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+    <div id="save-status-quiz3" class="save-status"></div>
   </div>
 
   <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
@@ -257,7 +331,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="score-section" id="scoreSection">
     <span class="score-emoji" id="scoreEmoji">🎉</span>
     <div class="score-title" id="scoreTitle">Well Done!</div>
-    <div class="score-num" id="scoreNum">0/9</div>
+    <div class="score-num" id="scoreNum">0/11</div>
     <div class="score-sub" id="scoreSub">Keep practising!</div>
     <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Speaking Badge Earned!</div>
   </div>
@@ -268,72 +342,139 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   </div>
 </div>
 
+<script src="/supabase-quiz.js"></script>
 <script>
 window.addEventListener('scroll',()=>{
   const doc=document.documentElement;
   const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
   document.getElementById('progressBar').style.width=scrolled+'%';
 });
-let score=0;
+
+let q1Score=0,q2Score=0,q3Score=0;
+let q1Done=false,q2Done=false,q3Done=false;
+
+// ── Quiz 1: Multiple Choice ──────────────────────────────────
 function checkMC(btn,result,qId,correct){
   const q=document.getElementById(qId);
   q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
   const fb=document.getElementById(qId+'-fb');
-  if(result==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';score++;}
-  else{btn.classList.add('wrong');q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';}
+  if(result==='correct'){
+    btn.classList.add('correct');
+    fb.textContent='✅ Correct! Great job!';
+    fb.className='mc-feedback show correct';
+    q1Score++;
+  } else {
+    btn.classList.add('wrong');
+    q.querySelectorAll('.mc-option').forEach(o=>{
+      if(o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct');
+    });
+    fb.textContent='❌ The correct answer is "'+correct+'"';
+    fb.className='mc-feedback show wrong';
+  }
+  const answered=document.querySelectorAll('.mc-question [disabled]').length;
+  if(answered>=3 && !q1Done){
+    q1Done=true;
+    submitQuizScore('speaking-3','quiz1',q1Score,3);
+  }
 }
+
+// ── Quiz 2: Fill in the Blanks ───────────────────────────────
 function checkFITB(){
-  ['fitb1','fitb2','fitb3'].forEach(id=>{
+  if(q2Done) return;
+  q2Done=true;
+  q2Score=0;
+  ['fitb1','fitb2','fitb3','fitb4','fitb5'].forEach(id=>{
     const inp=document.getElementById(id);
-    if(!inp)return;
+    if(!inp) return;
     const answer=inp.dataset.answer.toLowerCase().trim();
     const user=inp.value.toLowerCase().trim();
-    if(user===answer){inp.classList.add('correct');score++;}
+    if(user===answer){inp.classList.add('correct');q2Score++;}
     else{inp.classList.add('wrong');inp.value=inp.dataset.answer;}
     inp.disabled=true;
   });
+  submitQuizScore('speaking-3','quiz2',q2Score,5);
 }
+
+// ── Quiz 3: Word Order ───────────────────────────────────────
 let selectedWords=[];
-const correctOrder=["In", "my", "opinion", "this", "is", "the", "best", "option"];
+const correctOrder=["In","my","opinion,","this","is","the","best","option"];
+
 function selectWord(el){
-  if(el.classList.contains('used'))return;
+  if(el.classList.contains('used')) return;
   el.classList.add('used');
-  selectedWords.push(el.textContent);
+  selectedWords.push(el.textContent.trim());
   const answer=document.getElementById('dndAnswer');
   const placeholder=document.getElementById('dndPlaceholder');
-  if(placeholder)placeholder.remove();
-  const wordEl=document.createElement('span');
-  wordEl.textContent=el.textContent;
-  wordEl.className='dnd-placed';
-  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
-  answer.appendChild(wordEl);
+  if(placeholder) placeholder.style.display='none';
+  const placed=document.createElement('div');
+  placed.className='dnd-placed';
+  placed.textContent=el.textContent.trim();
+  placed.onclick=function(){
+    const idx=selectedWords.indexOf(el.textContent.trim());
+    if(idx>-1) selectedWords.splice(idx,1);
+    el.classList.remove('used');
+    placed.remove();
+    if(selectedWords.length===0 && placeholder) placeholder.style.display='inline';
+  };
+  answer.appendChild(placed);
 }
+
 function checkDND(){
+  if(q3Done) return;
   const fb=document.getElementById('dndFeedback');
   const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
   fb.style.display='block';
-  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
-  else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+  if(isCorrect){
+    fb.textContent='✅ Perfect! That\'s exactly right!';
+    fb.style.background='var(--green-pale)';
+    fb.style.color='var(--green-dark)';
+    q3Score=3;
+  } else {
+    fb.textContent='❌ Not quite. Correct: "In my opinion, this is the best option"';
+    fb.style.background='#fff0f0';
+    fb.style.color='#c00';
+    q3Score=0;
+  }
+  q3Done=true;
+  submitQuizScore('speaking-3','quiz3',q3Score,3);
 }
+
 function resetDND(){
   selectedWords=[];
   const answer=document.getElementById('dndAnswer');
-  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  answer.querySelectorAll('.dnd-placed').forEach(p=>p.remove());
+  document.getElementById('dndPlaceholder').style.display='inline';
   document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
-  const fb=document.getElementById('dndFeedback');fb.style.display='none';
+  document.getElementById('dndFeedback').style.display='none';
+  q3Done=false;
+  q3Score=0;
 }
+
+// ── Final Score ──────────────────────────────────────────────
 function showScore(){
+  const total=q1Score+q2Score+q3Score;
+  const max=11;
+  const pct=Math.round((total/max)*100);
   const section=document.getElementById('scoreSection');
+  document.getElementById('scoreNum').textContent=total+'/'+max;
+  if(pct>=80){
+    document.getElementById('scoreEmoji').textContent='🏆';
+    document.getElementById('scoreTitle').textContent='Outstanding!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Badge earned!';
+    document.getElementById('scoreBadge').style.display='inline-flex';
+    const progress=JSON.parse(localStorage.getItem('plu_progress')||'{}');
+    progress['speaking-3']=true;
+    localStorage.setItem('plu_progress',JSON.stringify(progress));
+  } else if(pct>=50){
+    document.getElementById('scoreEmoji').textContent='👍';
+    document.getElementById('scoreTitle').textContent='Good Effort!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Try again to earn the badge!';
+  } else {
+    document.getElementById('scoreEmoji').textContent='📚';
+    document.getElementById('scoreTitle').textContent='Keep Practising!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Review the lesson and try again.';
+  }
   section.classList.add('show');
-  const pct=Math.round((score/9)*100);
-  document.getElementById('scoreNum').textContent=score+'/9';
-  const emoji=document.getElementById('scoreEmoji');
-  const title=document.getElementById('scoreTitle');
-  const sub=document.getElementById('scoreSub');
-  const badge=document.getElementById('scoreBadge');
-  if(pct>=80){emoji.textContent='🏆';title.textContent='Outstanding!';sub.textContent='You have mastered this lesson!';badge.style.display='inline-flex';localStorage.setItem('badge_speaking_article-3','earned');}
-  else if(pct>=60){emoji.textContent='🎉';title.textContent='Great Job!';sub.textContent='Good work! Review the sections you missed.';}
-  else{emoji.textContent='💪';title.textContent='Keep Going!';sub.textContent='Read the lesson again and try once more!';}
   section.scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
