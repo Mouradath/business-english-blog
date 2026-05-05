@@ -34,8 +34,6 @@
     .nav-btn:hover{border-color:var(--green-bright);}
     .nav-btn span{display:block;font-size:0.75rem;color:var(--green-mid);font-weight:600;margin-bottom:0.3rem;}
     footer{background:var(--green-dark);color:var(--green-light);text-align:center;padding:1.5rem;font-size:0.82rem;}
-
-    /* QUIZ STYLES */
     .quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
     .quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
     .quiz-icon{font-size:1.6rem;}
@@ -182,7 +180,6 @@
         <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
         <div class="quiz-subtitle">Choose the best answer</div></div>
       </div>
-
       <div class="mc-question" id="q1">
         <div class="mc-q">1. Which part of the sentence is "Tom" in: "Tom eats breakfast"?</div>
         <div class="mc-options">
@@ -193,7 +190,6 @@
         </div>
         <div class="mc-feedback" id="q1-fb"></div>
       </div>
-
       <div class="mc-question" id="q2">
         <div class="mc-q">2. What is the correct word order in English?</div>
         <div class="mc-options">
@@ -204,14 +200,13 @@
         </div>
         <div class="mc-feedback" id="q2-fb"></div>
       </div>
-
       <div class="mc-question" id="q3">
         <div class="mc-q">3. Which sentence is a negative sentence?</div>
         <div class="mc-options">
-          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">I like chocolate.</button>
-          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">Do you like chocolate?</button>
-          <button class="mc-option" onclick="checkMC(this,'correct','q3','I don\\'t like chocolate.')">I don't like chocolate.</button>
-          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\\'t like chocolate.')">She likes chocolate.</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\'t like chocolate.')">I like chocolate.</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\'t like chocolate.')">Do you like chocolate?</button>
+          <button class="mc-option" onclick="checkMC(this,'correct','q3','I don\'t like chocolate.')">I don't like chocolate.</button>
+          <button class="mc-option" onclick="checkMC(this,'wrong','q3','I don\'t like chocolate.')">She likes chocolate.</button>
         </div>
         <div class="mc-feedback" id="q3-fb"></div>
       </div>
@@ -224,7 +219,6 @@
         <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
         <div class="quiz-subtitle">Type the missing word</div></div>
       </div>
-
       <div class="fitb-question">
         <div class="fitb-sentence">1. Every sentence needs a subject and a <input class="fitb-input" id="fitb1" data-answer="verb" placeholder="???">.</div>
       </div>
@@ -246,7 +240,6 @@
         <div class="quiz-subtitle">Tap words in the correct order</div></div>
       </div>
       <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
-      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"She reads a book every day"</p>
       <div class="dnd-words" id="dndWords">
         <div class="dnd-word" onclick="selectWord(this)">a</div>
         <div class="dnd-word" onclick="selectWord(this)">every</div>
@@ -293,153 +286,109 @@
       <p style="font-size:0.78rem;color:#5a7a6a;margin:0 0 10px;">by Raymond Murphy · Cambridge University Press</p>
       <p style="font-size:0.9rem;color:#2d3e35;line-height:1.65;margin:0 0 18px;">Now that you know the basics of English sentences, this book is your next step. It covers every essential grammar structure — from simple sentences to complex clauses — with clear explanations and practice exercises on every page.</p>
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-        <p style="font-size:0.7rem;color:#8aab98;font-style:italic;max-width:220px;line-height:1.4;margin:0;">ⓘ Affiliate link — I may earn a small commission at no extra cost to you.</p>
-        <a href="https://amzn.to/4mQUW00" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:7px;background:#2d6a4f;color:#fff;font-size:0.85rem;font-weight:600;text-decoration:none;padding:9px 18px;border-radius:50px;white-space:nowrap;">View on Amazon ↗</a>
+        <p style="font-size:0.7rem;color:#8aab98;font-style:italic;max-width:220px;line-height:1.4;margin:0;">ⓘ Affiliate link — I may earn a small commission at no cost to you.</p>
+        <a href="https://www.amazon.com/English-Grammar-Use-Self-Study-Intermediate/dp/1108457657?tag=YOUR_TAG" target="_blank" rel="noopener" style="display:inline-block;background:#2d6a4f;color:#fff;padding:9px 20px;border-radius:30px;font-size:0.82rem;font-weight:700;text-decoration:none;">View on Amazon →</a>
       </div>
     </div>
+
   </article>
 
-  <footer>© 2026 PLU Blog · Built with passion for English learners everywhere</footer>
-
-<script>
-let score=0;
-let fitbChecked=false;
-let dndChecked=false;
-
-function checkMC(btn,result,qId,correct){
-  const q=document.getElementById(qId);
-  q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
-  const fb=document.getElementById(qId+'-fb');
-  if(result==='correct'){
-    btn.classList.add('correct');
-    fb.textContent='✅ Correct! Great job!';
-    fb.className='mc-feedback show correct';
-    score++;
-  } else {
-    btn.classList.add('wrong');
-    q.querySelectorAll('.mc-option').forEach(o=>{
-      if(o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct');
-    });
-    fb.textContent='❌ The correct answer is "'+correct+'"';
-    fb.className='mc-feedback show wrong';
-  }
-}
-
-function checkFITB(){
-  if(fitbChecked) return;
-  fitbChecked=true;
-  let correct=0;
-  ['fitb1','fitb2','fitb3'].forEach(id=>{
-    const inp=document.getElementById(id);
-    if(!inp) return;
-    const answer=inp.dataset.answer.toLowerCase().trim();
-    const user=inp.value.toLowerCase().trim();
-    if(user===answer){
-      inp.classList.add('correct');
-      correct++;
+  <script>
+  let score = 0;
+  function checkMC(btn, result, qId, correct) {
+    const q = document.getElementById(qId);
+    q.querySelectorAll('.mc-option').forEach(o => o.disabled = true);
+    const fb = document.getElementById(qId + '-fb');
+    if (result === 'correct') {
+      btn.classList.add('correct');
+      fb.textContent = '✅ Correct! Great job!';
+      fb.className = 'mc-feedback show correct';
       score++;
     } else {
-      inp.classList.add('wrong');
-      inp.value=inp.dataset.answer;
+      btn.classList.add('wrong');
+      q.querySelectorAll('.mc-option').forEach(o => {
+        if (o.getAttribute('onclick').includes("'correct'")) o.classList.add('correct');
+      });
+      fb.textContent = '❌ The correct answer is "' + correct + '"';
+      fb.className = 'mc-feedback show wrong';
     }
-    inp.disabled=true;
-  });
-  const fb=document.getElementById('fitbFeedback');
-  fb.style.display='block';
-  if(correct===3){
-    fb.textContent='✅ Perfect! All 3 correct!';
-    fb.style.background='var(--green-pale)';
-    fb.style.color='var(--green-dark)';
-  } else {
-    fb.textContent='You got '+correct+'/3. Correct answers are shown above.';
-    fb.style.background='#fff8e6';
-    fb.style.color='#6b5a00';
   }
-}
-
-let selectedWords=[];
-const correctOrder=["She","reads","a","book","every","day"];
-
-function selectWord(el){
-  if(el.classList.contains('used')) return;
-  el.classList.add('used');
-  selectedWords.push(el.textContent);
-  const answer=document.getElementById('dndAnswer');
-  const placeholder=document.getElementById('dndPlaceholder');
-  if(placeholder) placeholder.remove();
-  const wordEl=document.createElement('span');
-  wordEl.textContent=el.textContent;
-  wordEl.className='dnd-placed';
-  wordEl.onclick=()=>{
-    wordEl.remove();
-    el.classList.remove('used');
-    const idx=selectedWords.lastIndexOf(el.textContent);
-    if(idx>-1) selectedWords.splice(idx,1);
-    if(document.getElementById('dndAnswer').children.length===0){
-      const ph=document.createElement('span');
-      ph.id='dndPlaceholder';
-      ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';
-      ph.textContent='Tap words above...';
-      document.getElementById('dndAnswer').appendChild(ph);
+  function checkFITB() {
+    ['fitb1','fitb2','fitb3'].forEach(id => {
+      const inp = document.getElementById(id);
+      if (!inp) return;
+      const answer = inp.dataset.answer.toLowerCase().trim();
+      const user = inp.value.toLowerCase().trim();
+      if (user === answer) { inp.classList.add('correct'); score++; }
+      else { inp.classList.add('wrong'); inp.value = inp.dataset.answer; }
+      inp.disabled = true;
+    });
+  }
+  let selectedWords = [];
+  const correctOrder = ["She","reads","a","book","every","day"];
+  function selectWord(el) {
+    if (el.classList.contains('used')) return;
+    el.classList.add('used');
+    selectedWords.push(el.textContent.trim());
+    const answer = document.getElementById('dndAnswer');
+    const placeholder = document.getElementById('dndPlaceholder');
+    if (placeholder) placeholder.style.display = 'none';
+    const placed = document.createElement('div');
+    placed.className = 'dnd-placed';
+    placed.textContent = el.textContent.trim();
+    placed.onclick = function() {
+      const idx = selectedWords.indexOf(el.textContent.trim());
+      if (idx > -1) selectedWords.splice(idx, 1);
+      el.classList.remove('used');
+      placed.remove();
+      if (selectedWords.length === 0 && placeholder) placeholder.style.display = 'inline';
+    };
+    answer.appendChild(placed);
+  }
+  function checkDND() {
+    const fb = document.getElementById('dndFeedback');
+    const isCorrect = JSON.stringify(selectedWords) === JSON.stringify(correctOrder);
+    fb.style.display = 'block';
+    if (isCorrect) {
+      fb.textContent = '✅ Perfect sentence!';
+      fb.style.background = 'var(--green-pale)';
+      fb.style.color = 'var(--green-dark)';
+      score++;
+    } else {
+      fb.textContent = '❌ Not quite — try again!';
+      fb.style.background = '#fff0f0';
+      fb.style.color = '#c00';
     }
-  };
-  answer.appendChild(wordEl);
-}
-
-function checkDND(){
-  if(dndChecked) return;
-  const fb=document.getElementById('dndFeedback');
-  const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
-  fb.style.display='block';
-  if(isCorrect){
-    fb.textContent='✅ Perfect! That\'s exactly right!';
-    fb.style.background='var(--green-pale)';
-    fb.style.color='var(--green-dark)';
-    score++;
-    dndChecked=true;
-  } else {
-    fb.textContent='❌ Not quite. Try again or reset!';
-    fb.style.background='#fff0f0';
-    fb.style.color='#c00';
   }
-}
-
-function resetDND(){
-  selectedWords=[];
-  dndChecked=false;
-  const answer=document.getElementById('dndAnswer');
-  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
-  document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
-  document.getElementById('dndFeedback').style.display='none';
-}
-
-function showScore(){
-  const total=7;
-  const section=document.getElementById('scoreSection');
-  section.classList.add('show');
-  const pct=Math.round((score/total)*100);
-  document.getElementById('scoreNum').textContent=score+'/'+total;
-  const emoji=document.getElementById('scoreEmoji');
-  const title=document.getElementById('scoreTitle');
-  const sub=document.getElementById('scoreSub');
-  const badge=document.getElementById('scoreBadge');
-  if(pct>=80){
-    emoji.textContent='🏆';
-    title.textContent='Outstanding!';
-    sub.textContent='You have mastered this lesson!';
-    badge.style.display='inline-flex';
-    localStorage.setItem('badge_grammar_article-1','earned');
-  } else if(pct>=60){
-    emoji.textContent='🎉';
-    title.textContent='Great Job!';
-    sub.textContent='Good work! Review the sections you missed.';
-  } else {
-    emoji.textContent='💪';
-    title.textContent='Keep Going!';
-    sub.textContent='Read the lesson again and try once more!';
+  function resetDND() {
+    selectedWords = [];
+    const answer = document.getElementById('dndAnswer');
+    answer.querySelectorAll('.dnd-placed').forEach(p => p.remove());
+    document.getElementById('dndPlaceholder').style.display = 'inline';
+    document.querySelectorAll('.dnd-word').forEach(w => w.classList.remove('used'));
+    document.getElementById('dndFeedback').style.display = 'none';
   }
-  section.scrollIntoView({behavior:'smooth',block:'center'});
-}
-</script>
+  function showScore() {
+    const total = score;
+    const max = 7;
+    const pct = Math.round((total / max) * 100);
+    document.getElementById('scoreNum').textContent = total + '/' + max;
+    if (pct >= 80) {
+      document.getElementById('scoreEmoji').textContent = '🏆';
+      document.getElementById('scoreTitle').textContent = 'Excellent!';
+      document.getElementById('scoreSub').textContent = 'You scored ' + pct + '% — Badge earned!';
+      document.getElementById('scoreBadge').style.display = 'inline-flex';
+    } else if (pct >= 50) {
+      document.getElementById('scoreEmoji').textContent = '👍';
+      document.getElementById('scoreTitle').textContent = 'Good Effort!';
+      document.getElementById('scoreSub').textContent = 'You scored ' + pct + '% — Try again!';
+    } else {
+      document.getElementById('scoreEmoji').textContent = '📚';
+      document.getElementById('scoreTitle').textContent = 'Keep Practising!';
+      document.getElementById('scoreSub').textContent = 'You scored ' + pct + '% — Review and retry.';
+    }
+    document.getElementById('scoreSection').classList.add('show');
+  }
+  </script>
 </body>
 </html>
