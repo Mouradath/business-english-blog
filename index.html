@@ -4,407 +4,490 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English for All — Learn English at Every Level</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<meta name="description" content="Learn English from beginner to advanced with interactive lessons, quizzes, and cultural content. Start your journey today.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7733387489871456" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script defer src="/_vercel/insights/script.js"></script>
 <style>
-:root {
-  --green-dark: #1a3a24;
-  --green-mid: #2d6a4f;
-  --green-bright: #40c074;
-  --green-light: #b7e4c7;
-  --green-pale: #f0faf4;
-  --orange: #ff6b35;
-  --yellow: #ffd166;
-  --blue: #4cc9f0;
-  --pink: #f72585;
-  --white: #ffffff;
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
+:root{
+  --green-dark:#1a3a24;
+  --green-mid:#2d6a4f;
+  --green-bright:#40c074;
+  --green-light:#b7e4c7;
+  --green-pale:#f0faf4;
+  --yellow:#ffd166;
+  --orange:#ff6b35;
+  --white:#ffffff;
+  --ink:#1a1a1a;
+  --ink-soft:#5a5a5a;
+  --radius:16px;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Nunito', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#f8fdf9;color:var(--ink);overflow-x:hidden;}
 
 /* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(26,58,36,.97);
-  padding: 0 1.2rem;
-  height: 56px;
-  display: flex; align-items: center; justify-content: space-between;
-  box-shadow: 0 2px 16px rgba(0,0,0,.18);
-}
-.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--white); font-weight: 700; text-decoration: none; }
-.nav-logo span { color: var(--green-bright); }
-.nav-links { display: flex; gap: 1.2rem; }
-.nav-links a { color: var(--green-light); font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: color .2s; }
-.nav-links a:hover { color: var(--white); }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97);padding:0 1.4rem;height:56px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 16px rgba(0,0,0,.2);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-logo span{color:var(--green-bright);}
+.nav-links{display:flex;align-items:center;gap:1rem;}
+.nav-links a{color:var(--green-light);font-size:0.82rem;font-weight:700;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--green-bright);}
+.nav-cta{background:var(--green-bright);color:var(--green-dark)!important;padding:6px 16px;border-radius:20px;}
 
 /* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(160deg, var(--green-dark) 0%, #2d6a4f 60%, #1a3a24 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 80px 1.5rem 3rem;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(64,192,116,.12) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-/* Floating emojis */
-.floater {
-  position: absolute;
-  font-size: 2rem;
-  animation: floatAround 6s ease-in-out infinite;
-  opacity: 0.6;
-}
-.f1 { top: 12%; left: 8%; animation-delay: 0s; font-size: 2.4rem; }
-.f2 { top: 20%; right: 10%; animation-delay: 1s; font-size: 1.8rem; }
-.f3 { top: 60%; left: 5%; animation-delay: 2s; font-size: 2rem; }
-.f4 { top: 70%; right: 8%; animation-delay: 0.5s; font-size: 1.6rem; }
-.f5 { top: 40%; left: 3%; animation-delay: 1.5s; font-size: 1.4rem; }
-.f6 { top: 35%; right: 5%; animation-delay: 2.5s; font-size: 2.2rem; }
-@keyframes floatAround {
-  0%, 100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-18px) rotate(5deg); }
-}
-.hero-tag {
-  display: inline-block;
-  background: rgba(64,192,116,.2);
-  border: 1.5px solid var(--green-bright);
-  color: var(--green-bright);
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 2.5px;
-  text-transform: uppercase; padding: 6px 18px; border-radius: 30px;
-  margin-bottom: 1.4rem;
-  animation: fadeUp .8s both;
-}
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 8vw, 4rem);
-  color: var(--white); line-height: 1.15;
-  margin-bottom: 1rem;
-  animation: fadeUp .8s .1s both;
-}
-.hero h1 span { color: var(--green-bright); font-style: italic; }
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.15rem);
-  color: var(--green-light); line-height: 1.7;
-  max-width: 560px; margin: 0 auto 2rem;
-  animation: fadeUp .8s .2s both;
-}
-.hero-btns {
-  display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-  animation: fadeUp .8s .3s both;
-}
-.btn-primary {
-  background: var(--green-bright); color: var(--green-dark);
-  padding: 14px 28px; border-radius: 50px;
-  font-weight: 800; font-size: 0.95rem; text-decoration: none;
-  transition: transform .2s, box-shadow .2s;
-  box-shadow: 0 4px 20px rgba(64,192,116,.35);
-}
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(64,192,116,.45); }
-.btn-secondary {
-  background: transparent; color: var(--white);
-  padding: 14px 28px; border-radius: 50px;
-  font-weight: 700; font-size: 0.95rem; text-decoration: none;
-  border: 2px solid rgba(255,255,255,.4);
-  transition: border-color .2s, background .2s;
-}
-.btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--green-dark) 0%,#1e5c3a 60%,#2d6a4f 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 1.5rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(64,192,116,.07) 1px,transparent 1px);background-size:28px 28px;}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#f8fdf9);}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(64,192,116,.15);border:1.5px solid rgba(64,192,116,.4);color:var(--green-bright);font-size:0.75rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;animation:fadeUp .6s both;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,8vw,3.8rem);color:var(--white);line-height:1.15;margin-bottom:1.2rem;animation:fadeUp .6s .1s both;}
+.hero h1 em{color:var(--green-bright);font-style:italic;}
+.hero-sub{color:rgba(183,228,199,.9);font-size:clamp(1rem,3vw,1.15rem);max-width:540px;line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .6s .2s both;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .3s both;}
+.btn-primary{background:var(--green-bright);color:var(--green-dark);padding:16px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:900;text-decoration:none;box-shadow:0 6px 24px rgba(64,192,116,.35);transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(64,192,116,.45);}
+.btn-secondary{background:rgba(255,255,255,.1);color:var(--white);padding:16px 32px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;text-decoration:none;border:2px solid rgba(255,255,255,.25);transition:all .2s;}
+.btn-secondary:hover{background:rgba(255,255,255,.18);}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:3rem;animation:fadeUp .6s .4s both;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--green-bright);}
+.stat-label{font-size:0.75rem;color:rgba(183,228,199,.7);font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 
-/* Stats bar */
-.stats-bar {
-  display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
-  margin-top: 3rem; padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,.1);
-  animation: fadeUp .8s .4s both;
-}
-.stat { text-align: center; }
-.stat-num { font-size: 1.8rem; font-weight: 900; color: var(--white); line-height: 1; }
-.stat-label { font-size: 0.75rem; color: var(--green-light); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+/* ── SECTION SHARED ── */
+section{padding:5rem 1.5rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--green-dark);text-align:center;margin-bottom:0.6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:0.95rem;max-width:500px;margin:0 auto 2.5rem;}
+.container{max-width:900px;margin:0 auto;}
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── LEVEL SELECTOR ── */
-.levels-section {
-  padding: 4rem 1.5rem;
-  background: var(--green-pale);
-  text-align: center;
-}
-.section-tag {
-  display: inline-block;
-  background: var(--green-light);
-  color: var(--green-dark);
-  font-size: 0.72rem; font-weight: 800; letter-spacing: 2px;
-  text-transform: uppercase; padding: 5px 16px; border-radius: 20px;
-  margin-bottom: 1rem;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 5vw, 2.4rem);
-  color: var(--green-dark); margin-bottom: 0.6rem;
-}
-.section-sub { font-size: 1rem; color: var(--ink-soft); margin-bottom: 2.5rem; }
-.levels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem; max-width: 700px; margin: 0 auto;
-}
-.level-card {
-  background: var(--white); border-radius: 16px;
-  padding: 1.4rem 1rem; text-align: center;
-  border: 2px solid transparent;
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
-  cursor: pointer; transition: all .25s;
-  text-decoration: none; color: inherit;
-  display: block;
-}
-.level-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-.level-card.beginner:hover { border-color: #40c074; }
-.level-card.elementary:hover { border-color: #4cc9f0; }
-.level-card.pre-int:hover { border-color: #ffd166; }
-.level-card.intermediate:hover { border-color: #ff6b35; }
-.level-card.upper-int:hover { border-color: #f72585; }
-.level-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; display: block; }
-.level-name { font-weight: 800; font-size: 0.85rem; color: var(--green-dark); }
-.level-desc { font-size: 0.72rem; color: var(--ink-soft); margin-top: 3px; }
-.level-badge {
-  display: inline-block; margin-top: 8px;
-  font-size: 0.65rem; font-weight: 700; padding: 2px 10px; border-radius: 10px;
-}
-.beginner .level-badge { background: #e8f5ec; color: #2d6a4f; }
-.elementary .level-badge { background: #e8f7fd; color: #1a6985; }
-.pre-int .level-badge { background: #fffbeb; color: #8a6500; }
-.intermediate .level-badge { background: #fff3ee; color: #c04a1a; }
-.upper-int .level-badge { background: #fde8f3; color: #9c1a5a; }
+/* ── JOURNEY / LEVELS ── */
+.journey{background:var(--white);}
+.levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;max-width:900px;margin:0 auto;}
+.level-card{background:var(--green-pale);border-radius:var(--radius);padding:1.4rem 1rem;text-align:center;border:2px solid var(--green-light);transition:all .25s;cursor:pointer;text-decoration:none;display:block;}
+.level-card:hover{border-color:var(--green-bright);transform:translateY(-4px);box-shadow:0 8px 24px rgba(45,106,79,.12);}
+.level-card.locked{opacity:.5;cursor:default;pointer-events:none;}
+.level-icon{font-size:2rem;margin-bottom:0.6rem;display:block;}
+.level-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--green-dark);margin-bottom:0.3rem;}
+.level-tag{font-size:0.7rem;font-weight:800;color:var(--green-mid);letter-spacing:1px;text-transform:uppercase;}
+.level-desc{font-size:0.78rem;color:var(--ink-soft);margin-top:0.4rem;line-height:1.5;}
 
 /* ── CATEGORIES ── */
-.categories-section { padding: 4rem 1.5rem; background: var(--white); text-align: center; }
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.2rem; max-width: 800px; margin: 2rem auto 0;
-}
-.cat-card {
-  background: var(--green-pale); border-radius: 20px;
-  padding: 1.6rem 1rem; text-align: center;
-  transition: all .25s; text-decoration: none; color: inherit;
-  border: 2px solid transparent; display: block;
-  position: relative; overflow: hidden;
-}
-.cat-card::before {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: var(--green-bright);
-  transform: scaleX(0); transition: transform .25s; transform-origin: left;
-< truncated lines 206-215 >
-.features-section .section-sub { color: var(--green-light); }
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.2rem; max-width: 800px; margin: 2.5rem auto 0;
-}
-.feature-card {
-  background: rgba(255,255,255,.06); border-radius: 16px;
-  padding: 1.6rem 1.2rem; text-align: center;
-  border: 1px solid rgba(255,255,255,.1);
-  transition: background .25s;
-}
-.feature-card:hover { background: rgba(255,255,255,.1); }
-.feature-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
-.feature-title { font-weight: 800; color: var(--white); font-size: 0.95rem; margin-bottom: 0.4rem; }
-.feature-desc { font-size: 0.8rem; color: var(--green-light); line-height: 1.6; }
+.categories{background:#f8fdf9;}
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;max-width:900px;margin:0 auto;}
+.cat-card{background:var(--white);border-radius:var(--radius);padding:1.4rem;border:2px solid var(--green-light);text-decoration:none;color:var(--ink);transition:all .25s;display:flex;flex-direction:column;gap:0.6rem;}
+.cat-card:hover{border-color:var(--green-bright);transform:translateY(-3px);box-shadow:0 8px 24px rgba(45,106,79,.1);}
+.cat-icon{font-size:2rem;}
+.cat-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--green-dark);}
+.cat-desc{font-size:0.82rem;color:var(--ink-soft);line-height:1.5;}
+.cat-meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.cat-count{font-size:0.72rem;font-weight:800;color:var(--green-mid);letter-spacing:.5px;}
+.cat-arrow{color:var(--green-bright);font-size:1.1rem;font-weight:900;}
+.cat-progress{height:4px;background:var(--green-light);border-radius:2px;margin-top:0.4rem;overflow:hidden;}
+.cat-progress-fill{height:100%;background:var(--green-bright);border-radius:2px;width:0%;transition:width 1s ease;}
 
-/* ── CTA ── */
-.cta-section {
-  padding: 4rem 1.5rem; text-align: center;
-  background: linear-gradient(135deg, var(--green-pale) 0%, #d4f1e3 100%);
-}
-.cta-section .section-title { color: var(--green-dark); margin-bottom: 1rem; }
-.cta-section p { color: var(--ink-soft); margin-bottom: 2rem; font-size: 1rem; }
+/* ── WORD OF THE DAY ── */
+.wotd{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);color:var(--white);}
+.wotd-card{max-width:600px;margin:0 auto;text-align:center;}
+.wotd-label{font-size:0.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green-bright);margin-bottom:1rem;}
+.wotd-word{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,8vw,4rem);color:var(--white);margin-bottom:0.3rem;}
+.wotd-phonetic{font-size:1rem;color:var(--green-light);margin-bottom:1rem;font-style:italic;}
+.wotd-pos{display:inline-block;background:rgba(64,192,116,.2);border:1.5px solid var(--green-bright);color:var(--green-bright);font-size:0.72rem;font-weight:800;padding:3px 12px;border-radius:20px;margin-bottom:1.2rem;letter-spacing:1px;text-transform:uppercase;}
+.wotd-def{font-size:1rem;color:rgba(183,228,199,.9);line-height:1.7;margin-bottom:1.2rem;}
+.wotd-example{background:rgba(255,255,255,.08);border-radius:12px;padding:1rem 1.4rem;font-size:0.9rem;color:var(--green-light);line-height:1.6;font-style:italic;}
+.wotd-nav{display:flex;gap:0.8rem;justify-content:center;margin-top:1.5rem;}
+.wotd-btn{background:rgba(255,255,255,.1);color:var(--white);border:1.5px solid rgba(255,255,255,.2);padding:8px 20px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all .2s;}
+.wotd-btn:hover{background:rgba(255,255,255,.2);}
+.wotd-btn.primary{background:var(--green-bright);color:var(--green-dark);border-color:var(--green-bright);}
+
+/* ── HOW IT WORKS ── */
+.how{background:var(--white);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;}
+.step{text-align:center;padding:1.5rem 1rem;}
+.step-num{width:48px;height:48px;background:var(--green-bright);color:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin:0 auto 1rem;}
+.step-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--green-dark);margin-bottom:0.4rem;}
+.step-desc{font-size:0.82rem;color:var(--ink-soft);line-height:1.6;}
+
+/* ── CHALLENGES ── */
+.challenges{background:#f8fdf9;}
+.challenge-card{background:var(--white);border-radius:20px;padding:1.8rem;max-width:600px;margin:0 auto;border:2px solid var(--green-light);box-shadow:0 4px 20px rgba(45,106,79,.07);}
+.challenge-week{font-size:0.72rem;font-weight:800;color:var(--green-mid);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.6rem;}
+.challenge-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green-dark);margin-bottom:0.8rem;}
+.challenge-desc{font-size:0.9rem;color:var(--ink-soft);line-height:1.7;margin-bottom:1.4rem;}
+.challenge-tasks{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.4rem;}
+.challenge-task{display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--ink-soft);}
+.challenge-task::before{content:'🎯';font-size:0.85rem;flex-shrink:0;}
+.challenge-reward{display:flex;align-items:center;gap:8px;background:var(--green-pale);border-radius:10px;padding:10px 14px;font-size:0.82rem;font-weight:700;color:var(--green-dark);}
+
+/* ── CULTURE CORNER ── */
+.culture{background:linear-gradient(160deg,#fff8e6 0%,#fffdf5 100%);border-top:2px solid #ffe8a0;border-bottom:2px solid #ffe8a0;}
+.culture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;max-width:900px;margin:0 auto;}
+.culture-card{background:var(--white);border-radius:var(--radius);padding:1.4rem;border:2px solid #ffe8a0;transition:all .25s;text-decoration:none;color:var(--ink);display:block;}
+.culture-card:hover{border-color:var(--yellow);transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,209,102,.2);}
+.culture-tag{font-size:0.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#b07d00;margin-bottom:0.6rem;}
+.culture-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--green-dark);margin-bottom:0.4rem;line-height:1.4;}
+.culture-desc{font-size:0.8rem;color:var(--ink-soft);line-height:1.5;}
+.culture-emoji{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
+
+/* ── TESTIMONIAL ── */
+.testimonial{background:var(--white);text-align:center;}
+.quote-mark{font-family:'Playfair Display',serif;font-size:5rem;color:var(--green-light);line-height:0.5;margin-bottom:1.5rem;display:block;}
+.quote-text{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--green-dark);max-width:620px;margin:0 auto 1.5rem;line-height:1.6;font-style:italic;}
+.quote-author{font-size:0.85rem;font-weight:700;color:var(--green-mid);}
+.quote-dots{display:flex;gap:8px;justify-content:center;margin-top:1.5rem;}
+.quote-dot{width:8px;height:8px;border-radius:50%;background:var(--green-light);cursor:pointer;transition:background .2s;}
+.quote-dot.active{background:var(--green-bright);}
+
+/* ── FINAL CTA ── */
+.final-cta{background:linear-gradient(160deg,var(--green-dark),var(--green-mid));text-align:center;padding:5rem 1.5rem;}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.6rem);color:var(--white);margin-bottom:1rem;}
+.final-cta p{color:var(--green-light);font-size:1rem;max-width:480px;margin:0 auto 2rem;line-height:1.7;}
 
 /* ── FOOTER ── */
-footer {
-  background: var(--green-dark); color: var(--green-light);
-  text-align: center; padding: 1.5rem;
-  font-size: 0.82rem;
+footer{background:var(--green-dark);color:var(--green-light);padding:2rem 1.5rem;text-align:center;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:0.8rem;}
+.footer-logo span{color:var(--green-bright);}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;}
+.footer-links a{color:var(--green-light);text-decoration:none;font-size:0.82rem;font-weight:600;transition:color .2s;}
+.footer-links a:hover{color:var(--green-bright);}
+.footer-copy{font-size:0.75rem;color:rgba(183,228,199,.5);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  .hero-stats{gap:1.2rem;}
+  .nav-links .hide-mobile{display:none;}
 }
-footer a { color: var(--green-bright); text-decoration: none; }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">English <span>for All</span></a>
   <div class="nav-links">
-    <a href="#levels">Levels</a>
-    <a href="#categories">Topics</a>
-    <a href="#features">Features</a>
+    <a href="grammar/index.html" class="hide-mobile">Grammar</a>
+    <a href="speaking/index.html" class="hide-mobile">Speaking</a>
+    <a href="auth.html" class="nav-cta">Sign In</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="floater f1">📚</div>
-  <div class="floater f2">✏️</div>
-  <div class="floater f3">🌍</div>
-  <div class="floater f4">💬</div>
-  <div class="floater f5">⭐</div>
-  <div class="floater f6">🎯</div>
-
-  <div class="hero-tag">🌱 Free English Lessons for Everyone</div>
-  <h1>Learn English<br><span>at Every Level</span></h1>
-  <p>From your first words to fluent conversation — practical lessons, real vocabulary, interactive quizzes, and confident communication skills.</p>
-  <div class="hero-btns">
-    <a href="#levels" class="btn-primary">Start Learning 🚀</a>
-    <a href="#categories" class="btn-secondary">Explore Topics</a>
+  <div class="hero-badge">🌍 Your English Journey Starts Here</div>
+  <h1>Learn English that<br><em>actually sticks</em></h1>
+  <p class="hero-sub">From your very first words to fluent, confident English — warm lessons, real culture, and interactive quizzes that make learning feel like an adventure.</p>
+  <div class="hero-actions">
+    <a href="level-test.html" class="btn-primary">🎯 Find My Level</a>
+    <a href="#categories" class="btn-secondary">Explore Lessons ↓</a>
   </div>
-  <div class="stats-bar">
-    <div class="stat"><div class="stat-num">56+</div><div class="stat-label">Articles</div></div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">56</div><div class="stat-label">Lessons</div></div>
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Categories</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Levels</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free</div></div>
+    <div class="stat"><div class="stat-num">A1→C1</div><div class="stat-label">All Levels</div></div>
+    <div class="stat"><div class="stat-num">168</div><div class="stat-label">Quizzes</div></div>
   </div>
 </section>
 
-<!-- LEVELS -->
-<section class="levels-section" id="levels">
-  <div class="section-tag">📊 Choose Your Level</div>
-  <h2 class="section-title">Where Are You Today?</h2>
-  <p class="section-sub">Pick your level and start learning right away!</p>
-  <div class="levels-grid">
-    <a href="grammar/article-1.html" class="level-card beginner">
-      <span class="level-emoji">🌱</span>
-      <div class="level-name">Beginner</div>
-      <div class="level-desc">Starting from scratch</div>
-      <span class="level-badge">A1</span>
-    </a>
-    <a href="grammar/article-2.html" class="level-card elementary">
-      <span class="level-emoji">📖</span>
-      <div class="level-name">Elementary</div>
-      <div class="level-desc">Basic communication</div>
-      <span class="level-badge">A2</span>
-    </a>
-    <a href="grammar/article-3.html" class="level-card pre-int">
-      <span class="level-emoji">💡</span>
-      <div class="level-name">Pre-Intermediate</div>
-      <div class="level-desc">Growing confidence</div>
-      <span class="level-badge">B1</span>
-    </a>
-    <a href="grammar/article-4.html" class="level-card intermediate">
-      <span class="level-emoji">🔥</span>
-      <div class="level-name">Intermediate</div>
-      <div class="level-desc">Expressing ideas</div>
-      <span class="level-badge">B2</span>
-    </a>
-    <a href="grammar/article-5.html" class="level-card upper-int">
-      <span class="level-emoji">🏆</span>
-      <div class="level-name">Upper-Intermediate</div>
-      <div class="level-desc">Near fluency</div>
-      <span class="level-badge">C1</span>
-    </a>
+<!-- HOW IT WORKS -->
+<section class="how reveal">
+  <div class="container">
+    <h2 class="section-title">Your path to English fluency</h2>
+    <p class="section-sub">Four simple steps — and you'll be speaking, reading, and thinking in English.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Find your level</div>
+        <div class="step-desc">Take the free 5-minute test. We'll tell you exactly where you are — A1 to C1.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Follow your path</div>
+        <div class="step-desc">Each category guides you from beginner to advanced with clear, step-by-step lessons.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Practice & earn</div>
+        <div class="step-desc">Complete quizzes, earn XP, unlock badges. Every lesson brings you closer to fluency.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Track your progress</div>
+        <div class="step-desc">Your personal dashboard shows your scores, badges, and how far you've come.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY / LEVELS -->
+<section class="journey reveal">
+  <div class="container">
+    <h2 class="section-title">The English Journey</h2>
+    <p class="section-sub">Every learner has a place on this path. Where are you today?</p>
+    <div class="levels-grid">
+      <a href="level-test.html" class="level-card">
+        <span class="level-icon">🌱</span>
+        <div class="level-name">Beginner</div>
+        <div class="level-tag">A1</div>
+        <div class="level-desc">First words, greetings, simple sentences</div>
+      </a>
+      <a href="level-test.html" class="level-card">
+        <span class="level-icon">🏡</span>
+        <div class="level-name">Elementary</div>
+        <div class="level-tag">A2</div>
+        <div class="level-desc">Everyday life, basic conversations</div>
+      </a>
+      <a href="level-test.html" class="level-card">
+        <span class="level-icon">🏙️</span>
+        <div class="level-name">Pre-Inter.</div>
+        <div class="level-tag">B1</div>
+        <div class="level-desc">Work, travel, opinions, stories</div>
+      </a>
+      <a href="level-test.html" class="level-card">
+        <span class="level-icon">🌆</span>
+        <div class="level-name">Intermediate</div>
+        <div class="level-tag">B2</div>
+        <div class="level-desc">Debate, culture, professional English</div>
+      </a>
+      <a href="level-test.html" class="level-card">
+        <span class="level-icon">🌍</span>
+        <div class="level-name">Advanced</div>
+        <div class="level-tag">C1</div>
+        <div class="level-desc">Fluency, nuance, literature</div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="level-test.html" class="btn-primary" style="display:inline-flex;">🎯 Take the Level Test — it's free!</a>
+    </div>
   </div>
 </section>
 
 <!-- CATEGORIES -->
-<section class="categories-section" id="categories">
-  <div class="section-tag">📂 All Topics</div>
-  <h2 class="section-title">What Do You Want to Learn?</h2>
-  <p class="section-sub">7 categories covering everything you need</p>
-  <div class="categories-grid">
-    <a href="grammar/index.html" class="cat-card">
-      <span class="cat-emoji">📝</span>
-      <div class="cat-name">Grammar</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="vocabulary/index.html" class="cat-card">
-      <span class="cat-emoji">📖</span>
-      <div class="cat-name">Vocabulary</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="speaking/index.html" class="cat-card">
-      <span class="cat-emoji">🎤</span>
-      <div class="cat-name">Speaking</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="writing/index.html" class="cat-card">
-      <span class="cat-emoji">✍️</span>
-      <div class="cat-name">Writing</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="business-english/index.html" class="cat-card">
-      <span class="cat-emoji">💼</span>
-      <div class="cat-name">Business English</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="idioms-culture/index.html" class="cat-card">
-      <span class="cat-emoji">🌍</span>
-      <div class="cat-name">Idioms & Culture</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-    <a href="miscellaneous/index.html" class="cat-card">
-      <span class="cat-emoji">🎲</span>
-      <div class="cat-name">Miscellaneous</div>
-      <div class="cat-count">8 lessons</div>
-    </a>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="features-section" id="features">
-  <div class="section-tag" style="background:rgba(64,192,116,.2);color:var(--green-bright);">✨ What Makes Us Different</div>
-  <h2 class="section-title">Learning That Actually Works</h2>
-  <p class="section-sub">Every lesson is designed to be fun, interactive and effective</p>
-  <div class="features-grid">
-    <div class="feature-card">
-      <span class="feature-icon">🎯</span>
-      <div class="feature-title">Interactive Quizzes</div>
-      <div class="feature-desc">Multiple choice, fill in the blanks, drag & drop — test yourself after every lesson</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">📈</span>
-      <div class="feature-title">Progress Tracking</div>
-      <div class="feature-desc">See your score, earn badges, and track your improvement lesson by lesson</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🎨</span>
-      <div class="feature-title">Visual Learning</div>
-      <div class="feature-desc">Illustrated examples, diagrams, and visual aids that make concepts click</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🌍</span>
-      <div class="feature-title">Real English</div>
-      <div class="feature-desc">Practical language you can use immediately in real conversations</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🏆</span>
-      <div class="feature-title">Earn Badges</div>
-      <div class="feature-desc">Complete lessons and quizzes to unlock achievement badges</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💯</span>
-      <div class="feature-title">100% Free</div>
-      <div class="feature-desc">Every lesson, quiz and resource — completely free, forever</div>
+<section class="categories reveal" id="categories">
+  <div class="container">
+    <h2 class="section-title">Explore all categories</h2>
+    <p class="section-sub">8 lessons per category. From A1 to B2. All with interactive quizzes.</p>
+    <div class="categories-grid">
+      <a href="grammar/index.html" class="cat-card">
+        <span class="cat-icon">📐</span>
+        <div class="cat-name">Grammar</div>
+        <div class="cat-desc">Master the rules that make English clear and correct.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A1→B2</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="vocabulary/index.html" class="cat-card">
+        <span class="cat-icon">📚</span>
+        <div class="cat-name">Vocabulary</div>
+        <div class="cat-desc">Build the words you need for every situation.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A1→B2</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="speaking/index.html" class="cat-card">
+        <span class="cat-icon">🎤</span>
+        <div class="cat-name">Speaking</div>
+        <div class="cat-desc">Real conversations, from directions to presentations.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A1→C1</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="writing/index.html" class="cat-card">
+        <span class="cat-icon">✍️</span>
+        <div class="cat-name">Writing</div>
+        <div class="cat-desc">Emails, essays, and everything in between.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A2→B2</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="business-english/index.html" class="cat-card">
+        <span class="cat-icon">💼</span>
+        <div class="cat-name">Business English</div>
+        <div class="cat-desc">Professional language for meetings, emails, and careers.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · B1→B2</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="idioms-culture/index.html" class="cat-card">
+        <span class="cat-icon">🌍</span>
+        <div class="cat-name">Idioms & Culture</div>
+        <div class="cat-desc">Sound natural. Understand the culture behind the language.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A2→B2</span><span class="cat-arrow">→</span></div>
+      </a>
+      <a href="miscellaneous/index.html" class="cat-card">
+        <span class="cat-icon">✨</span>
+        <div class="cat-name">Miscellaneous</div>
+        <div class="cat-desc">Pronunciation, word origins, and fascinating English facts.</div>
+        <div class="cat-progress"><div class="cat-progress-fill" data-width="0"></div></div>
+        <div class="cat-meta"><span class="cat-count">8 lessons · A1→B2</span><span class="cat-arrow">→</span></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2 class="section-title">Ready to Start Your Journey? 🚀</h2>
-  <p>Join thousands of learners improving their English every day</p>
-  <a href="#levels" class="btn-primary">Start Learning Now — It's Free!</a>
+<!-- WORD OF THE DAY -->
+<section class="wotd reveal">
+  <div class="wotd-card">
+    <div class="wotd-label">✨ Word of the Day</div>
+    <div class="wotd-word" id="wotdWord">Persevere</div>
+    <div class="wotd-phonetic" id="wotdPhonetic">/ˌpɜːsɪˈvɪər/</div>
+    <div class="wotd-pos" id="wotdPos">Verb</div>
+    <div class="wotd-def" id="wotdDef">To continue doing something even when it is difficult or takes a long time.</div>
+    <div class="wotd-example" id="wotdExample">"She persevered with her English studies and became completely fluent."</div>
+    <div class="wotd-nav">
+      <button class="wotd-btn" onclick="prevWord()">← Previous</button>
+      <button class="wotd-btn primary" onclick="nextWord()">Next Word →</button>
+    </div>
+  </div>
 </section>
 
+<!-- WEEKLY CHALLENGE -->
+<section class="challenges reveal">
+  <div class="container">
+    <h2 class="section-title">🏆 Weekly Challenge</h2>
+    <p class="section-sub">A new challenge every Monday. Complete it to earn bonus XP!</p>
+    <div class="challenge-card">
+      <div class="challenge-week">This Week's Challenge</div>
+      <div class="challenge-title">The Tense Master Challenge</div>
+      <div class="challenge-desc">This week, we're focusing on the three most important English tenses. Complete all three tasks to earn your Weekly Champion badge!</div>
+      <div class="challenge-tasks">
+        <div class="challenge-task">Complete the Present Simple lesson and score 80%+</div>
+        <div class="challenge-task">Complete the Present Continuous lesson and score 80%+</div>
+        <div class="challenge-task">Learn 10 new vocabulary words from the Vocabulary category</div>
+      </div>
+      <div class="challenge-reward">🏅 Reward: 150 XP + Weekly Champion Badge</div>
+      <div style="margin-top:1.2rem;">
+        <a href="auth.html" class="btn-primary" style="display:inline-flex;font-size:0.9rem;padding:12px 24px;">Accept the Challenge →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE CORNER -->
+<section class="culture reveal">
+  <div class="container">
+    <h2 class="section-title" style="color:#4a3000;">🌍 Culture Corner</h2>
+    <p class="section-sub" style="color:#6b5a00;">English is more than grammar — it's history, culture, and human stories.</p>
+    <div class="culture-grid">
+      <a href="grammar/index.html" class="culture-card">
+        <span class="culture-emoji">🎭</span>
+        <div class="culture-tag">Literature</div>
+        <div class="culture-title">Shakespeare invented over 1,700 English words</div>
+        <div class="culture-desc">Words like "bedroom", "lonely", and "generous" — all came from one playwright.</div>
+      </a>
+      <a href="idioms-culture/index.html" class="culture-card">
+        <span class="culture-emoji">⚓</span>
+        <div class="culture-tag">History</div>
+        <div class="culture-title">Why English has so many French words</div>
+        <div class="culture-desc">In 1066, the Normans invaded England — and changed the language forever.</div>
+      </a>
+      <a href="vocabulary/index.html" class="culture-card">
+        <span class="culture-emoji">🎵</span>
+        <div class="culture-tag">Music</div>
+        <div class="culture-title">The Beatles and the Present Perfect</div>
+        <div class="culture-desc">"I have just seen a face" — why Lennon used the present perfect and what it means.</div>
+      </a>
+      <a href="speaking/index.html" class="culture-card">
+        <span class="culture-emoji">🗣️</span>
+        <div class="culture-tag">Famous Speeches</div>
+        <div class="culture-title">What MLK's "I Have a Dream" teaches us</div>
+        <div class="culture-desc">One of history's greatest speeches — and a masterclass in English rhetoric.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial reveal">
+  <div class="container">
+    <span class="quote-mark">"</span>
+    <div class="quote-text" id="quoteText">The limits of my language mean the limits of my world.</div>
+    <div class="quote-author" id="quoteAuthor">— Ludwig Wittgenstein, Philosopher</div>
+    <div class="quote-dots">
+      <div class="quote-dot active" onclick="showQuote(0)"></div>
+      <div class="quote-dot" onclick="showQuote(1)"></div>
+      <div class="quote-dot" onclick="showQuote(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+  <h2>Ready to start your journey?</h2>
+  <p>Find your level in 5 minutes. Get your personalised learning path. Start your first lesson today — completely free.</p>
+  <a href="level-test.html" class="btn-primary" style="display:inline-flex;">🎯 Find My Level — It's Free!</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>English for All · <a href="#">PLU Blog</a> · Made with ❤️ for English learners everywhere</p>
+  <div class="footer-logo">English <span>for All</span></div>
+  <div class="footer-links">
+    <a href="grammar/index.html">Grammar</a>
+    <a href="vocabulary/index.html">Vocabulary</a>
+    <a href="speaking/index.html">Speaking</a>
+    <a href="writing/index.html">Writing</a>
+    <a href="business-english/index.html">Business</a>
+    <a href="auth.html">Sign In</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+  <div class="footer-copy">© 2025 English for All. Made with ❤️ for English learners everywhere.</div>
 </footer>
 
+<script>
+// ── Scroll reveal ──────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Progress bars from localStorage ───────────
+const progress = JSON.parse(localStorage.getItem('plu_progress') || '{}');
+const cats = ['grammar','speaking','vocabulary','writing','business-english','idioms-culture','miscellaneous'];
+document.querySelectorAll('.cat-progress-fill').forEach((bar, i) => {
+  let done = 0;
+  for(let j=1;j<=8;j++){
+    if(progress[cats[i]+'-'+j]) done++;
+  }
+  const pct = Math.round((done/8)*100);
+  setTimeout(() => { bar.style.width = pct + '%'; }, 500);
+});
+
+// ── Word of the Day ────────────────────────────
+const words = [
+  {word:'Persevere',phonetic:'/ˌpɜːsɪˈvɪər/',pos:'Verb',def:'To continue doing something even when it is difficult or takes a long time.',example:'"She persevered with her English studies and became completely fluent."'},
+  {word:'Eloquent',phonetic:'/ˈeləkwənt/',pos:'Adjective',def:'Able to express ideas clearly and effectively in speech or writing.',example:'"The president gave an eloquent speech that moved the entire audience."'},
+  {word:'Endeavour',phonetic:'/ɪnˈdevər/',pos:'Verb / Noun',def:'To try hard to do or achieve something.',example:'"We will endeavour to deliver the best possible English learning experience."'},
+  {word:'Resilience',phonetic:'/rɪˈzɪliəns/',pos:'Noun',def:'The ability to recover quickly from difficulties.',example:'"Learning a new language requires resilience and patience."'},
+  {word:'Articulate',phonetic:'/ɑːˈtɪkjʊlət/',pos:'Adjective',def:'Able to express thoughts and feelings clearly and effectively.',example:'"She became more articulate in English after months of daily practice."'},
+  {word:'Immerse',phonetic:'/ɪˈmɜːs/',pos:'Verb',def:'To involve yourself deeply in something so you learn or experience it fully.',example:'"The best way to learn English is to immerse yourself in the language."'},
+  {word:'Nuance',phonetic:'/ˈnjuːɑːns/',pos:'Noun',def:'A subtle difference in meaning, expression, or sound.',example:'"At C1 level, you can appreciate the nuances of English humour."'},
+];
+const todayIdx = new Date().getDate() % words.length;
+let currentWord = todayIdx;
+function showWord(idx) {
+  const w = words[idx];
+  document.getElementById('wotdWord').textContent = w.word;
+  document.getElementById('wotdPhonetic').textContent = w.phonetic;
+  document.getElementById('wotdPos').textContent = w.pos;
+  document.getElementById('wotdDef').textContent = w.def;
+  document.getElementById('wotdExample').textContent = w.example;
+}
+function nextWord(){ currentWord=(currentWord+1)%words.length; showWord(currentWord); }
+function prevWord(){ currentWord=(currentWord-1+words.length)%words.length; showWord(currentWord); }
+showWord(currentWord);
+
+// ── Quotes ─────────────────────────────────────
+const quotes = [
+  {text:'The limits of my language mean the limits of my world.',author:'— Ludwig Wittgenstein, Philosopher'},
+  {text:'One language sets you in a corridor for life. Two languages open every door along the way.',author:'— Frank Smith, Psycholinguist'},
+  {text:'To have another language is to possess a second soul.',author:'— Charlemagne, King of the Franks'},
+];
+let currentQuote = 0;
+function showQuote(idx) {
+  currentQuote = idx;
+  document.getElementById('quoteText').textContent = quotes[idx].text;
+  document.getElementById('quoteAuthor').textContent = quotes[idx].author;
+  document.querySelectorAll('.quote-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+}
+setInterval(() => showQuote((currentQuote+1)%quotes.length), 5000);
+</script>
 </body>
 </html>
