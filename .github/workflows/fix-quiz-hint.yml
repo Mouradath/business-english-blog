@@ -1,0 +1,19 @@
+name: Remove Quiz 3 Hint Line
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Remove italic hint lines
+        run: |
+          find . -name "*.html" -exec sed -i '/font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;/d' {} +
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Remove Quiz 3 answer hint from all articles" || echo "Nothing to commit"
+          git push
