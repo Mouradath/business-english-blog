@@ -44,6 +44,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .tip-icon{font-size:1.3rem;flex-shrink:0;}
 .tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
 .tip-text strong{color:#4a3a00;}
+.verb-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem;}
+.verb-table th{background:var(--green-dark);color:var(--white);padding:10px 14px;text-align:left;font-weight:800;}
+.verb-table td{padding:9px 14px;border-bottom:1px solid var(--green-light);color:var(--ink-soft);}
+.verb-table tr:nth-child(even) td{background:var(--green-pale);}
+.verb-table td:first-child{font-weight:800;color:var(--green-dark);}
 .quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
 .quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
 .quiz-icon{font-size:1.6rem;}
@@ -62,11 +67,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .mc-feedback.wrong{background:#fff0f0;color:#c00;}
 .fitb-question{margin-bottom:1.2rem;}
 .fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
-.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:120px;text-align:center;outline:none;padding:2px 4px;}
 .fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
 .fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
 .check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
 .check-btn:hover{background:var(--green-mid);}
+.save-status{font-size:0.82rem;margin-top:8px;font-weight:600;display:none;}
 .dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
 .dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
 .dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
@@ -89,7 +95,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
 </style>
 </head>
-<body>
+<body data-article-id="vocabulary-1">
 <nav>
   <a href="../index.html" class="nav-logo">English <span>for All</span></a>
   <a href="../vocabulary/index.html" class="back-btn">← Vocabulary</a>
@@ -103,66 +109,98 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
     <span>🎯 Beginner</span><span>📊 A1/A2</span>
     <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
   </div>
-  <p class="hero-sub">Master the 50 most important English verbs</p>
+  <p class="hero-sub">The most important verbs every English learner needs to know</p>
 </section>
 
 <div class="article-body">
   <div class="objectives">
     <h3>🎯 What You'll Learn</h3>
     <ul>
-      <li>Understand the key concepts of Essential English Verbs</li>
-      <li>Study real examples with clear explanations</li>
-      <li>Practice with 3 interactive quiz types</li>
+      <li>The 15 most essential English verbs for beginners</li>
+      <li>How to use them in simple everyday sentences</li>
+      <li>The difference between action verbs and state verbs</li>
       <li>Earn your Vocabulary badge with 80%+ score!</li>
     </ul>
   </div>
 
+  <!-- Section 1 -->
   <div class="lesson-section">
-    <h2>📖 1. Introduction</h2>
-    <p>Master the 50 most important English verbs This lesson is perfect for Beginner learners at A1/A2 level. Study the examples carefully and look for patterns in the language.</p>
-    <div class="example-box">
-      <div class="ex-label">✅ Key Examples</div>
-      <p>• Study each example below carefully.<br>
-      • Notice how the language patterns work.<br>
-      • Try to create your own examples!</p>
-    </div>
+    <h2>📖 1. The Most Essential English Verbs</h2>
+    <p>Verbs are the engine of every sentence — they express actions, states, and events. As a beginner, learning the most common verbs will unlock your ability to communicate in hundreds of everyday situations.</p>
+
+    <table class="verb-table">
+      <tr><th>Verb</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td>be</td><td>to exist / equal</td><td>I am a student.</td></tr>
+      <tr><td>have</td><td>to possess</td><td>She has a cat.</td></tr>
+      <tr><td>do</td><td>to perform</td><td>I do my homework.</td></tr>
+      <tr><td>go</td><td>to move / travel</td><td>We go to school.</td></tr>
+      <tr><td>get</td><td>to receive / obtain</td><td>He gets good grades.</td></tr>
+      <tr><td>make</td><td>to create / produce</td><td>She makes coffee.</td></tr>
+      <tr><td>know</td><td>to have knowledge</td><td>I know this word.</td></tr>
+      <tr><td>think</td><td>to have a thought</td><td>I think it's correct.</td></tr>
+      <tr><td>want</td><td>to desire</td><td>They want to learn.</td></tr>
+      <tr><td>use</td><td>to employ / utilise</td><td>We use a dictionary.</td></tr>
+    </table>
+
     <div class="tip-box">
       <span class="tip-icon">💡</span>
-      <div class="tip-text"><strong>Study Tip:</strong> Read examples out loud! Speaking and hearing correct English helps your brain remember patterns much faster.</div>
+      <div class="tip-text"><strong>Study tip:</strong> These 10 verbs appear in over 50% of everyday English conversations. Master them first — everything else becomes much easier.</div>
     </div>
   </div>
 
+  <!-- Section 2 -->
   <div class="lesson-section">
-    <h2>📝 2. Key Patterns & Examples</h2>
-    <p>Study these important patterns. Notice how the structure works in different contexts.</p>
+    <h2>📝 2. Action Verbs vs State Verbs</h2>
+    <p>Not all verbs work the same way. <span class="highlight">Action verbs</span> describe things you physically do. <span class="highlight">State verbs</span> describe situations, feelings, or mental states — and they are NOT normally used with -ing.</p>
+
     <div class="example-box">
-      <div class="ex-label">✅ Pattern 1</div>
-      <p>Key example demonstrating the main concept of <span class="highlight">Essential English Verbs</span>. Notice the structure and how it changes in context.</p>
+      <div class="ex-label">✅ Action Verbs — can use -ing</div>
+      <p>
+        • <strong>run</strong> → She <strong>is running</strong> to the bus.<br>
+        • <strong>eat</strong> → They <strong>are eating</strong> lunch.<br>
+        • <strong>make</strong> → He <strong>is making</strong> dinner.<br>
+        • <strong>go</strong> → I <strong>am going</strong> to the shop.
+      </p>
     </div>
-    <div class="example-box">
-      <div class="ex-label">✅ Pattern 2</div>
-      <p>Another example showing a variation. Compare this with Pattern 1 — can you spot the difference?</p>
+
+    <div class="example-box" style="border-left-color:var(--yellow);background:#fffdf0;">
+      <div class="ex-label" style="color:#9a7000;">⚠️ State Verbs — do NOT use -ing</div>
+      <p>
+        • <strong>know</strong> → ✅ "I know the answer." ❌ "I am knowing the answer."<br>
+        • <strong>want</strong> → ✅ "She wants coffee." ❌ "She is wanting coffee."<br>
+        • <strong>like</strong> → ✅ "He likes music." ❌ "He is liking music."<br>
+        • <strong>have</strong> → ✅ "They have a car." ❌ "They are having a car."
+      </p>
     </div>
+
     <div class="tip-box">
       <span class="tip-icon">🎯</span>
-      <div class="tip-text"><strong>Remember:</strong> Practice these patterns in your own sentences. The more you use them, the more natural they will feel!</div>
+      <div class="tip-text"><strong>Memory trick:</strong> State verbs describe things that don't change moment by moment — your knowledge, your feelings, your possessions. Because they don't change, they don't need the continuous (-ing) form.</div>
     </div>
   </div>
 
+  <!-- Section 3 -->
   <div class="lesson-section">
-    <h2>⚠️ 3. Common Mistakes</h2>
-    <p>These are the most common errors learners make. Study them carefully to avoid them!</p>
+    <h2>⚠️ 3. Common Mistakes with Verbs</h2>
+    <p>These are the most common verb errors that beginners make. Study them carefully!</p>
+
     <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
       <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
-      <p>• Watch out for this typical mistake with Essential English Verbs.<br>
-      • This is another error many learners make.<br>
-      • Avoid this — native speakers never say this!</p>
+      <p>
+        • ❌ <em>"She is knowing the answer."</em> — "know" is a state verb<br>
+        • ❌ <em>"I am wanting a coffee."</em> — "want" is a state verb<br>
+        • ❌ <em>"He make dinner every day."</em> — missing -s for he/she/it<br>
+        • ❌ <em>"They goes to school."</em> — "go" doesn't add -es for they
+      </p>
     </div>
     <div class="example-box">
       <div class="ex-label">✅ Correct Forms</div>
-      <p>• The correct version — notice the difference!<br>
-      • This is how native speakers actually say it.<br>
-      • Use this form and you'll sound natural.</p>
+      <p>
+        • ✅ <em>"She knows the answer."</em><br>
+        • ✅ <em>"I want a coffee."</em><br>
+        • ✅ <em>"He makes dinner every day."</em><br>
+        • ✅ <em>"They go to school."</em>
+      </p>
     </div>
   </div>
 
@@ -170,76 +208,93 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🎯</span>
-      <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
-      <div class="quiz-subtitle">Choose the best answer</div></div>
+      <div>
+        <div class="quiz-title">Quiz 1 — Multiple Choice</div>
+        <div class="quiz-subtitle">Choose the best answer</div>
+      </div>
     </div>
-    
+
     <div class="mc-question" id="q1">
-      <div class="mc-q">1. Which is an action verb?</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','run')">happy</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q1','run')">run</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','run')">blue</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','run')">slowly</button>
-</div>
+      <div class="mc-q">1. Which sentence is correct?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','She knows the answer.')">She is knowing the answer.</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q1','She knows the answer.')">She knows the answer.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','She knows the answer.')">She are knowing the answer.</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','She knows the answer.')">She know the answer.</button>
+      </div>
       <div class="mc-feedback" id="q1-fb"></div>
     </div>
+
     <div class="mc-question" id="q2">
-      <div class="mc-q">2. 'Make' means...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','to create or produce something')">to destroy something</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q2','to create or produce something')">to create or produce something</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','to create or produce something')">to find something</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','to create or produce something')">to lose something</button>
-</div>
+      <div class="mc-q">2. "Make" is an example of...</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','an action verb')">a state verb</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q2','an action verb')">an action verb</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','an action verb')">an adjective</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','an action verb')">a preposition</button>
+      </div>
       <div class="mc-feedback" id="q2-fb"></div>
     </div>
+
     <div class="mc-question" id="q3">
-      <div class="mc-q">3. She ___ her homework every evening.</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','does')">do</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q3','does')">does</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','does')">doing</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','does')">done</button>
-</div>
+      <div class="mc-q">3. Which verb CANNOT normally be used with -ing?</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','want')">run</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','want')">eat</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q3','want')">want</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','want')">go</button>
+      </div>
       <div class="mc-feedback" id="q3-fb"></div>
     </div>
+    <div id="save-status-quiz1" class="save-status"></div>
   </div>
 
   <!-- Quiz 2: Fill in the Blanks -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">✏️</span>
-      <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
-      <div class="quiz-subtitle">Type the missing word</div></div>
+      <div>
+        <div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
+        <div class="quiz-subtitle">Type the missing word</div>
+      </div>
     </div>
-    
+
     <div class="fitb-question">
-      <div class="fitb-sentence">1. I ___ to the market every Saturday. <input class="fitb-input" id="fitb1" placeholder="?" data-answer="go"></div>
+      <div class="fitb-sentence">1. I <input class="fitb-input" id="fitb1" placeholder="?" data-answer="know"> the answer — it's "go".</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">2. She ___ English very well. (speak)</div>
+      <div class="fitb-sentence">2. She <input class="fitb-input" id="fitb2" placeholder="?" data-answer="makes"> delicious food every Sunday.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">3. They ___ football on weekends. <input class="fitb-input" id="fitb3" placeholder="?" data-answer="play"></div>
+      <div class="fitb-sentence">3. They <input class="fitb-input" id="fitb3" placeholder="?" data-answer="want"> to learn English.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">4. We <input class="fitb-input" id="fitb4" placeholder="?" data-answer="use"> a dictionary to find words.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">5. He <input class="fitb-input" id="fitb5" placeholder="?" data-answer="goes"> to work by bus.</div>
     </div>
     <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+    <div id="save-status-quiz2" class="save-status"></div>
   </div>
 
-  <!-- Quiz 3: Build the Sentence -->
+  <!-- Quiz 3: Build the Sentence — NO hint line -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🧩</span>
-      <div><div class="quiz-title">Quiz 3 — Build the Sentence</div>
-      <div class="quiz-subtitle">Tap words in the correct order</div></div>
+      <div>
+        <div class="quiz-title">Quiz 3 — Build the Sentence</div>
+        <div class="quiz-subtitle">Tap words in the correct order</div>
+      </div>
     </div>
     <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
-    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"She makes delicious food every Sunday"</p>
     <div class="dnd-words" id="dndWords">
       <div class="dnd-word" onclick="selectWord(this)">delicious</div>
-<div class="dnd-word" onclick="selectWord(this)">every</div>
-<div class="dnd-word" onclick="selectWord(this)">Sunday</div>
-<div class="dnd-word" onclick="selectWord(this)">food</div>
-<div class="dnd-word" onclick="selectWord(this)">She</div>
-<div class="dnd-word" onclick="selectWord(this)">makes</div>
-
+      <div class="dnd-word" onclick="selectWord(this)">She</div>
+      <div class="dnd-word" onclick="selectWord(this)">every</div>
+      <div class="dnd-word" onclick="selectWord(this)">food</div>
+      <div class="dnd-word" onclick="selectWord(this)">Sunday</div>
+      <div class="dnd-word" onclick="selectWord(this)">makes</div>
     </div>
     <div class="dnd-answer-box" id="dndAnswer">
       <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
@@ -249,6 +304,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
     </div>
     <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+    <div id="save-status-quiz3" class="save-status"></div>
   </div>
 
   <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
@@ -256,109 +312,136 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="score-section" id="scoreSection">
     <span class="score-emoji" id="scoreEmoji">🎉</span>
     <div class="score-title" id="scoreTitle">Well Done!</div>
-    <div class="score-num" id="scoreNum">0/9</div>
+    <div class="score-num" id="scoreNum">0/11</div>
     <div class="score-sub" id="scoreSub">Keep practising!</div>
     <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Vocabulary Badge Earned!</div>
   </div>
 
   <div class="article-nav">
-    <a href="../index.html"><span class="nav-dir">← Previous</span><span>Category Home</span></a>
+    <a href="../vocabulary/index.html"><span class="nav-dir">← Back</span><span>Category Home</span></a>
     <a href="article-2.html" style="text-align:right;"><span class="nav-dir">Next →</span><span>Lesson 2</span></a>
   </div>
 </div>
 
+<!-- Affiliate -->
+<section style="max-width:720px;margin:3rem auto 2rem;padding:0 1.5rem;">
+  <div style="background:#fff;border:2px solid var(--green-mid);border-radius:20px;padding:2rem;">
+    <span style="display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:6px 14px;border-radius:50px;margin-bottom:1.2rem;">📚 WE RECOMMEND</span>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-dark);margin-bottom:0.4rem;">Basic Vocabulary in Use</h3>
+    <p style="font-size:0.9rem;color:var(--green-mid);margin-bottom:1rem;">by Michael McCarthy · Cambridge University Press</p>
+    <p style="font-size:1rem;color:var(--ink);line-height:1.7;margin-bottom:1.5rem;">Now that you've started exploring essential English verbs, this book is your perfect companion. It covers hundreds of everyday vocabulary items with clear explanations and practice exercises.</p>
+    <p style="font-size:0.8rem;color:var(--ink-soft);font-style:italic;margin-bottom:1.2rem;">ⓘ Affiliate link — I may earn a small commission at no extra cost to you.</p>
+    <a href="https://amzn.to/48wqK4m" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--green-dark);color:#fff;font-weight:700;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:1rem;">View on Amazon ↗</a>
+  </div>
+</section>
+
+<script src="/supabase-quiz.js"></script>
 <script>
 window.addEventListener('scroll',()=>{
   const doc=document.documentElement;
   const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
   document.getElementById('progressBar').style.width=scrolled+'%';
 });
-let score=0;
+
+let q1Score=0,q2Score=0,q3Score=0;
+let q1Done=false,q2Done=false,q3Done=false;
+
 function checkMC(btn,result,qId,correct){
   const q=document.getElementById(qId);
   q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
   const fb=document.getElementById(qId+'-fb');
-  if(result==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';score++;}
-  else{btn.classList.add('wrong');q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';}
+  if(result==='correct'){
+    btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';q1Score++;
+  } else {
+    btn.classList.add('wrong');
+    q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});
+    fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';
+  }
+  const answered=document.querySelectorAll('.mc-question [disabled]').length;
+  if(answered>=3&&!q1Done){q1Done=true;submitQuizScore('vocabulary-1','quiz1',q1Score,3);}
 }
+
 function checkFITB(){
-  ['fitb1','fitb2','fitb3'].forEach(id=>{
+  if(q2Done)return;
+  q2Done=true;q2Score=0;
+  ['fitb1','fitb2','fitb3','fitb4','fitb5'].forEach(id=>{
     const inp=document.getElementById(id);
     if(!inp)return;
     const answer=inp.dataset.answer.toLowerCase().trim();
     const user=inp.value.toLowerCase().trim();
-    if(user===answer){inp.classList.add('correct');score++;}
+    if(user===answer){inp.classList.add('correct');q2Score++;}
     else{inp.classList.add('wrong');inp.value=inp.dataset.answer;}
     inp.disabled=true;
   });
+  submitQuizScore('vocabulary-1','quiz2',q2Score,5);
 }
+
 let selectedWords=[];
-const correctOrder=["She", "makes", "delicious", "food", "every", "Sunday"];
+const correctOrder=["She","makes","delicious","food","every","Sunday"];
 function selectWord(el){
   if(el.classList.contains('used'))return;
   el.classList.add('used');
-  selectedWords.push(el.textContent);
+  selectedWords.push(el.textContent.trim());
   const answer=document.getElementById('dndAnswer');
   const placeholder=document.getElementById('dndPlaceholder');
-  if(placeholder)placeholder.remove();
-  const wordEl=document.createElement('span');
-  wordEl.textContent=el.textContent;
-  wordEl.className='dnd-placed';
-  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
-  answer.appendChild(wordEl);
+  if(placeholder)placeholder.style.display='none';
+  const placed=document.createElement('div');
+  placed.className='dnd-placed';
+  placed.textContent=el.textContent.trim();
+  placed.onclick=function(){
+    const idx=selectedWords.indexOf(el.textContent.trim());
+    if(idx>-1)selectedWords.splice(idx,1);
+    el.classList.remove('used');placed.remove();
+    if(selectedWords.length===0&&placeholder)placeholder.style.display='inline';
+  };
+  answer.appendChild(placed);
 }
+
 function checkDND(){
+  if(q3Done)return;
   const fb=document.getElementById('dndFeedback');
   const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
   fb.style.display='block';
-  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
-  else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+  if(isCorrect){fb.textContent='✅ Perfect sentence!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';q3Score=3;}
+  else{fb.textContent='❌ Not quite — try again!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+  q3Done=true;
+  submitQuizScore('vocabulary-1','quiz3',q3Score,3);
 }
+
 function resetDND(){
   selectedWords=[];
-  const answer=document.getElementById('dndAnswer');
-  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.getElementById('dndAnswer').querySelectorAll('.dnd-placed').forEach(p=>p.remove());
+  document.getElementById('dndPlaceholder').style.display='inline';
   document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
-  const fb=document.getElementById('dndFeedback');fb.style.display='none';
+  document.getElementById('dndFeedback').style.display='none';
+  q3Done=false;q3Score=0;
 }
+
 function showScore(){
-  const section=document.getElementById('scoreSection');
-  section.classList.add('show');
-  const pct=Math.round((score/9)*100);
-  document.getElementById('scoreNum').textContent=score+'/9';
-  const emoji=document.getElementById('scoreEmoji');
-  const title=document.getElementById('scoreTitle');
-  const sub=document.getElementById('scoreSub');
-  const badge=document.getElementById('scoreBadge');
-  if(pct>=80){emoji.textContent='🏆';title.textContent='Outstanding!';sub.textContent='You have mastered this lesson!';badge.style.display='inline-flex';localStorage.setItem('badge_vocabulary_article-1','earned');}
-  else if(pct>=60){emoji.textContent='🎉';title.textContent='Great Job!';sub.textContent='Good work! Review the sections you missed.';}
-  else{emoji.textContent='💪';title.textContent='Keep Going!';sub.textContent='Read the lesson again and try once more!';}
-  section.scrollIntoView({behavior:'smooth',block:'center'});
+  const total=q1Score+q2Score+q3Score;
+  const max=11;
+  const pct=Math.round((total/max)*100);
+  document.getElementById('scoreNum').textContent=total+'/'+max;
+  if(pct>=80){
+    document.getElementById('scoreEmoji').textContent='🏆';
+    document.getElementById('scoreTitle').textContent='Outstanding!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Badge earned!';
+    document.getElementById('scoreBadge').style.display='inline-flex';
+    const progress=JSON.parse(localStorage.getItem('plu_progress')||'{}');
+    progress['vocabulary-1']=true;
+    localStorage.setItem('plu_progress',JSON.stringify(progress));
+  } else if(pct>=50){
+    document.getElementById('scoreEmoji').textContent='👍';
+    document.getElementById('scoreTitle').textContent='Good Effort!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Try again to earn the badge!';
+  } else {
+    document.getElementById('scoreEmoji').textContent='📚';
+    document.getElementById('scoreTitle').textContent='Keep Practising!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Review the lesson and retry.';
+  }
+  document.getElementById('scoreSection').classList.add('show');
+  document.getElementById('scoreSection').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
-<!-- Affiliate Book Recommendation -->
-<section style="max-width:720px;margin:3rem auto 2rem;padding:0 1.5rem;">
-  <div style="background:#fff;border:2px solid var(--green-mid);border-radius:20px;padding:2rem;">
-    <span style="display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:var(--green-dark);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:6px 14px;border-radius:50px;margin-bottom:1.2rem;">
-      📚 WE RECOMMEND
-    </span>
-    <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--green-dark);margin-bottom:0.4rem;">
-      Basic Vocabulary in Use
-    </h3>
-    <p style="font-size:0.9rem;color:var(--green-mid);margin-bottom:1rem;">
-      by Michael McCarthy · Cambridge University Press
-    </p>
-    <p style="font-size:1rem;color:var(--ink);line-height:1.7;margin-bottom:1.5rem;">
-      Now that you've started exploring essential English words for daily life, this book is your perfect companion. It covers hundreds of everyday vocabulary items with clear explanations, real-life examples, and practice exercises to help them stick.
-    </p>
-    <p style="font-size:0.8rem;color:var(--ink-soft);font-style:italic;margin-bottom:1.2rem;">
-      ⓘ Affiliate link — I may earn a small commission at no extra cost to you.
-    </p>
-    <a href="https://amzn.to/48wqK4m" target="_blank" rel="noopener noreferrer"
-      style="display:inline-block;background:var(--green-dark);color:#fff;font-weight:700;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:1rem;">
-      View on Amazon ↗
-    </a>
-  </div>
-</section>
 </body>
 </html>
