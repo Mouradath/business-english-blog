@@ -43,6 +43,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .tip-icon{font-size:1.3rem;flex-shrink:0;}
 .tip-text{font-size:0.88rem;line-height:1.6;color:#6b5a00;}
 .tip-text strong{color:#4a3a00;}
+.word-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem;}
+.word-table th{background:var(--green-dark);color:var(--white);padding:10px 14px;text-align:left;font-weight:800;}
+.word-table td{padding:9px 14px;border-bottom:1px solid var(--green-light);color:var(--ink-soft);}
+.word-table tr:nth-child(even) td{background:var(--green-pale);}
+.word-table td:first-child{font-weight:800;color:var(--green-dark);}
 .quiz-section{background:var(--white);border-radius:20px;padding:1.6rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid var(--green-pale);}
 .quiz-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
 .quiz-icon{font-size:1.6rem;}
@@ -61,11 +66,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .mc-feedback.wrong{background:#fff0f0;color:#c00;}
 .fitb-question{margin-bottom:1.2rem;}
 .fitb-sentence{font-size:0.95rem;line-height:2.2;color:var(--ink);font-weight:600;}
-.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:110px;text-align:center;outline:none;padding:2px 4px;}
+.fitb-input{border:none;border-bottom:2px solid var(--green-mid);background:transparent;font-family:'Nunito',sans-serif;font-size:0.92rem;font-weight:700;color:var(--green-dark);width:120px;text-align:center;outline:none;padding:2px 4px;}
 .fitb-input.correct{border-color:var(--green-bright);color:var(--green-dark);background:var(--green-pale);border-radius:4px;border-style:solid;}
 .fitb-input.wrong{border-color:#ff4444;color:#c00;background:#fff0f0;border-radius:4px;border-style:solid;}
 .check-btn{background:var(--green-dark);color:var(--white);border:none;padding:10px 22px;border-radius:30px;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;margin-top:0.8rem;transition:background .2s;}
 .check-btn:hover{background:var(--green-mid);}
+.save-status{font-size:0.82rem;margin-top:8px;font-weight:600;display:none;}
 .dnd-instruction{font-size:0.82rem;color:var(--ink-soft);margin-bottom:0.8rem;}
 .dnd-words{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
 .dnd-word{padding:6px 14px;background:var(--green-pale);border:2px solid var(--green-light);border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .2s;color:var(--green-dark);user-select:none;}
@@ -88,7 +94,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 .nav-dir{font-size:0.7rem;color:var(--ink-soft);font-weight:600;}
 </style>
 </head>
-<body>
+<body data-article-id="vocabulary-8">
 <nav>
   <a href="../index.html" class="nav-logo">English <span>for All</span></a>
   <a href="../vocabulary/index.html" class="back-btn">← Vocabulary</a>
@@ -97,7 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
 
 <section class="article-hero">
   <div class="hero-badge">📚 Vocabulary · Upper-Intermediate · C1</div>
-  <h1>Idioms & <span>Fixed Expressions</span></h1>
+  <h1>Idioms &amp; <span>Fixed Expressions</span></h1>
   <div class="hero-meta">
     <span>🎯 Upper-Intermediate</span><span>📊 C1</span>
     <span>⏱ 10 min</span><span>🎯 3 Quizzes</span><span>🏆 Badge</span>
@@ -109,120 +115,161 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="objectives">
     <h3>🎯 What You'll Learn</h3>
     <ul>
-      <li>Understand the key concepts of Idioms & Fixed Expressions</li>
-      <li>Study real examples with clear explanations</li>
-      <li>Practice with 3 interactive quiz types</li>
+      <li>10 essential English idioms with their real meanings</li>
+      <li>The origins and stories behind famous idioms</li>
+      <li>How to use fixed expressions naturally in conversation</li>
       <li>Earn your Vocabulary badge with 80%+ score!</li>
     </ul>
   </div>
 
+  <!-- Section 1 -->
   <div class="lesson-section">
-    <h2>📖 1. Introduction</h2>
-    <p>Common fixed phrases every fluent speaker knows This lesson is perfect for Upper-Intermediate learners at C1 level. Study the examples carefully and look for patterns in the language.</p>
-    <div class="example-box">
-      <div class="ex-label">✅ Key Examples</div>
-      <p>• Study each example below carefully.<br>
-      • Notice how the language patterns work.<br>
-      • Try to create your own examples!</p>
-    </div>
+    <h2>📖 1. Essential English Idioms</h2>
+    <p>An <span class="highlight">idiom</span> is a phrase whose meaning cannot be understood from the individual words. For example, "break a leg" has nothing to do with legs — it means "good luck". At C1 level, knowing idioms is what separates a good speaker from a truly fluent one.</p>
+
+    <table class="word-table">
+      <tr><th>Idiom</th><th>Meaning</th></tr>
+      <tr><td>Break a leg</td><td>Good luck (used especially before performances)</td></tr>
+      <tr><td>It's raining cats and dogs</td><td>It's raining very heavily</td></tr>
+      <tr><td>Bite the bullet</td><td>Endure a difficult situation bravely</td></tr>
+      <tr><td>Hit the nail on the head</td><td>Be exactly right about something</td></tr>
+      <tr><td>Once in a blue moon</td><td>Very rarely</td></tr>
+      <tr><td>The ball is in your court</td><td>It's your turn to make a decision</td></tr>
+      <tr><td>Spill the beans</td><td>Reveal a secret accidentally</td></tr>
+      <tr><td>Under the weather</td><td>Feeling slightly ill or sad</td></tr>
+    </table>
+
     <div class="tip-box">
       <span class="tip-icon">💡</span>
-      <div class="tip-text"><strong>Study Tip:</strong> Read examples out loud! Speaking and hearing correct English helps your brain remember patterns much faster.</div>
+      <div class="tip-text"><strong>Culture tip:</strong> "Break a leg" comes from the theatre world. Actors believed wishing someone "good luck" directly would bring bad luck — so they said the opposite! This superstition dates back to Shakespeare's time in the 1600s.</div>
     </div>
   </div>
 
+  <!-- Section 2 -->
   <div class="lesson-section">
-    <h2>📝 2. Key Patterns & Examples</h2>
-    <p>Study these important patterns. Notice how the structure works in different contexts.</p>
+    <h2>📝 2. Fixed Expressions</h2>
+    <p>Unlike idioms, <span class="highlight">fixed expressions</span> have meanings you can usually guess — but their exact form cannot be changed. You must use them word-for-word as they are.</p>
+
     <div class="example-box">
-      <div class="ex-label">✅ Pattern 1</div>
-      <p>Key example demonstrating the main concept of <span class="highlight">Idioms & Fixed Expressions</span>. Notice the structure and how it changes in context.</p>
+      <div class="ex-label">✅ Common Fixed Expressions</div>
+      <p>
+        • <strong>"As a matter of fact..."</strong> — used to add a surprising truth<br>
+        • <strong>"To be honest..."</strong> — introduces a frank opinion<br>
+        • <strong>"At the end of the day..."</strong> — when considering everything<br>
+        • <strong>"By and large..."</strong> — generally speaking / mostly<br>
+        • <strong>"On the other hand..."</strong> — to introduce a contrasting point<br>
+        • <strong>"In the long run..."</strong> — over a long period of time
+      </p>
     </div>
+
     <div class="example-box">
-      <div class="ex-label">✅ Pattern 2</div>
-      <p>Another example showing a variation. Compare this with Pattern 1 — can you spot the difference?</p>
+      <div class="ex-label">✅ Idioms in Context</div>
+      <p>
+        • <strong>"I was feeling under the weather,</strong> so I stayed home."<br>
+        • <strong>"She hit the nail on the head</strong> — that's exactly the problem."<br>
+        • <strong>"He only visits once in a blue moon."</strong><br>
+        • <strong>"At the end of the day, it's your decision."</strong>
+      </p>
     </div>
+
     <div class="tip-box">
       <span class="tip-icon">🎯</span>
-      <div class="tip-text"><strong>Remember:</strong> Practice these patterns in your own sentences. The more you use them, the more natural they will feel!</div>
+      <div class="tip-text"><strong>Key rule:</strong> Never change the words of an idiom. You cannot say "raining dogs and cats" or "biting the bullet" in a different order. Idioms are frozen — they must be used exactly as they are.</div>
     </div>
   </div>
 
+  <!-- Section 3 -->
   <div class="lesson-section">
     <h2>⚠️ 3. Common Mistakes</h2>
-    <p>These are the most common errors learners make. Study them carefully to avoid them!</p>
+    <p>These are the most common idiom errors at C1 level.</p>
+
     <div class="example-box" style="border-left-color:var(--orange);background:#fff5f0;">
       <div class="ex-label" style="color:var(--orange);">❌ Common Errors</div>
-      <p>• Watch out for this typical mistake with Idioms & Fixed Expressions.<br>
-      • This is another error many learners make.<br>
-      • Avoid this — native speakers never say this!</p>
+      <p>
+        • ❌ <em>"It's raining dogs and cats."</em> — wrong word order; always "cats and dogs"<br>
+        • ❌ <em>"He broke the ice."</em> used when meaning "he broke a leg" — don't mix idioms<br>
+        • ❌ <em>"She spilled the beans about the surprise."</em> — actually correct! But learners often say "revealed the beans"<br>
+        • ❌ <em>"I'm feeling under the weather today."</em> used to mean you're very sick — it only means slightly unwell
+      </p>
     </div>
     <div class="example-box">
       <div class="ex-label">✅ Correct Forms</div>
-      <p>• The correct version — notice the difference!<br>
-      • This is how native speakers actually say it.<br>
-      • Use this form and you'll sound natural.</p>
+      <p>
+        • ✅ <em>"It's raining cats and dogs out there!"</em><br>
+        • ✅ <em>"Break a leg tonight!"</em> (for performances)<br>
+        • ✅ <em>"She spilled the beans about the party."</em><br>
+        • ✅ <em>"I'm feeling a bit under the weather — just a cold."</em>
+      </p>
     </div>
   </div>
 
-  <!-- Quiz 1: Multiple Choice -->
+  <!-- Quiz 1 -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🎯</span>
       <div><div class="quiz-title">Quiz 1 — Multiple Choice</div>
       <div class="quiz-subtitle">Choose the best answer</div></div>
     </div>
-    
     <div class="mc-question" id="q1">
-      <div class="mc-q">1. 'Break a leg' means...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q1','good luck')">to actually break your leg</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q1','good luck')">good luck</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','good luck')">be careful</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q1','good luck')">slow down</button>
-</div>
+      <div class="mc-q">1. "Break a leg" means...</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Good luck')">To actually break your leg</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q1','Good luck')">Good luck</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Good luck')">Be careful</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q1','Good luck')">Slow down</button>
+      </div>
       <div class="mc-feedback" id="q1-fb"></div>
     </div>
     <div class="mc-question" id="q2">
-      <div class="mc-q">2. 'It's raining cats and dogs' means...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q2','it's raining very heavily')">there are animals outside</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q2','it's raining very heavily')">it's raining very heavily</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','it's raining very heavily')">the weather is strange</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q2','it's raining very heavily')">it's snowing</button>
-</div>
+      <div class="mc-q">2. "It's raining cats and dogs" means...</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','It\'s raining very heavily')">There are animals outside</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q2','It\'s raining very heavily')">It's raining very heavily</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','It\'s raining very heavily')">The weather is strange</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q2','It\'s raining very heavily')">It's snowing</button>
+      </div>
       <div class="mc-feedback" id="q2-fb"></div>
     </div>
     <div class="mc-question" id="q3">
-      <div class="mc-q">3. 'Bite the bullet' means...</div>
-      <div class="mc-options"><button class="mc-option" onclick="checkMC(this,'wrong','q3','to endure a painful situation bravely')">to eat something hard</button>
-<button class="mc-option" onclick="checkMC(this,'correct','q3','to endure a painful situation bravely')">to endure a painful situation bravely</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','to endure a painful situation bravely')">to make a quick decision</button>
-<button class="mc-option" onclick="checkMC(this,'wrong','q3','to endure a painful situation bravely')">to give up</button>
-</div>
+      <div class="mc-q">3. "Bite the bullet" means...</div>
+      <div class="mc-options">
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','To endure a difficult situation bravely')">To eat something hard</button>
+        <button class="mc-option" onclick="checkMC(this,'correct','q3','To endure a difficult situation bravely')">To endure a difficult situation bravely</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','To endure a difficult situation bravely')">To make a quick decision</button>
+        <button class="mc-option" onclick="checkMC(this,'wrong','q3','To endure a difficult situation bravely')">To give up easily</button>
+      </div>
       <div class="mc-feedback" id="q3-fb"></div>
     </div>
+    <div id="save-status-quiz1" class="save-status"></div>
   </div>
 
-  <!-- Quiz 2: Fill in the Blanks -->
+  <!-- Quiz 2 -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">✏️</span>
       <div><div class="quiz-title">Quiz 2 — Fill in the Blanks</div>
       <div class="quiz-subtitle">Type the missing word</div></div>
     </div>
-    
     <div class="fitb-question">
-      <div class="fitb-sentence">1. ___ the nail on the head means to be exactly right. <input class="fitb-input" id="fitb1" placeholder="?" data-answer="Hit"></div>
+      <div class="fitb-sentence">1. <input class="fitb-input" id="fitb1" placeholder="?" data-answer="Hit"> the nail on the head means to be exactly right.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">2. Once in a ___ moon means very rarely. <input class="fitb-input" id="fitb2" placeholder="?" data-answer="blue"></div>
+      <div class="fitb-sentence">2. Once in a <input class="fitb-input" id="fitb2" placeholder="?" data-answer="blue"> moon means very rarely.</div>
     </div>
     <div class="fitb-question">
-      <div class="fitb-sentence">3. The ball is in your ___ means it's your decision. <input class="fitb-input" id="fitb3" placeholder="?" data-answer="court"></div>
+      <div class="fitb-sentence">3. The ball is in your <input class="fitb-input" id="fitb3" placeholder="?" data-answer="court"> — it's your decision now.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">4. I'm feeling a bit under the <input class="fitb-input" id="fitb4" placeholder="?" data-answer="weather"> today — just a cold.</div>
+    </div>
+    <div class="fitb-question">
+      <div class="fitb-sentence">5. She <input class="fitb-input" id="fitb5" placeholder="?" data-answer="spilled"> the beans about the surprise party.</div>
     </div>
     <button class="check-btn" onclick="checkFITB()">Check Answers ✓</button>
+    <div id="save-status-quiz2" class="save-status"></div>
   </div>
 
-  <!-- Quiz 3: Build the Sentence -->
+  <!-- Quiz 3 -->
   <div class="quiz-section">
     <div class="quiz-header">
       <span class="quiz-icon">🧩</span>
@@ -230,16 +277,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <div class="quiz-subtitle">Tap words in the correct order</div></div>
     </div>
     <p class="dnd-instruction">Tap the words below to build the correct sentence:</p>
-    <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0.8rem;font-style:italic;">"Good luck and break a leg tonight"</p>
     <div class="dnd-words" id="dndWords">
       <div class="dnd-word" onclick="selectWord(this)">luck</div>
-<div class="dnd-word" onclick="selectWord(this)">break</div>
-<div class="dnd-word" onclick="selectWord(this)">a</div>
-<div class="dnd-word" onclick="selectWord(this)">and</div>
-<div class="dnd-word" onclick="selectWord(this)">tonight</div>
-<div class="dnd-word" onclick="selectWord(this)">leg</div>
-<div class="dnd-word" onclick="selectWord(this)">Good</div>
-
+      <div class="dnd-word" onclick="selectWord(this)">break</div>
+      <div class="dnd-word" onclick="selectWord(this)">a</div>
+      <div class="dnd-word" onclick="selectWord(this)">and</div>
+      <div class="dnd-word" onclick="selectWord(this)">tonight</div>
+      <div class="dnd-word" onclick="selectWord(this)">leg</div>
+      <div class="dnd-word" onclick="selectWord(this)">Good</div>
     </div>
     <div class="dnd-answer-box" id="dndAnswer">
       <span style="font-size:0.78rem;color:var(--ink-soft);" id="dndPlaceholder">Tap words above...</span>
@@ -249,6 +294,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
       <button class="check-btn" style="background:#e8e8e8;color:var(--ink);" onclick="resetDND()">Reset 🔄</button>
     </div>
     <div id="dndFeedback" style="margin-top:0.8rem;font-size:0.88rem;font-weight:700;display:none;padding:8px 12px;border-radius:8px;"></div>
+    <div id="save-status-quiz3" class="save-status"></div>
   </div>
 
   <button class="submit-quiz" onclick="showScore()">🏆 See My Final Score!</button>
@@ -256,84 +302,123 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,58,36,.97
   <div class="score-section" id="scoreSection">
     <span class="score-emoji" id="scoreEmoji">🎉</span>
     <div class="score-title" id="scoreTitle">Well Done!</div>
-    <div class="score-num" id="scoreNum">0/9</div>
+    <div class="score-num" id="scoreNum">0/11</div>
     <div class="score-sub" id="scoreSub">Keep practising!</div>
     <div class="badge-earned" id="scoreBadge" style="display:none;">🏆 Vocabulary Badge Earned!</div>
   </div>
 
   <div class="article-nav">
     <a href="article-7.html"><span class="nav-dir">← Previous</span><span>Lesson 7</span></a>
-    <a href="../index.html" style="text-align:right;"><span class="nav-dir">Next →</span><span>Category Home</span></a>
+    <a href="../vocabulary/index.html" style="text-align:right;"><span class="nav-dir">🏠 Home</span><span>Category Home</span></a>
   </div>
 </div>
 
+<script src="/supabase-quiz.js"></script>
 <script>
 window.addEventListener('scroll',()=>{
   const doc=document.documentElement;
   const scrolled=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
   document.getElementById('progressBar').style.width=scrolled+'%';
 });
-let score=0;
+
+let q1Score=0,q2Score=0,q3Score=0;
+let q1Done=false,q2Done=false,q3Done=false;
+
 function checkMC(btn,result,qId,correct){
   const q=document.getElementById(qId);
   q.querySelectorAll('.mc-option').forEach(o=>o.disabled=true);
   const fb=document.getElementById(qId+'-fb');
-  if(result==='correct'){btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';score++;}
-  else{btn.classList.add('wrong');q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';}
+  if(result==='correct'){
+    btn.classList.add('correct');fb.textContent='✅ Correct! Great job!';fb.className='mc-feedback show correct';q1Score++;
+  } else {
+    btn.classList.add('wrong');
+    q.querySelectorAll('.mc-option').forEach(o=>{if(o.getAttribute('onclick').includes("'correct'"))o.classList.add('correct');});
+    fb.textContent='❌ The correct answer is "'+correct+'"';fb.className='mc-feedback show wrong';
+  }
+  const answered=document.querySelectorAll('.mc-question [disabled]').length;
+  if(answered>=3&&!q1Done){q1Done=true;submitQuizScore('vocabulary-8','quiz1',q1Score,3);}
 }
+
 function checkFITB(){
-  ['fitb1','fitb2','fitb3'].forEach(id=>{
+  if(q2Done)return;
+  q2Done=true;q2Score=0;
+  ['fitb1','fitb2','fitb3','fitb4','fitb5'].forEach(id=>{
     const inp=document.getElementById(id);
     if(!inp)return;
     const answer=inp.dataset.answer.toLowerCase().trim();
     const user=inp.value.toLowerCase().trim();
-    if(user===answer){inp.classList.add('correct');score++;}
+    if(user===answer){inp.classList.add('correct');q2Score++;}
     else{inp.classList.add('wrong');inp.value=inp.dataset.answer;}
     inp.disabled=true;
   });
+  submitQuizScore('vocabulary-8','quiz2',q2Score,5);
 }
+
 let selectedWords=[];
-const correctOrder=["Good", "luck", "and", "break", "a", "leg", "tonight"];
+const correctOrder=["Good","luck","and","break","a","leg","tonight"];
 function selectWord(el){
   if(el.classList.contains('used'))return;
   el.classList.add('used');
-  selectedWords.push(el.textContent);
+  selectedWords.push(el.textContent.trim());
   const answer=document.getElementById('dndAnswer');
   const placeholder=document.getElementById('dndPlaceholder');
-  if(placeholder)placeholder.remove();
-  const wordEl=document.createElement('span');
-  wordEl.textContent=el.textContent;
-  wordEl.className='dnd-placed';
-  wordEl.onclick=()=>{wordEl.remove();el.classList.remove('used');selectedWords=selectedWords.filter((w,i,arr)=>{const idx=arr.indexOf(el.textContent);return i!==idx||w!==el.textContent;});if(document.getElementById('dndAnswer').children.length===0){const ph=document.createElement('span');ph.id='dndPlaceholder';ph.style.cssText='font-size:0.78rem;color:var(--ink-soft);';ph.textContent='Tap words above...';document.getElementById('dndAnswer').appendChild(ph);}};
-  answer.appendChild(wordEl);
+  if(placeholder)placeholder.style.display='none';
+  const placed=document.createElement('div');
+  placed.className='dnd-placed';
+  placed.textContent=el.textContent.trim();
+  placed.onclick=function(){
+    const idx=selectedWords.indexOf(el.textContent.trim());
+    if(idx>-1)selectedWords.splice(idx,1);
+    el.classList.remove('used');placed.remove();
+    if(selectedWords.length===0&&placeholder)placeholder.style.display='inline';
+  };
+  answer.appendChild(placed);
 }
+
 function checkDND(){
+  if(q3Done)return;
   const fb=document.getElementById('dndFeedback');
   const isCorrect=JSON.stringify(selectedWords)===JSON.stringify(correctOrder);
   fb.style.display='block';
-  if(isCorrect){fb.textContent='✅ Perfect! That's exactly right!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';score++;}
-  else{fb.textContent='❌ Not quite right. Try again or reset!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+  if(isCorrect){fb.textContent='✅ Perfect sentence!';fb.style.background='var(--green-pale)';fb.style.color='var(--green-dark)';q3Score=3;}
+  else{fb.textContent='❌ Not quite — try again!';fb.style.background='#fff0f0';fb.style.color='#c00';}
+  q3Done=true;
+  submitQuizScore('vocabulary-8','quiz3',q3Score,3);
 }
+
 function resetDND(){
   selectedWords=[];
-  const answer=document.getElementById('dndAnswer');
-  answer.innerHTML='<span id="dndPlaceholder" style="font-size:0.78rem;color:var(--ink-soft);">Tap words above...</span>';
+  document.getElementById('dndAnswer').querySelectorAll('.dnd-placed').forEach(p=>p.remove());
+  document.getElementById('dndPlaceholder').style.display='inline';
   document.querySelectorAll('.dnd-word').forEach(w=>w.classList.remove('used'));
-  const fb=document.getElementById('dndFeedback');fb.style.display='none';
+  document.getElementById('dndFeedback').style.display='none';
+  q3Done=false;q3Score=0;
 }
+
 function showScore(){
-  const section=document.getElementById('scoreSection');
-  section.classList.add('show');
-  const pct=Math.round((score/9)*100);
-  document.getElementById('scoreNum').textContent=score+'/9';
-  const emoji=document.getElementById('scoreEmoji');
-  const title=document.getElementById('scoreTitle');
-  const sub=document.getElementById('scoreSub');
-  const badge=document.getElementById('scoreBadge');
-  if(pct>=80){emoji.textContent='🏆';title.textContent='Outstanding!';sub.textContent='You have mastered this lesson!';badge.style.display='inline-flex';localStorage.setItem('badge_vocabulary_article-8','earned');}
-  else if(pct>=60){emoji.textContent='🎉';title.textContent='Great Job!';sub.textContent='Good work! Review the sections you missed.';}
-  else{emoji.textContent='💪';title.textContent='Keep Going!';sub.textContent='Read the lesson again and try once more!';}
-  section.scrollIntoView({behavior:'smooth',block:'center'});
+  const total=q1Score+q2Score+q3Score;
+  const max=11;
+  const pct=Math.round((total/max)*100);
+  document.getElementById('scoreNum').textContent=total+'/'+max;
+  if(pct>=80){
+    document.getElementById('scoreEmoji').textContent='🏆';
+    document.getElementById('scoreTitle').textContent='Outstanding!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Badge earned!';
+    document.getElementById('scoreBadge').style.display='inline-flex';
+    const progress=JSON.parse(localStorage.getItem('plu_progress')||'{}');
+    progress['vocabulary-8']=true;
+    localStorage.setItem('plu_progress',JSON.stringify(progress));
+  } else if(pct>=50){
+    document.getElementById('scoreEmoji').textContent='👍';
+    document.getElementById('scoreTitle').textContent='Good Effort!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Try again to earn the badge!';
+  } else {
+    document.getElementById('scoreEmoji').textContent='📚';
+    document.getElementById('scoreTitle').textContent='Keep Practising!';
+    document.getElementById('scoreSub').textContent='You scored '+pct+'% — Review the lesson and retry.';
+  }
+  document.getElementById('scoreSection').classList.add('show');
+  document.getElementById('scoreSection').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
 </body>
